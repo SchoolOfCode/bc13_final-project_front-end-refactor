@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "../component/header/header";
 import Button from "../component/button/button";
 import { useState } from "react";
+import Footer from "../component/footer/footer";
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -34,6 +35,7 @@ export default function Home() {
           <h1>Find pet sitters</h1>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

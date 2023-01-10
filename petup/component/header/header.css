@@ -1,3 +1,10 @@
+:root {
+    --main-yellow: #eae299;
+    --green: #2B4141;
+    --white: rgba(246, 246,246, 0.6);
+    --black: #1f1f1f;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -6,7 +13,7 @@
     height: 15%;
     width: 100%;
     /* border: 1px solid red; */
-    background-color: #e3d878;
+    background-color: #2B4141;
 }
 .header > img {
     height: 100%;
@@ -25,7 +32,11 @@
     border: 1px solid black;
     border-radius: 5px;
     font-size: 18px;
+    
 } 
+.navlinks > h1 > a {
+    color: var(--main-yellow)
+}
 .navlinks {
     display: flex;
     height: 50%;

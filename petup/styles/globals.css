@@ -3,4 +3,8 @@ html, body , #__next{
   padding: 0;
   height: 100%;
   width: 100%;
+  background-image: url('https://imgs.search.brave.com/jOJaorSTC9R-2jEuxFS8dZEcJQhyMi-cGkNZPA2qGYY/rs:fit:1200:1080:1/g:ce/aHR0cDovL3dhbGxw/YXBlcmNhdmUuY29t/L3dwL3Frd29FbUIu/anBn');
+  /* /* background-size: cover; */
+  background-repeat: no-repeat; 
+  background-size: cover;
 }
