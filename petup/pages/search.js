@@ -38,10 +38,8 @@ const Search = () => {
   return (
     <div>
       <Header />
-      <h2>
-        <Link href="/">Back to home</Link>
-      </h2>
-      <div>
+
+      <div className="search-page-main-div">
         {result.map((user) => {
           return (
               <DisplayResults name={user.name} city={user.city} />
