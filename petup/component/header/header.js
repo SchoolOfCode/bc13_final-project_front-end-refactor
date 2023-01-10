@@ -11,12 +11,12 @@ const Header = () => {
       />
       <div className="navlinks">
         <h1 className="title">
-          <Link href="/search" style={{ textDecoration: "none" }}>
+          <Link href="/carer" style={{ textDecoration: "none" }}>
             Become a carer!
           </Link>
         </h1>
         <h1 className="title">
-          <Link href="/search" style={{ textDecoration: "none" }}>
+          <Link href="/sitter" style={{ textDecoration: "none" }}>
             Become a sitter!
           </Link>
         </h1>
