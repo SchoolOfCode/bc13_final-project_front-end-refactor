@@ -10,3 +10,14 @@ footer {
     padding-right: 2rem ;
  
 }
+footer > a {
+    display: flex;
+    max-height: 10%;
+    max-width: 100%;
+    background-color: var(--green);
+    color: var(--main-yellow);
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem ;
+}
