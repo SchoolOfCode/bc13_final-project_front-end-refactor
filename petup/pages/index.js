@@ -25,8 +25,8 @@ export default function Home() {
            {/* To send data to next page we pass this object in the Link component */}
           <Link href={{
             pathname: "/search",
-            query: input
-          }} style={{ textDecoration: "none" }} >
+            query: {city: input}
+          }} passHref style={{ textDecoration: "none" }} >
           <Button onClick={() => handleClick} className="search-button" text="Search">
            </Button>
           </Link>

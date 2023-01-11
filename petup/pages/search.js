@@ -8,30 +8,44 @@ import { DisplayResults } from "../component/displayResults/displayResults";
 const Search = () => {
   //using this hook to get data from previous page
   const router = useRouter();
-  const data = router.query;
-  //datacame out as object with input as key and we are accessing it
-  const input = Object.keys(data);
-  // console.log(input[0]);
-  function getData() {
-    const response = getAllUsers();
-    // const data = response.json()
-    console.log(response);
-    return response;
-    // console.log(typeof(response[i].address.city))
-  }
-  const response = getData();
-  const result = citySearch(response, input);
+  const data = router.query;   //data came out as object like this data = {city: input}
+  
+  //get the city state
+  const input = data.city;
 
-    //for loop function to find matching key for and returns an array of user object that matches key city
+  function getData() {
+    const response = getAllUsers(); //response is already parsed into JS object
+    // const data = response.json() // no need to parse again. 
+    return response;
+  }
+  
+  const response = getData(); //fetch all data
+  const result = citySearch(response, input); //get user that matches city input
+
+  //for loop function to find matching key for and returns an array of user object that matches key city
   function citySearch(response, input) {
     let result = [];
     for (let i = 0; i < response.length; i++) {
       if (response[i].address.city == input) {
-        let user = { name: response[i].name, city: response[i].address.city };
-        result.push(user);
+        result.push(response[i]);
       }
     }
     console.log(result);
+
+    //each user object is like this: 
+    // {id: 1,
+    // name: "Leanne Graham",
+    // nickname: "Leanne",
+    // imageURL : "https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?w=2000",
+    // tagline: "I am a pet carer",
+    // address: {
+    //   street: "Kulas Light",
+    //   city: "London",
+    //   postcode: "WN5 9FT",
+    // },
+    // phone: "1-770-736-8031 x56442",
+    // rate : "35"}
+
     return result;
   }
 
@@ -41,9 +55,12 @@ const Search = () => {
 
       <div className="search-page-main-div">
         {result.map((user) => {
-          return (
+          
+          return ( 
+            <div  key = {user.id}> 
               <DisplayResults name={user.name} city={user.city} />
-          );
+           </div>
+          )
         })}
       </div>
     </div>
