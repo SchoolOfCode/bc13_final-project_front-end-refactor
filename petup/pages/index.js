@@ -24,7 +24,7 @@ export default function Home() {
       <Header />
       <div className="main-div">
         <div className="searchBox-div">
-          <input className="input-field" type="text" onChange={handleChange} />
+          <input className="input-field" placeholder="Search by city" type="text" onChange={handleChange} />
           <form className="checkboxes">
           <input type='checkbox' value='dog'/>
           <label>Dog</label>

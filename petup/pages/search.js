@@ -52,7 +52,7 @@ const Search = () => {
   }
 
   return (
-    <div>
+    <>
         <Head>
         <title>Profile</title>
       </Head>
@@ -62,7 +62,7 @@ const Search = () => {
       <div className="search-page-main-div">
         {result.map((user) => {
           return ( 
-            <div  key = {user.id}> 
+            <div className="card-div" key = {user.id}> 
               <DisplayResults id = {user.id} 
               name = {user.name} 
               nickname = {user.nickname}
@@ -76,7 +76,7 @@ const Search = () => {
         })}
       </div>
       <Footer/>
-    </div>
+    </>
     
   );
 };
