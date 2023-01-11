@@ -30,7 +30,7 @@ const Search = () => {
         result.push(response[i]);
       }
     }
-    console.log(result);
+    console.log(`this is results array: ${result}`);
 
     //each user object is like this: 
     // {id: 1,
@@ -55,10 +55,16 @@ const Search = () => {
 
       <div className="search-page-main-div">
         {result.map((user) => {
-          
           return ( 
             <div  key = {user.id}> 
-              <DisplayResults name={user.name} city={user.city} />
+              <DisplayResults id = {user.id} 
+              name = {user.name} 
+              nickname = {user.nickname}
+               imageURL = {user.imageURL}
+                tagline = {user.tagline} 
+                address = {user.address} 
+                phone = {user.phone}
+                rate = {user.rate}/>
            </div>
           )
         })}
