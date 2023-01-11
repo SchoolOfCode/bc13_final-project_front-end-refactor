@@ -24,6 +24,10 @@ export default function Home() {
       <Header />
       <div className="main-div">
         <div className="searchBox-div">
+
+          <input className="input-field" type="text" 
+            onChange={handleChange}
+          />
           <input className="input-field" type="text" onChange={handleChange} />
           <form className="checkboxes">
           <input type='checkbox' value='dog'/>
@@ -32,20 +36,17 @@ export default function Home() {
           <label>Cat</label>
           </form>
         
-          {/* To send data to next page we pass this object in the Link component */}
-          <Link
-            href={{
-              pathname: "/search",
-              query: input,
-            }}
-            style={{ textDecoration: "none" }}
-          >
-            <Button
-              onClick={() => handleClick}
-              className="search-button"
-              text="Search"
-            ></Button>
+        
+        {/* To send data to next page we pass this object in the Link component */}
+        {/* passHref forces Link to send href property to its child (in this case Button)*/}
+          <Link href={{
+            pathname: "/search",
+            query: {city: input}
+          }} passHref style={{ textDecoration: "none" }} >
+          <Button onClick={() => handleClick} className="search-button" text="Search">
+           </Button>
           </Link>
+          
         </div>
         <div className="tagline-div">
           <h1>Find pet sitters</h1>
