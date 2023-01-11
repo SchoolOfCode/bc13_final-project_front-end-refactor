@@ -17,5 +17,5 @@
     align-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: var(--white);
+    background-color: rgba(246, 246, 246, 246);
 }

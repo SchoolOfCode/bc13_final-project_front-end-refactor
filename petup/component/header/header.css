@@ -1,7 +1,7 @@
 :root {
     --main-yellow: #eae299;
     --green: #2B4141;
-    --white: rgba(246, 246,246, 0.6);
+    --white: rgba(246, 246,246, 0.8);
     --black: #1f1f1f;
 }
 
@@ -15,11 +15,17 @@
     /* border: 1px solid red; */
     background-color: #2B4141;
 }
-.header > img {
+.header > a > img {
     height: 100%;
-    width: 8%;
+    min-width: 100px;
+    max-width: 100px;
     border-radius: 50%;
 
+}
+.header > a {
+    display: flex;
+    height: 100%;
+    width: 10%;
 }
  .navlinks > h1  {
     margin: 0;

@@ -39,7 +39,7 @@
     font-size: 14px;
     transition-property: background-color, border-color, color, box-shadow, filter;
     transition-duration: .3s;
-    border: 1px solid transparent;
+    border: 1px solid var(--green);
     letter-spacing: 2px;
     min-width: 160px;
     white-space: normal;
@@ -88,4 +88,18 @@
     border-radius: 15px;
     background-color: var(--white);
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.checkboxes {
+    display: flex;
+    align-items: center;
+}
+.checkboxes > input {
+    display: flex;
+    width: 30px;
+    height: 40px;
+    
+
+}
+.checkboxes > label {
+    font-size: 25px;
 }

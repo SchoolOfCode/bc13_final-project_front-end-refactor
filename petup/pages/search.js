@@ -1,9 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Header from "../component/header/header";
 import { getAllUsers } from "../lib/search";
 import { DisplayResults } from "../component/displayResults/displayResults";
+import Footer from "../component/footer/footer";
 
 const Search = () => {
   //using this hook to get data from previous page
@@ -51,6 +53,10 @@ const Search = () => {
 
   return (
     <div>
+        <Head>
+        <title>Profile</title>
+      </Head>
+       
       <Header />
 
       <div className="search-page-main-div">
@@ -69,7 +75,9 @@ const Search = () => {
           )
         })}
       </div>
+      <Footer/>
     </div>
+    
   );
 };
 
