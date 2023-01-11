@@ -1,12 +1,20 @@
-
+import Head from 'next/head'
 import React from 'react'
+import Header from '../component/header/header'
 
-const componentName = () => {
+const Carer = () => {
     return (
-        <div>
+        <>
+            <Head>
+                <title>Become a Carer!</title>
+            </Head>
+            <Header/>
+            <div>
             <h1>carer page</h1>
         </div>
+        </>
+        
     )
 }
 
-export default componentName
+export default Carer

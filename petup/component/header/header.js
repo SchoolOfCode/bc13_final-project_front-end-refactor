@@ -5,10 +5,14 @@ import Button from "../button/button";
 const Header = () => {
   return (
     <div className="header">
-      <img
-        src="https://i.ibb.co/fxc9pws/dogpicproject.jpg"
-        alt="dogpicproject"
+    <Link href='/'>
+    <img
+        src="https://i.ibb.co/ThN9Z9z/Any-Conv-com-logo-color.jpg" 
+        alt="logo"
+        
       />
+    </Link>
+      
       <div className="navlinks">
         <h1 className="title">
           <Link href="/carer" style={{ textDecoration: "none" }}>
