@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300&display=swap');
+html, body , #__next{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('https://imgs.search.brave.com/jOJaorSTC9R-2jEuxFS8dZEcJQhyMi-cGkNZPA2qGYY/rs:fit:1200:1080:1/g:ce/aHR0cDovL3dhbGxw/YXBlcmNhdmUuY29t/L3dwL3Frd29FbUIu/anBn');
+  /* /* background-size: cover; */
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
