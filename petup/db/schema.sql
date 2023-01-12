@@ -1,4 +1,5 @@
 /*sample schema for our database. to be edited*/
+/*I corrected a few errors in these schema. I have checked that works in dbFiddle */
 
 CREATE TABLE users (
 	user_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -107,9 +108,10 @@ VALUES
 
 /* SAMPLE QUESTIONS*/
 
-INSERT INTO pet_service (tagline, summary, pet_type, service_type, price, how_many_pets, pet_size)
+INSERT INTO pet_service (sitter_id, tagline, summary, pet_type, service_type, price, how_many_pets, pet_size)
 VALUES
 (
+        1,
         'I am a pet owner!',
         'I love all animals and want to take care of them all!',
         'Dog',
@@ -119,6 +121,7 @@ VALUES
         'Big'
 ),
 (
+        2,
         'I do not own a pet',
         'I love dogs',
         'Dog',
