@@ -82,3 +82,8 @@ const Search = () => {
 };
 
 export default Search;
+
+
+//refactor to add getStaticPaths or getStaticProps
+//export getStaticPaths function to return a list (fetched data from db) 
+///export getStaticProps to fetch required data to render this dynamic page
