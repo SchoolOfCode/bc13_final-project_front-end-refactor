@@ -31,7 +31,8 @@ CREATE TABLE pet_service(
   pet_size VARCHAR(15)
 
   );
-  
+  -- fake addresses 
+
 --   6 King Street
 -- BLACKBURN
 -- BB62 6VD
@@ -50,6 +51,9 @@ CREATE TABLE pet_service(
 -- 40 Manchester Road
 -- SALISBURY
 -- SP91 0CP
+
+--fake numbers 
+
 -- 078 1460 0003 
 -- 079 3436 2105 
 -- 079 4946 1134 
@@ -71,7 +75,7 @@ CREATE TABLE pet_service(
 -- 079 8224 0227 
 -- 078 8147 9591
 
-/*SAMPLE PLAYERS*/
+
 
 INSERT INTO users (fullname,nickname, email,phone_number, profile_image,address_street, address_city, address_postcode, latitude, longitude )
 VALUES 
@@ -98,87 +102,30 @@ VALUES
        'L7 6LJ',
        '',
        ''
-),
-(
-  'player 3'
 );
 
 
 /* SAMPLE QUESTIONS*/
 
-INSERT INTO questions (question)
+INSERT INTO pet_service (tagline, summary, pet_type, service_type, price, how_many_pets, pet_size)
 VALUES
 (
-  'Imagine you are in a jungle and you have to choose one of these animals to fight to get to freedom - which one would you choose?'
-),
-(
-  'Which is the most overrated?'
-),
-(
-  'What is something you dont get the hype over?'
-),
-(
-  'Pick a superpower - but there is a twist!'
-),
-(
-'Who would you choose to fight alongside you in a zombie apocalypse?'
+        'I am a pet owner!',
+        'I love all animals and want to take care of them all!',
+        'Dog, cats, Iguanas',
+        'Cuddling, walking',
+         15,
+         5,
+        'Big and small',
 )
-;
+(
+        'I do not own a pet',
+        'I love dogs',
+        'Dog',
+        'house sitting',
+         5,
+         2,
+        'small',
+)
 
-INSERT INTO multiple_choices (question_id, choices)
-VALUES
-(1, 'Gorilla'),
-(1, 'Bear'),
-(1, 'Worlf'),
-(1, 'Venomous snake'),
-(1, 'Rhino'),
-(1, 'Kangaroo'),
 
-(2, 'Social Media'),
-(2, 'Dogs and Cats'),
-(2, 'Chocolate'),
-(2, 'Capital Cities'),
-(2, 'Netflix'),
-(2, 'Anime'),
-
-(3, 'React'),
-(3, 'JavaScript'),
-(3, 'SQL'),
-(3, 'Testing'),
-(3, 'CSS'),
-(3, 'UX/UI'),
-
-(4, 'Invisibility but you smell like sewage'),
-(4, 'Flying but you constantly need the loo'),
-(4, 'Super strength but super sticky also'),
-(4, 'X-ray vision but you lose your clothes when you use it'),
-(4, 'Super stretchy but super slimy also'),
-(4, 'Shape shifter but you only turn into bugs'),
-
-(5, 'Liz'),
-(5, 'Arshi'),
-(5, 'Hamza'),
-(5, 'Jordan'),
-(5, 'Loz'),
-(5, 'Jessica');
-
-/*SAMPLE ANSWERS*/
-INSERT INTO answers (player, question, choices)
-VALUES 
-(1,1,1),
-(1,2,7),
-(1,3,14),
-(1,4,20),
-(1,5,27),
-
-(2,1,6),
-(2,2,12),
-(2,3,18),
-(2,4,24),
-(2,5,30),
-
-(3,1,5),
-(3,2,10),
-(3,3,15),
-(3,4,22),
-(3,5,27)
