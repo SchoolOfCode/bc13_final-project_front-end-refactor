@@ -34,6 +34,8 @@ const Search = () => {
     }
     console.log(`this is results array: ${result}`);
 
+//!!!!!!12/1: props has changed. displayresults card needs to be updated with new prop data
+
     //each user object is like this: 
     // {id: 1,
     // name: "Leanne Graham",
