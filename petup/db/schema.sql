@@ -8,7 +8,7 @@ CREATE TABLE users (
   created_at timestamp ,
   updated_at timestamp, 
   phone_number VARCHAR(15),
-  profile_image VARCHAR(150),
+  profile_image TEXT,
   address_street TEXT,
   address_city VARCHAR (30),
   address_postcode VARCHAR (10),
@@ -88,8 +88,8 @@ VALUES
        '6 King street',
        'BLACKBURN',
        'BB62 6VD',
-       '',
-       ''
+       0.00,
+       0.00
 ),
 (
       'Ervin Howell',
@@ -100,8 +100,8 @@ VALUES
        '24 West Street',
        'Liverpool',
        'L7 6LJ',
-       '',
-       ''
+       0.00,
+       0.00
 );
 
 
@@ -112,12 +112,12 @@ VALUES
 (
         'I am a pet owner!',
         'I love all animals and want to take care of them all!',
-        'Dog, cats, Iguanas',
-        'Cuddling, walking',
+        'Dog',
+        'walking',
          15,
          5,
-        'Big and small',
-)
+        'Big'
+),
 (
         'I do not own a pet',
         'I love dogs',
@@ -125,7 +125,7 @@ VALUES
         'house sitting',
          5,
          2,
-        'small',
-)
+        'small'
+);
 
 
