@@ -6,11 +6,14 @@
 
 export const user = [
     {
-        "id": 1,
-        "name": "Leanne Graham",
-        "nickname": "Leanne",
-        "imageURL" : "https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?w=2000",
-        "tagline": "I am a pet carer",
+        "user_id": 1,
+        "fullname": "Leanne Graham",
+        "nickname": "Lea",
+        "email" : "Sincere@april.biz",
+        "created_at" : "timestamp",
+        "updated_at" : "timestamp",
+        "phone_number" : "070 2562 2287",
+        "profile_image" : "https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?w=2000",
         "address": {
           "street": "Kulas Light",
           "city": "London",
