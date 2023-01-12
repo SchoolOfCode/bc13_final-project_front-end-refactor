@@ -12,7 +12,8 @@ export function getAllUsers() {
     const res = user;
     //to refactor to this: 
     //const res = await fetch('..');
-    return res.json();
+    // return res.json();
+    return res
 }
 
 //sample codes to get data from database below: 
