@@ -1,6 +1,9 @@
 //this is sample dummy data for first sprint
 //this data is more refined and catered for our app compared to dummydb.js
 
+//user array to be refactored with new table schema. 
+
+
 export const user = [
     {
         "id": 1,
