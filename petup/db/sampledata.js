@@ -6,7 +6,7 @@
 
 export const user = [
     {
-        "user_id": 1,
+        "user_id": "1",
         "fullname": "Leanne Graham",
         "nickname": "Lea",
         "email" : "Sincere@april.biz",
@@ -21,7 +21,7 @@ export const user = [
         "longitude" : "0.00",
       },
       {
-        "user_id": 2,
+        "user_id": "2",
         "fullname": "Ervin Howell",
         "nickname": "Erv",
         "email" : "Ervinge@april.biz",
@@ -36,7 +36,7 @@ export const user = [
         "longitude" : "0.00",
       },
       {
-        "user_id": 1,
+        "user_id": "3",
         "fullname": "Leanne Graham",
         "nickname": "Lea",
         "email" : "Sincere@april.biz",
@@ -51,7 +51,7 @@ export const user = [
         "longitude" : "0.00",
       },
       {
-        "user_id": 1,
+        "user_id": "4",
         "fullname": "Leanne Graham",
         "nickname": "Lea",
         "email" : "Sincere@april.biz",
@@ -66,7 +66,7 @@ export const user = [
         "longitude" : "0.00",
       },
       {
-        "user_id": 1,
+        "user_id": "5",
         "fullname": "Leanne Graham",
         "nickname": "Lea",
         "email" : "Sincere@april.biz",
@@ -81,7 +81,7 @@ export const user = [
         "longitude" : "0.00",
       },
       {
-        "user_id": 1,
+        "user_id": "6",
         "fullname": "Leanne Graham",
         "nickname": "Lea",
         "email" : "Sincere@april.biz",
@@ -96,3 +96,91 @@ export const user = [
         "longitude" : "0.00",
       },
     ]
+
+  export const petService = [
+    {
+      "service_id" : "1",
+	    "sitter_id" : "2",
+      "tagline" : "I am a pet owner!",
+      "summary" : "'I love all animals and want to take care of them all!",
+      "pet_type" : "Dog",
+      "service_type" : "walking",
+      "price" : "15",
+      "published_at" : "timestamp",
+      "created_at " : "timestamp",
+      "updated_at " : "timestamp",
+      "how_many_pets" :"5",
+      "pet_size" : "big"
+    },
+    {
+      "service_id" : "2",
+	    "sitter_id" : "2",
+      "tagline" : "I am a pet owner!",
+      "summary" : "'I love all animals and want to take care of them all!",
+      "pet_type" : "Dog",
+      "service_type" : "house sitting",
+      "price" : "15",
+      "published_at" : "timestamp",
+      "created_at " : "timestamp",
+      "updated_at " : "timestamp",
+      "how_many_pets" :"5",
+      "pet_size" : "big"
+    },
+    {
+      "service_id" : "3",
+	    "sitter_id" : "3",
+      "tagline" : "I am a pet owner!",
+      "summary" : "'I love all animals and want to take care of them all!",
+      "pet_type" : "Cat",
+      "service_type" : "house sitting",
+      "price" : "15",
+      "published_at" : "timestamp",
+      "created_at " : "timestamp",
+      "updated_at " : "timestamp",
+      "how_many_pets" :"5",
+      "pet_size" : "big"
+    },
+    {
+      "service_id" : "4",
+	    "sitter_id" : "3",
+      "tagline" : "I am a pet owner!",
+      "summary" : "'I love all animals and want to take care of them all!",
+      "pet_type" : "Dog",
+      "service_type" : "walking",
+      "price" : "15",
+      "published_at" : "timestamp",
+      "created_at " : "timestamp",
+      "updated_at " : "timestamp",
+      "how_many_pets" :"5",
+      "pet_size" : "big"
+    },
+    {
+      "service_id" : "5",
+	    "sitter_id" : "3",
+      "tagline" : "I am a pet owner!",
+      "summary" : "'I love all animals and want to take care of them all!",
+      "pet_type" : "Dog",
+      "service_type" : "walking",
+      "price" : "15",
+      "published_at" : "timestamp",
+      "created_at " : "timestamp",
+      "updated_at " : "timestamp",
+      "how_many_pets" :"5",
+      "pet_size" : "big"
+    },
+    {
+      "service_id" : "4",
+	    "sitter_id" : "3",
+      "tagline" : "I am a pet owner!",
+      "summary" : "'I love all animals and want to take care of them all!",
+      "pet_type" : "Dog",
+      "service_type" : "walking",
+      "price" : "15",
+      "published_at" : "timestamp",
+      "created_at " : "timestamp",
+      "updated_at " : "timestamp",
+      "how_many_pets" :"5",
+      "pet_size" : "big"
+    },
+   
+  ]
