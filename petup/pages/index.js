@@ -25,12 +25,12 @@ export default function Home() {
       <div className="main-div">
         <div className="searchBox-div">
           <input className="input-field" placeholder="Search by city" type="text" onChange={handleChange} />
-          <form className="checkboxes">
+          {/* <form className="checkboxes">
           <input type='checkbox' value='dog'/>
           <label>Dog</label>
           <input type='checkbox' value='cat'></input>
           <label>Cat</label>
-          </form>
+          </form> */}
         
         
         {/* To send data to next page we pass this object in the Link component */}
@@ -46,6 +46,7 @@ export default function Home() {
         </div>
         <div className="tagline-div">
           <h1>Find pet sitters</h1>
+          <p style={{color: '#2B4141'}}> Whatever your pets need, PetBrB will help you get the best independent sitters, so you can spend less and worry less.</p>
         </div>
       </div>
       <Footer />

@@ -7,25 +7,30 @@ const Header = () => {
     <div className="header">
     <Link href='/'>
     <img
-        src="https://i.ibb.co/ThN9Z9z/Any-Conv-com-logo-color.jpg" 
+        src="https://i.ibb.co/0fPsQsW/logo-no-background.png" 
         alt="logo"
         
       />
     </Link>
       
-      <div className="navlinks">
-        <h1 className="title">
+      {/* <div className="navlinks"> */}
+        {/* <h1 className="title">
           <Link href="/carer" style={{ textDecoration: "none" }}>
             Become a carer!
           </Link>
-        </h1>
-        <h1 className="title">
+        </h1> */}
+        {/* <h1 className="title">
+          <Link href="/sitter" style={{ textDecoration: "none" }}>
+            Become a sitter!
+          </Link>
+        </h1> */}
+      {/* </div> */}
+      <div className="button-div">
+      <h1 className="title">
           <Link href="/sitter" style={{ textDecoration: "none" }}>
             Become a sitter!
           </Link>
         </h1>
-      </div>
-      <div className="button-div">
         <Button className="sign-in" text="Sign in" />
         <Button className="sign-up" text="Sign up" />
       </div>

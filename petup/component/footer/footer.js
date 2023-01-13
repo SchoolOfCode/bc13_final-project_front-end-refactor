@@ -7,7 +7,7 @@ const Footer = () => {
             <Link href='/contact' style={{textDecoration: 'none'}}>
                 <h2>Contact us</h2>
             </Link>
-            <h2>PetUp</h2>
+            <h2>PetBrB</h2>
             <h2>Copyright @ SoC</h2>
         </footer>
     )
