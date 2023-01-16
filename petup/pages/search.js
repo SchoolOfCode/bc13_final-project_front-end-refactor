@@ -8,21 +8,36 @@ import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
 
 
-//16.1 : will need to use getStaticProps or the server side render Props function. (or in the index.js?) 
+//16.1 : will need to use getStaticProps or the server side render Props function.
 //use dynamic routing
+//getStaticProps will get the data once on mount?
 export async function getStaticProps(){
-  //call function to get data
+   //in getStaticProps, we call the function to get data, which
+  //has been defined in the lib folder (that fetch data from local database)
 
-}
-
-
-const Search = () => {
   //using this hook to get data from previous page
   const router = useRouter();
   const data = router.query;   //data came out as object like this data = {city: input}
   
   //get the city state
   const input = data.city;
+
+ 
+  const sitterData = await getSitterByCity(input); // get sitterData by City. 
+  return {
+    props: {
+      sitterData,
+    },
+    //the props that is being returned here will be passed as props
+    //in the component function 'Search', so the data can be rendered the data on the page. 
+
+  };
+
+}
+
+
+const Search = ({sitterData}) => {
+  
 
   function getData() {
     const response = getAllUsers(); //response is already parsed into JS object

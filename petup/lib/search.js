@@ -17,17 +17,24 @@ export function getAllUsers() {
     return res
 }
 
-function getSitterByCity(){
-    //get service by city. do direct sql query to database
+function getSitterByCity(city){
+    //get sitter service by city. do direct sql query to database
     const response = [];//SQLquery here
-    return response;
-    //should it be return response.json()?
+    // return response;
+    // //should it be return response.json()?
 
+
+    //logic for city search here. 
+    const dummyData = []
+    const dummyResponse = citySearch(dummyData, city)
+    return dummyResponse
+   
     //for loop function to find matching key for and returns an array of user object that matches key city
-  function citySearch(response, input) {
+    //FIX THIS FUNCTION
+    function citySearch(response, city) {
     let result = [];
     for (let i = 0; i < response.length; i++) {
-      if (response[i].address.city == input) {
+      if (response[i].address.city == city) {
         result.push(response[i]);
       }
     }
