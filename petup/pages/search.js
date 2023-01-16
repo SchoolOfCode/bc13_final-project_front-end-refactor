@@ -34,7 +34,8 @@ const Search = () => {
     }
     console.log(`this is results array: ${result}`);
 
-//!!!!!!12/1: props has changed. displayresults card needs to be updated with new prop data
+//16/1 - will update the function above
+    //!!!!!!12/1: props has changed. displayresults card needs to be updated with new prop data
 
     //each user object is like this: 
     // {id: 1,
