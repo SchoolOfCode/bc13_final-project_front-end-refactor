@@ -14,6 +14,21 @@ import '../styles/index.css'
 import '../component/footer/footer.css'
 import '../component/displayResults/displayResults.css'
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import { SessionProvider } from "next-auth/react"
+
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
+  return (
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  )
 }
+
+
+// Previous code 
+// export default function App({ Component, pageProps }) {
+//   return <Component {...pageProps} />
+// }

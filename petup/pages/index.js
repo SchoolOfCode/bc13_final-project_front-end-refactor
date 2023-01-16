@@ -4,10 +4,29 @@ import Head from "next/head";
 import Button from "../component/button/button";
 import { useState } from "react";
 import Footer from "../component/footer/footer";
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Home() {
   const [input, setInput] = useState("");
 
+  {/*This is OAuth*/}
+  const { session, status } = useSession()
+  const userEmail = session?.user.email;
+
+  if (status === "loading") {
+    return <p>Hang on there...</p>
+  }
+
+  if (status === "authenticated") {
+    return (
+      <>
+        <p>Signed in as {userEmail}</p>
+        <button onClick={() => signOut()}>Sign out</button>
+        <img src="https://cdn.pixabay.com/photo/2017/08/11/19/36/vw-2632486_1280.png" />
+      </>
+    )
+  }
+{/*This is OAuth*/}
   function handleChange(e) {
     setInput(e.target.value);
   }
@@ -22,6 +41,12 @@ export default function Home() {
         <title>Home</title>
       </Head>
       <Header />
+      {/*This is OAuth*/}
+      <div className="auth">
+        <p>Not signed in.</p>
+      <button onClick={() => signIn()}>Sign in</button>
+      </div>
+      {/*This is OAuth*/}
       <div className="main-div">
         <div className="searchBox-div">
           <input className="input-field" placeholder="Search by city" type="text" onChange={handleChange} />
