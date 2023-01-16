@@ -7,6 +7,15 @@ import { getAllUsers } from "../lib/search";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
 
+
+//16.1 : will need to use getStaticProps or the server side render Props function. (or in the index.js?) 
+//use dynamic routing
+export async function getStaticProps(){
+  //call function to get data
+
+}
+
+
 const Search = () => {
   //using this hook to get data from previous page
   const router = useRouter();
@@ -24,35 +33,7 @@ const Search = () => {
   const response = getData(); //fetch all data
   const result = citySearch(response, input); //get user that matches city input
 
-  //for loop function to find matching key for and returns an array of user object that matches key city
-  function citySearch(response, input) {
-    let result = [];
-    for (let i = 0; i < response.length; i++) {
-      if (response[i].address.city == input) {
-        result.push(response[i]);
-      }
-    }
-    console.log(`this is results array: ${result}`);
-
-//16/1 - will update the function above
-    //!!!!!!12/1: props has changed. displayresults card needs to be updated with new prop data
-
-    //each user object is like this: 
-    // {id: 1,
-    // name: "Leanne Graham",
-    // nickname: "Leanne",
-    // imageURL : "https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?w=2000",
-    // tagline: "I am a pet carer",
-    // address: {
-    //   street: "Kulas Light",
-    //   city: "London",
-    //   postcode: "WN5 9FT",
-    // },
-    // phone: "1-770-736-8031 x56442",
-    // rate : "35"}
-
-    return result;
-  }
+  
 
   return (
     <>
