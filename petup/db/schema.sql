@@ -1,4 +1,5 @@
 /*sample schema for our database. to be edited*/
+/*I corrected a few errors in these schema. I have checked that works in dbFiddle */
 
 CREATE TABLE users (
 	user_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -8,7 +9,7 @@ CREATE TABLE users (
   created_at timestamp ,
   updated_at timestamp, 
   phone_number VARCHAR(15),
-  profile_image VARCHAR(150),
+  profile_image TEXT,
   address_street TEXT,
   address_city VARCHAR (30),
   address_postcode VARCHAR (10),
@@ -88,8 +89,8 @@ VALUES
        '6 King street',
        'BLACKBURN',
        'BB62 6VD',
-       '',
-       ''
+       0.00,
+       0.00
 ),
 (
       'Ervin Howell',
@@ -100,32 +101,34 @@ VALUES
        '24 West Street',
        'Liverpool',
        'L7 6LJ',
-       '',
-       ''
+       0.00,
+       0.00
 );
 
 
 /* SAMPLE QUESTIONS*/
 
-INSERT INTO pet_service (tagline, summary, pet_type, service_type, price, how_many_pets, pet_size)
+INSERT INTO pet_service (sitter_id, tagline, summary, pet_type, service_type, price, how_many_pets, pet_size)
 VALUES
 (
+        1,
         'I am a pet owner!',
         'I love all animals and want to take care of them all!',
-        'Dog, cats, Iguanas',
-        'Cuddling, walking',
+        'Dog',
+        'walking',
          15,
          5,
-        'Big and small',
-)
+        'Big'
+),
 (
+        2,
         'I do not own a pet',
         'I love dogs',
         'Dog',
         'house sitting',
          5,
          2,
-        'small',
-)
+        'small'
+);
 
 
