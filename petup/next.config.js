@@ -7,43 +7,9 @@
 
 // module.exports = nextConfig
 
-// module.exports = {
-//   webpack: (config, { isServer }) => {
-//     // Fixes npm packages that depend on `fs` module
-//     if (!isServer) {
-//       config.node = {
-//         reactStrictMode: true,
-//         fs: 'empty'
-//       }
-//     }
-
-//     return config
-//   }
-// }
-
-// module.exports = {
-//   webpack(config) { // we depend on nextjs switching to webpack 4 by default. Probably they will 
-//     // change this behavior at some future major version.
-//     config.node = {
-//       fs: "empty", // webpack4 era solution 
-//     };
-
-//     return config;
-//   },
-// };
-
-// module.exports = {
-//   webpack: (config, { isServer }) => {
-//       if (!isServer) {
-//           // set 'fs' to an empty module on the client to prevent this error on build --> Error: Can't resolve 'fs'
-//           config.node = {
-//               fs: 'empty'
-//           }
-//       }
-
-//       return config;
-//   }
-// }
+//the module.exports is updated with the following code 
+//to tell webpack not to resolve the module on the client-side(!isServer)
+//this fixes the error 'can't resolve 'fs' error'
 
 module.exports = {
   webpack: (config, { isServer }) => {
