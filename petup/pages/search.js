@@ -69,21 +69,16 @@ console.log(`this is user input for city: ${userInput}`)
         {sitterData.map((user) => {
           return ( 
             <div className="card-div" key = {user.id}> 
-            <p>name = {user.name} 
-              nickname = {user.nickname}
-               imageURL = {user.profile_image}
+              <DisplayResults
+              fullname = {user.fullname}
+              nickname = {user.nickname} 
+              email = {user.email}
+              phone_number = {user.phone_number}
+              profile_image = {user.profile_image}
                 tagline = {user.tagline} 
-                address = {user.address_city} 
-                phone = {user.phone_number}
-                rate = {user.price}</p>
-              {/* <DisplayResults id = {user.id} 
-              name = {user.name} 
-              nickname = {user.nickname}
-               imageURL = {user.imageURL}
-                tagline = {user.tagline} 
-                address = {user.address} 
-                phone = {user.phone}
-                rate = {user.rate}/> */}
+                address_region = {user.address_region}
+                address_city = {user.address_city}
+              price = {user.price}/>
            </div>
           )
         })}
