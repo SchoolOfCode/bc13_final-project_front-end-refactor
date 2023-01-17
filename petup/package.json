@@ -6,13 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db-create": "node -r dotenv/config ./db/scripts/create-table.js",
+    "db-drop": "node -r dotenv/config ./db/scripts/drop-table.js",
+    "db-seed": "node -r dotenv/config ./db/scripts/seed-table.js",
+    "db-reset": "node -r dotenv/config ./db/scripts/reset-table.js"
   },
   "dependencies": {
     "@next/font": "13.1.1",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "next": "13.1.1",
+    "pg": "^8.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
