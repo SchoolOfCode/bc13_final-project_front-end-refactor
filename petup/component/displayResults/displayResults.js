@@ -1,6 +1,6 @@
 import Image from 'next/image' // to use Image component with URL, it needs to be configured in package.json
 
-//12/1: props has changed. displayresults card needs to be updated with new prop data
+//refactoring this script now
 
 export function DisplayResults({
   id,
