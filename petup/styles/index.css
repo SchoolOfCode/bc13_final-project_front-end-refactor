@@ -1,12 +1,13 @@
 .main-div {
     border: 1px solid black;
-    height: 75%;
+    height: 80%;
     max-width: 100%;
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: space-around;
     /* background-color: var(--white); */
+    padding-bottom: 20vh;
    
 }
 
@@ -14,17 +15,19 @@
     /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
-    align-content: space-around;
+    align-content: center;
     align-items: center;
     justify-content: space-around;
-    height: 40%;
-    width: 40%;
+    min-height: 45vh;
+    max-height: 55vh;
+    width: 45%;
     padding: 2%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     background-color: var(--white);
     opacity: 200%;
     border: 1px solid var(--green);
+    
 }
 
 .search-button {
@@ -46,9 +49,11 @@
     font-weight: 700;
     text-align: center;
     padding: 16px 14px 18px;
-    color: var(--green);
+    /* color: var(--green); */
     box-shadow: inset 0 0 0 2px var(--main-yellow);
-    background-color: var(--main-yellow);
+    background-color: var(--orange);
+    color: var(--white);
+
 
 }
 
@@ -60,22 +65,22 @@
 
 
 .input-field {
-    border: 3px solid var(--green);
-    border-radius: 5px;
-    height: 50px;
+    border: 1px solid var(--green);
+    /* border-radius: 5px; */
+    height: 5vh;
     line-height: normal;
     color: #282828;
     display: block;
-    width: 60%;
-    box-sizing: border-box;
+    width: 30vh;
+    /* box-sizing: border-box; */
     user-select: auto;
-    font-size: 16px;
+    font-size: 14px;
     padding: 0 6px;
     padding-left: 12px;
 }
 
 .input-field:focus{
-    border: 3px solid #eae299;
+    border: 1px solid #eae299;
 }
 
 
@@ -90,13 +95,16 @@
     align-items: center;
     align-content: space-between;
     border-radius: 15px;
-    background-color: var(--white);
+    background-color: transparent;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     padding: 0;
 }
+.tagline-div > h1 {
+    font-size: x-large;
+}
 .tagline-div > p {
     color: var(--green);
-    font-size: x-large;
+    font-size: large;
 }
 .checkboxes {
     display: flex;
@@ -111,4 +119,114 @@
 }
 .checkboxes > label {
     font-size: 25px;
+}
+.top-search-div {
+    display: flex;
+    height: 20%;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    font-size: small;
+}
+.second-search-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 20%;
+    width: 100%;
+}
+.pet-service {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 30vh;
+}
+.toggle-box-service {
+    display: flex;
+    min-height: 5vh;
+    width: 100%;
+    border: 1px solid var(--green);
+    /* border-radius: 5px; */
+}
+.input-box-div {
+display: flex;
+flex-direction: column;
+height: 100%;
+width: 30vh;
+}
+.third-search-div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    height: 20%;
+    width: 100%;
+}
+.third-search-div > a {
+    display: flex;
+}
+.radio-div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    /* gap: 1vw; */
+    /* flex-direction: column; */
+    width: 30vw;
+    height: 100%;
+}
+.number-input {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.radio{
+    height: 40%;
+    width: 40%;
+}
+.radio-buttons {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.btn-primary {
+    min-width: 3vh;
+    max-width: 10vh;
+}
+.react-datepicker-wrapper {
+    display: flex;
+    height: 100%;
+    width: 10vh;
+}
+.react-datepicker__input-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+.react-datepicker__input-container > input {
+    display: flex;
+    
+    height: 100%;
+    width: 100%;
+}
+.chakra-numberinput {
+    display: flex;
+    width: 100%;
+}
+.chakra-numberinput > input {
+    width: 100%;
+}
+.btn-check {
+    display: flex;
+    text-align: center;
+    background-color: var(--orange);
+    width: 5vw;
+}
+.radio-div > label {
+    background-color: var(--orange);
 }

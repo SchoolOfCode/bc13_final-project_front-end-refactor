@@ -9,7 +9,11 @@ footer {
     justify-content: space-between;
     padding-left: 2rem;
     padding-right: 2rem ;
+    
  
+}
+footer > h2, a > h2 {
+    font-size: larger;
 }
 footer > a {
     display: flex;
