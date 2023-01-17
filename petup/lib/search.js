@@ -4,20 +4,20 @@
 //we can eitherfetch exernal API database or query database directly. 
 
 import { user } from '../db/sampledata' // this is old dummy data. will refactor to show newer data
-
+import {query} from '../db/index' // import query function for writing SQL query
 
 //the function in this folder will query to get data from database
 //for now, the data {user} is stored locally and being imported in this file
-export function getAllUsers() {
+export async function getAllSitters() {
     
-    const res = user;
-    //to refactor to this: 
-    //const res = await fetch('..');
+    //const res = user; //'user' array is obtained from local sample data.
+
+    const res = await query('SECELCT * FROM users');
     // return res.json();
-    return res
+    return res;
 }
 
-function getSitterByCity(city){
+export async function getSitterByCity(city){
     //get sitter service by city. do direct sql query to database
     const response = [];//SQLquery here
     //example SQL queries
@@ -45,48 +45,24 @@ function getSitterByCity(city){
     }
     console.log(`this is results array: ${result}`);
 
-//16/1 - will update the function above
     //!!!!!!12/1: props has changed. displayresults card needs to be updated with new prop data
-
-    //each user object is like this: 
-    // {id: 1,
-    // name: "Leanne Graham",
-    // nickname: "Leanne",
-    // imageURL : "https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?w=2000",
-    // tagline: "I am a pet carer",
-    // address: {
-    //   street: "Kulas Light",
-    //   city: "London",
-    //   postcode: "WN5 9FT",
-    // },
-    // phone: "1-770-736-8031 x56442",
-    // rate : "35"}
-
     return result;
   }
 
-
-}
-
-function getSitterByCityServicePets(){
-    //get service by city and type of pets (1 filter)
-    // 3. get service by city, type of service, type of pet 
-}
-
-
-export {getSitterByCity,
-    getSitterByCityServicePets}
-
-//todo 16.1 : 
-//set up a function that gives data based on the filter below:
-//thefunctions that we need (for filter): 
+//refactor this function to give data based on the filter below:
 // 1. get all service by city(for utmost basic search, no filter)
 // 2. get service by city and type of pets (1 filter)
 // 3. get service by city, type of service, type of pet  (2 and 3 can be combined)
 // 4. get service by city, type of service, type of pet, price range (min and max)
 // 5. get service by city, type of service, type of pet, proce range, date of availability
 
-//sample codes to get data from database below: 
+}
+
+
+
+
+
+//sample codes below to get data from database: 
 
 //**** EXTERNAL API DATABASE */
 
