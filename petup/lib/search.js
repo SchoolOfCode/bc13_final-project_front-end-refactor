@@ -20,6 +20,11 @@ export function getAllUsers() {
 function getSitterByCity(city){
     //get sitter service by city. do direct sql query to database
     const response = [];//SQLquery here
+    //example SQL queries
+        //SELECT * 
+        // FROM users 
+        // INNER JOIN pet_service 
+        // ON users.user_id = pet_service.sitter_id 
     // return response;
     // //should it be return response.json()?
 
