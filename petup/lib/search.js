@@ -12,9 +12,9 @@ export async function getAllSitters() {
     
     //const res = user; //'user' array is obtained from local sample data.
 
-    const res = await query('SECELCT * FROM users');
+    const res = await query('SELECT * FROM users');
     // return res.json();
-    return res;
+    return res.rows;
 }
 
 export async function getSitterByCity(city){

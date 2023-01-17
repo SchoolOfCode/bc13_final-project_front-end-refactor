@@ -3,15 +3,15 @@ import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Header from "../component/header/header";
-import { getAllUsers } from "../lib/search";
+//import { getAllUsers } from "../lib/search";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
-import {getAllSitters, getSitterByCity } from '../lib/search.js'
+import {getAllSitters} from '../lib/search.js'
 
 //16.1 : will need to use getStaticProps or the getServerSideProps function.
 //refactor later to use dynamic routing?
 //getStaticProps will get the data once at build time.
-export async function getStaticProps(){
+export async function getServerSideProps(){
    //in getStaticProps, we call the function to get data
 
   //using this hook to get search keywrd from previous page
@@ -23,6 +23,7 @@ export async function getStaticProps(){
 
  //testing to get all sitters without filter
  const sitterData = await getAllSitters(); // get all sitter data
+ //console.log(await sitterData)
  return {
    props: {
      sitterData,
@@ -52,6 +53,7 @@ const Search = ({sitterData, input}) => {
   
 console.log(sitterData)
 console.log(input)
+//console.log(input)
   //below is some old code from getting local data
   // function getData() {
   //   const response = getAllUsers(); //response is already parsed into JS object

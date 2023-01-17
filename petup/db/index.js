@@ -1,6 +1,7 @@
 //import node-postgress package for interfacing with postgreSQL database
 import pkg from 'pg'; 
 
+
 /** set up a pool instance with configuration to online database, this manages connections for us */
 const { Pool } = pkg;
 export const pool = new Pool({
