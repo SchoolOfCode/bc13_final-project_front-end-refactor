@@ -19,34 +19,16 @@ export async function getAllSitters() {
 
 export async function getSitterByCity(city){
     //get sitter service by city. do direct sql query to database
-    const response = [];//SQLquery here
-    //example SQL queries
-        //SELECT * 
-        // FROM users 
-        // INNER JOIN pet_service 
-        // ON users.user_id = pet_service.sitter_id 
-    // return response;
-    // //should it be return response.json()?
+    const response = await query(`SELECT * 
+    FROM users 
+    INNER JOIN pet_service 
+    ON users.user_id = pet_service.sitter_id 
+    WHERE LOWER(address_city) LIKE LOWER($1)`, [city])
 
+    return response.rows;
+    //search is case insensitive 
+    //refactor later to use wildcard expression '%'
 
-    //logic for city search here. 
-    const dummyData = []
-    const dummyResponse = citySearch(dummyData, city)
-    return dummyResponse
-   
-    //for loop function to find matching key for and returns an array of user object that matches key city
-    //FIX THIS FUNCTION
-    function citySearch(response, city) {
-    let result = [];
-    for (let i = 0; i < response.length; i++) {
-      if (response[i].address.city == city) {
-        result.push(response[i]);
-      }
-    }
-    console.log(`this is results array: ${result}`);
-
-    //!!!!!!12/1: props has changed. displayresults card needs to be updated with new prop data
-    return result;
   }
 
 //refactor this function to give data based on the filter below:
@@ -56,7 +38,6 @@ export async function getSitterByCity(city){
 // 4. get service by city, type of service, type of pet, price range (min and max)
 // 5. get service by city, type of service, type of pet, proce range, date of availability
 
-}
 
 
 

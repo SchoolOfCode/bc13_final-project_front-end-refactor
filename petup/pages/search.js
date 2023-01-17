@@ -6,25 +6,25 @@ import Header from "../component/header/header";
 //import { getAllUsers } from "../lib/search";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
-import {getAllSitters} from '../lib/search.js'
+import {getSitterByCity} from '../lib/search.js'
 
 //use getStaticProps or the getServerSideProps function for any Node.js module that is run on the server-side (not available in the browser)
 //in getStaticProps, we call the function to get data
     //getStaticProps will get the data once at build time.
     //getServerSideProps is called at each request time
 
-//'context' contains request specific paramters, like query parameters, etc.
+//'context' contains request specific parameters, like query parameters, etc.
 export async function getServerSideProps(context){
 
 //get the userInput from the query parameter
 const userInput = (context.query.city)
 
-//old code below for getting userInput from useRouter hook:
-  // const router = useRouter();
-  // const input = router.query.city;   //data came out as object like this data = {city: input}
+// //old code below for getting userInput from useRouter hook:
+//   const router = useRouter();
+//   const input = router.query.city;   //data came out as object like this data = {city: input}
 
  //testing to get all sitters without filter
- const sitterData = await getAllSitters(); // get all sitter data
+ const sitterData = await getSitterByCity(userInput); // get all sitter data
  
  //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
  return {
@@ -33,17 +33,6 @@ const userInput = (context.query.city)
      userInput
    }
  };
-
-
-
-  // //revive the code below for advanced search by city
-  // const sitterData = await getSitterByCity(input); // get sitterData by City. 
-  // return {
-  //   props: {
-  //     sitterData,
-  //     input
-  //   }
-  // };
 
    
 }
@@ -75,21 +64,29 @@ console.log(`this is user input for city: ${userInput}`)
       <Header />
 
       <div className="search-page-main-div">
-        {/* comment out for now. .map has to be refactored for new data
-        {result.map((user) => {
+      <p>this is user input for city: ${userInput}</p>
+       
+        {sitterData.map((user) => {
           return ( 
             <div className="card-div" key = {user.id}> 
-              <DisplayResults id = {user.id} 
+            <p>name = {user.name} 
+              nickname = {user.nickname}
+               imageURL = {user.profile_image}
+                tagline = {user.tagline} 
+                address = {user.address_city} 
+                phone = {user.phone_number}
+                rate = {user.price}</p>
+              {/* <DisplayResults id = {user.id} 
               name = {user.name} 
               nickname = {user.nickname}
                imageURL = {user.imageURL}
                 tagline = {user.tagline} 
                 address = {user.address} 
                 phone = {user.phone}
-                rate = {user.rate}/>
+                rate = {user.rate}/> */}
            </div>
           )
-        })} */}
+        })}
       </div>
       <Footer/>
     </>
@@ -100,4 +97,4 @@ console.log(`this is user input for city: ${userInput}`)
 export default Search;
 
 
-//refactor later to use dynamic routing?
+//refactor later to use dynamic routing?  
