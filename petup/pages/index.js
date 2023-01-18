@@ -136,7 +136,7 @@ export default function Home() {
               style={{ textDecoration: "none" }}
             >
               <Button
-                onClick={() => handleClick}
+                // onClick={() => handleClick}
                 className="search-button"
                 text="Search"
               ></Button>
