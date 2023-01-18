@@ -1,8 +1,6 @@
-//The functions below will create database tables according to schema
-// and seed the database with some initial data. 
-// also there is an option to drop table
-//scripts added in package.json to reset table. 
-//to reset table, write this in the terminal : 'npm run db-reset'
+//The functions below will create and seed database tables according to schema.
+//There's also a function to delete and reset all tables. 
+//example to reset table, write this in the terminal : 'npm run db-reset'
 
 import {pool} from "./index.js";
 
