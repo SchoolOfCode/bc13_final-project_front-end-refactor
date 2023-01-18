@@ -17,18 +17,38 @@ import Calendar from "../component/calendar/calendar";
 import Example from "../component/numberInput/input";
 import Radio from "../component/radioButtons/radio";
 
+// we need to track the states of different inputs
+// we can either usestates or useReducer
 
+// how we set min and max value for price?
 
 
 export default function Home() {
-  const [input, setInput] = useState("");
+  const [city, setCity] = useState("");
+  const [service, setService] = useState(1);
+  const [minPrice, setMinPrice] = useState(0)
+  const [maxPrice, setMaxPrice] = useState(0)
+  const [pet, setPet] = useState("")
+  const [startDate, setStartDate] = useState("")
+  const [endData, setEndDate] = useState("")
   const [priceString, setPriceString] = useState('(per night)');
 
-  function handleChange(e) {
-    setInput(e.target.value);
+  function handleCityChange(e) {
+    setCity(e.target.value);
   }
+
+  /**
+   * 
+   * Takes in a value which is an int. Values correspond to these values in the database:
+   * 1 = 'Pet Hosting', 2 = 'Home Sitting', 3 = 'Dog Walking'
+   */
+  function handleServiceChange(e) {
+    setService(e.target.value)
+    console.log(`service`, service)
+  }
+
   function handleClick() {
-    console.log(input);
+    console.log(city);
   }
   // console.log(input)
   return (
@@ -50,9 +70,9 @@ export default function Home() {
             <div className="pet-service">
               <label for="service">What service would you like?</label>
               <select name="service" id="pets" className="toggle-box-service">
-                <option value="Pet hosting">Pet Hosting</option>
-                <option value="home sitting">Home Sitting</option>
-                <option value="home sitting">Dog Walking</option>
+                <option value={1} alt='' onClick={handleServiceChange}>Pet Hosting</option>
+                <option value={2} alt='' onClick={handleServiceChange}>Home Sitting</option>
+                <option value={3} alt='' onClick={handleServiceChange}>Dog Walking</option>
               </select>
             </div>
             <div className="input-box-div">
@@ -62,7 +82,7 @@ export default function Home() {
                 className="input-field"
                 placeholder="Search by city"
                 type="text"
-                onChange={handleChange}
+                onChange={handleCityChange}
               />
             </div>
           </div>
@@ -121,7 +141,10 @@ export default function Home() {
             <Link
               href={{
                 pathname: "/search",
-                query: { city: input },
+                query: { 
+                  city: city, 
+                  service: service 
+                },
               }}
               passHref
               style={{ textDecoration: "none" }}
