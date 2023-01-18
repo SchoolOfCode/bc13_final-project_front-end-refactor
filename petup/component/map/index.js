@@ -1,10 +1,9 @@
 import { MapContainer, Marker, Popup, TileLayer, Circle } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
-import styles from './map.css';
 
 const Map = () => {
   return (
-        <MapContainer className={styles.container} center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+        <MapContainer className= "container" center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
