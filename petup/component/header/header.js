@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Button from "../button/button";
 import { useSession, signIn, signOut } from "next-auth/react"
+import Logo from '../../public/petbrb-high-resolution-logo-white-on-transparent-background.png';
 
 const Header = () => {
 
@@ -28,9 +29,11 @@ const Header = () => {
     <div className="header">
     <Link href='/'>
     <img
-        src="https://i.ibb.co/0fPsQsW/logo-no-background.png" 
+        src={Logo}
+        width='200px'
+        height='200px'
         alt="logo"
-        
+        className='logo'
       />
     </Link>
       
@@ -49,14 +52,14 @@ const Header = () => {
       <div className="button-div">
       <h1 className="title">
           <Link href="/sitter" style={{ textDecoration: "none" }}>
-            Become a sitter!
+            Become a sitter
           </Link>
         </h1>
     
         {status === "authenticated" ?    
-          <Button onClick = {() => signOut()} className="sign-up" text="Sign out" /> : 
-          (<><Button onClick = {() => signIn()} className="sign-in" text="Sign in" />
-          <Button className="sign-up" text="Sign up" /> </>)
+          <Button onClick = {() => signOut()} className="sign-up" text="Sign Out" /> : 
+          (<><Button onClick = {() => signIn()} className="sign-in" text="Log In" />
+          <Button className="sign-up" text="Sign Up" /> </>)
           }
 
         

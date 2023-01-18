@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
 html, body , #__next{
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background-image: url('https://imgs.search.brave.com/jOJaorSTC9R-2jEuxFS8dZEcJQhyMi-cGkNZPA2qGYY/rs:fit:1200:1080:1/g:ce/aHR0cDovL3dhbGxw/YXBlcmNhdmUuY29t/L3dwL3Frd29FbUIu/anBn');
+  background-image: url('../public/landing-page.jpg');
+  background-color:rgba(0, 0, 0, 0.5);
+  /* opacity: 0.4;
+  filter: alpha(opacity=40); */
   /* /* background-size: cover; */
   background-repeat: no-repeat; 
   background-size: cover;
+  font-family: 'Poppins';
 }
