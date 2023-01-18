@@ -25,7 +25,7 @@ import Image from 'next/image' // to use Image component with URL, it needs to b
 // }
 
 //note on pet_service :
-// - pet_type  = {1 : 'cat', 2 : 'dot', 3: 'others'}
+// - pet_type  = {1 : 'cat', 2 : 'dog', 3: 'others'}
 // - service_type = {1: 'pet hosting', 2: 'house sitting', 3: 'dog walking', 4: 'additional services' }
 // - pet_size = {1: 'small', 2: 'medium', 3:'large'}
 

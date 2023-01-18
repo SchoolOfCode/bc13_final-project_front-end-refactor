@@ -1,17 +1,13 @@
 //this script is for fetching external data into our app. 
-//currently, data is stored locally. 
-
-//we can eitherfetch exernal API database or query database directly. 
+//either fetch exernal API database or query database directly. 
 
 import { user } from '../db/sampledata' // this is old dummy data. will refactor to show newer data
 import {query} from '../db/index' // import query function for writing SQL query
 
+
 //the function in this folder will query to get data from database
-//for now, the data {user} is stored locally and being imported in this file
 export async function getAllSitters() {
     
-    //const res = user; //'user' array is obtained from local sample data.
-
     const res = await query('SELECT * FROM users');
     // return res.json();
     return res.rows;

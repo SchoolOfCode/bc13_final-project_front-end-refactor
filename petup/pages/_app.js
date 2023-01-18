@@ -15,6 +15,8 @@ import '../component/footer/footer.css'
 import '../component/displayResults/displayResults.css'
 import '../component/radioButtons/radio.css'
 import '../styles/search.css'
+import '../component/map/map.css'
+
 
 import { SessionProvider } from "next-auth/react"
 

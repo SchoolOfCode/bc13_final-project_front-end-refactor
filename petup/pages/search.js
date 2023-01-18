@@ -6,6 +6,14 @@ import Header from "../component/header/header";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
 import {getSitterByCity} from '../lib/search.js'
+import dynamic from 'next/dynamic';
+
+
+const Map = dynamic(
+    () => import('../component/map/index.js'), // replace '@components/map' with your component's location
+    { ssr: false } // This line is important. It's what prevents server-side render
+)
+
 
 //use getStaticProps or the getServerSideProps function for any Node.js module that is run on the server-side (not available in the browser)
 //in getStaticProps, we call the function to get data
@@ -81,6 +89,7 @@ const Search = ({sitterData, userInput}) => {
            </div>
           )
         })}
+        <Map />
       </div>
       <Footer/>
     </>
