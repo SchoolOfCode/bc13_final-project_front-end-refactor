@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <div className="header">
     <Link href='/'>
-      <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" width={150} height={150}/>
+      <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" width={100} height={100}/>
     </Link>
     
       

@@ -7,9 +7,22 @@
     align-content: center;
     justify-content: space-around;
     /* background-color: var(--white); */
-    padding-bottom: 20vh;
-   
+    background-image: url('../public/landing-page.jpg');
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;
 }
+
+  .feature{
+    background:rgba(0,0,0,0.4);
+    padding:0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+  }
 
 .searchBox-div {
     /* border: 1px solid blue; */
@@ -66,7 +79,7 @@
 .tagline-div > h1 {
     font-size: x-large;
     text-align: left;
-    color: white;
+    color: #EEEEEE;
 }
 .tagline-div > p {
     color: var(--green);

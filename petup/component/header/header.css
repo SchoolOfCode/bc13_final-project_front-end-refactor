@@ -10,11 +10,13 @@
     padding-left: 10px;
     /* border: 1px solid red; */
     background-color: var(--green);
+
 }
 .header > a > img {
-    height: 80px;
+    height: 60px;
+    width: 150px;
     min-width: 80px;
-    max-width: 90px;
+    max-width: 150px;
     
 
 }

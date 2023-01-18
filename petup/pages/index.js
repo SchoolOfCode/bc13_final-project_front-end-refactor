@@ -45,6 +45,9 @@ export default function Home() {
       </Head>
       <Header />
       <div className="main-div">
+      
+    <div className="feature">
+
         <div className="searchBox-div">
           <div className="top-search-div">
             <div className="pet-service">
@@ -140,6 +143,7 @@ export default function Home() {
               so you can 
               spend less & worry less
               </h1>
+        </div>
         </div>
       </div>
       <Footer />
