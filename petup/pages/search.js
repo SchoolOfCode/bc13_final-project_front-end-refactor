@@ -64,7 +64,7 @@ console.log(`this is user input for city: ${userInput}`)
       <Header />
 
       <div className="search-page-main-div">
-      <p>this is user input for city: ${userInput}</p>
+      {/* <p>this is user input for city: ${userInput}</p> */}
        
         {sitterData.map((user) => {
           return ( 
