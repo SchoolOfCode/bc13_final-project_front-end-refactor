@@ -55,7 +55,6 @@ export default function Home() {
                 <option value="home sitting">Dog Walking</option>
               </select>
             </div>
-
             <div className="input-box-div">
               <label for="input">Near?</label>
               <input
@@ -118,15 +117,7 @@ export default function Home() {
             </div>
           </div>
           <div className="third-search-div">
-            {/* <Calendar style={{width: '30vh'}} /> */}
-            {/* <form className="checkboxes">
-          <input type='checkbox' value='dog'/>
-          <label>Dog</label>
-          <input type='checkbox' value='cat'></input>
-          <label>Cat</label>
-          </form> */}
-            {/* To send data to next page we pass this object in the Link component */}
-            {/* passHref forces Link to send href property to its child (in this case Button)*/}
+            <Calendar style={{width: '30vh'}} />
             <Link
               href={{
                 pathname: "/search",
@@ -137,7 +128,7 @@ export default function Home() {
             >
               <Button
                 onClick={() => handleClick}
-                className="search-button"
+                className="sign-up"
                 text="Search"
               ></Button>
             </Link>
