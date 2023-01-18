@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Button from "../button/button";
 import { useSession, signIn, signOut } from "next-auth/react"
-import Logo from '../../public/petbrb-high-resolution-logo-white-on-transparent-background.png';
+import Image from "next/image"
 
 const Header = () => {
 
@@ -31,13 +31,7 @@ const Header = () => {
   return (
     <div className="header">
     <Link href='/'>
-    <img
-        src={Logo}
-        width='200px'
-        height='200px'
-        alt="logo"
-        className='logo'
-      />
+      <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" width={150} height={150}/>
     </Link>
     
       
