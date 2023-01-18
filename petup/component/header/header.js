@@ -7,8 +7,11 @@ import Logo from '../../public/petbrb-high-resolution-logo-white-on-transparent-
 const Header = () => {
 
   {/*This is OAuth*/}
-  const { session, status } = useSession()
+  const { data: session, status } = useSession()
   const userEmail = session?.user.email;
+  const userName = session?.user.name;
+  const userImage = session?.user.image;
+  console.log(session)
 
   // if (status === "loading") {
   //   return <p>Hang on there...</p>
@@ -36,6 +39,7 @@ const Header = () => {
         className='logo'
       />
     </Link>
+    
       
       {/* <div className="navlinks"> */}
         {/* <h1 className="title">
@@ -56,14 +60,16 @@ const Header = () => {
           </Link>
         </h1>
     
-        {status === "authenticated" ?    
-          <Button onClick = {() => signOut()} className="sign-up" text="Sign Out" /> : 
-          (<><Button onClick = {() => signIn()} className="sign-in" text="Log In" />
-          <Button className="sign-up" text="Sign Up" /> </>)
-          }
-
-        
-   
+        {status === "authenticated" ?   
+        <div className="button-username">
+        <p>Hi, {userName}</p>
+        <img src={userImage} alt='profile-image'></img>
+        <Button onClick = {() => signOut()} className="sign-up" text="Sign out" />
+        </div>
+         : 
+          (<><Button onClick = {() => signIn()} className="sign-in" text="Sign in" />
+          <Button className="sign-up" text="Sign up" /> </>)
+          } 
       </div>
     </div>
   );
