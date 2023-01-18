@@ -57,6 +57,11 @@
     justify-content: flex-end;
     gap: 30px;
 }
+
+.logo{
+    color: white;
+}
+
 .button-username {
     display: flex;
     align-items: center;

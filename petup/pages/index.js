@@ -22,7 +22,7 @@ import Radio from "../component/radioButtons/radio";
 
 export default function Home() {
   const [input, setInput] = useState("");
-
+  const [priceString, setPriceString] = useState('(per night)');
 
   function handleChange(e) {
     setInput(e.target.value);
@@ -50,8 +50,9 @@ export default function Home() {
             <div className="pet-service">
               <label for="service">What service would you like?</label>
               <select name="service" id="pets" className="toggle-box-service">
-                <option value="Pet hosting">Pet hosting</option>
-                <option value="home sitting">home sitting</option>
+                <option value="Pet hosting">Pet Hosting</option>
+                <option value="home sitting">Home Sitting</option>
+                <option value="home sitting">Dog Walking</option>
               </select>
             </div>
 
@@ -112,7 +113,7 @@ export default function Home() {
               </>
             </div>
             <div className="number-input" name="number-input">
-              <label for="number-input">Rate?</label>
+              <label for="number-input">For how much? {priceString}</label>
               <Example />
             </div>
           </div>
@@ -143,12 +144,11 @@ export default function Home() {
           </div>
         </div>
         <div className="tagline-div">
-          <h1>Find pet sitters</h1>
-          <p style={{ color: "#2B4141" }}>
-            {" "}
-            Whatever your pets need, PetBrB will help you get the best
-            independent sitters, so you can spend less and worry less.
-          </p>
+          <h1>Helping you find
+              the best sitters, 
+              so you can 
+              spend less & worry less
+              </h1>
         </div>
       </div>
       <Footer />
