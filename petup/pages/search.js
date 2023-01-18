@@ -3,7 +3,6 @@ import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Header from "../component/header/header";
-//import { getAllUsers } from "../lib/search";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
 import {getSitterByCity} from '../lib/search.js'
@@ -23,8 +22,8 @@ const userInput = (context.query.city)
 //   const router = useRouter();
 //   const input = router.query.city;   //data came out as object like this data = {city: input}
 
- //testing to get all sitters without filter
- const sitterData = await getSitterByCity(userInput); // get all sitter data
+ //get the data
+ const sitterData = await getSitterByCity(userInput);
  
  //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
  return {
@@ -41,8 +40,8 @@ const userInput = (context.query.city)
 
 const Search = ({sitterData, userInput}) => {
   
-console.log(sitterData)
-console.log(`this is user input for city: ${userInput}`)
+//console.log(sitterData)
+//console.log(`this is user input for city: ${userInput}`)
 
   //below is some old code from getting local data
   // function getData() {

@@ -1,6 +1,5 @@
 import Image from 'next/image' // to use Image component with URL, it needs to be configured in package.json
 
-//refactoring this script now
 //data looks like this:
 // {
 //   user_id: 25,
@@ -25,6 +24,11 @@ import Image from 'next/image' // to use Image component with URL, it needs to b
 //   pet_size: '2'
 // }
 
+//note on pet_service :
+// - pet_type  = {1 : 'cat', 2 : 'dot', 3: 'others'}
+// - service_type = {1: 'pet hosting', 2: 'house sitting', 3: 'dog walking', 4: 'additional services' }
+// - pet_size = {1: 'small', 2: 'medium', 3:'large'}
+
 export function DisplayResults({
   fullname,
   nickname,
@@ -36,7 +40,6 @@ export function DisplayResults({
   address_city,
   price,
 }) {
-  // const {id, name, nickname, imageURL, tagline, address, phone, rate} = props;  // something wrong with this object destructing
 
   return (
     <>
