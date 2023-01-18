@@ -3,7 +3,6 @@ import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Header from "../component/header/header";
-//import { getAllUsers } from "../lib/search";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
 import {getSitterByCity} from '../lib/search.js'
@@ -23,8 +22,8 @@ const userInput = (context.query.city)
 //   const router = useRouter();
 //   const input = router.query.city;   //data came out as object like this data = {city: input}
 
- //testing to get all sitters without filter
- const sitterData = await getSitterByCity(userInput); // get all sitter data
+ //get the data
+ const sitterData = await getSitterByCity(userInput);
  
  //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
  return {
@@ -41,8 +40,8 @@ const userInput = (context.query.city)
 
 const Search = ({sitterData, userInput}) => {
   
-console.log(sitterData)
-console.log(`this is user input for city: ${userInput}`)
+//console.log(sitterData)
+//console.log(`this is user input for city: ${userInput}`)
 
   //below is some old code from getting local data
   // function getData() {
@@ -64,26 +63,21 @@ console.log(`this is user input for city: ${userInput}`)
       <Header />
 
       <div className="search-page-main-div">
-      <p>this is user input for city: ${userInput}</p>
+      {/* <p>this is user input for city: ${userInput}</p> */}
        
         {sitterData.map((user) => {
           return ( 
             <div className="card-div" key = {user.id}> 
-            <p>name = {user.name} 
-              nickname = {user.nickname}
-               imageURL = {user.profile_image}
+              <DisplayResults
+              fullname = {user.fullname}
+              nickname = {user.nickname} 
+              email = {user.email}
+              phone_number = {user.phone_number}
+              profile_image = {user.profile_image}
                 tagline = {user.tagline} 
-                address = {user.address_city} 
-                phone = {user.phone_number}
-                rate = {user.price}</p>
-              {/* <DisplayResults id = {user.id} 
-              name = {user.name} 
-              nickname = {user.nickname}
-               imageURL = {user.imageURL}
-                tagline = {user.tagline} 
-                address = {user.address} 
-                phone = {user.phone}
-                rate = {user.rate}/> */}
+                address_region = {user.address_region}
+                address_city = {user.address_city}
+              price = {user.price}/>
            </div>
           )
         })}
