@@ -4,6 +4,7 @@ import Head from "next/head";
 import Button from "../component/button/button";
 import { useState } from "react";
 import Footer from "../component/footer/footer";
+import Image from 'next/image';
 
 import {
   NumberInput,
@@ -103,21 +104,32 @@ export default function Home() {
           <div className="top-search-div">
             <div className="pet-service">
               <label for="service">What service would you like?</label>
-              <svg className = "svg-luggage-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 22h-24v-15h24v15zm-15-20c-1.104 0-2 .896-2 2v2h2v-1.5c0-.276.224-.5.5-.5h5c.276 0 .5.224.5.5v1.5h2v-2c0-1.104-.896-2-2-2h-6z"/></svg>
+              <div className = "select-div">
+              <Image
+              className = 'luggage-icon'
+              src = '/icons8-luggage-96.png'
+              alt = "luggage-icon"
+               width = {100}
+               height = {100}
+              />
               <select name="service" id="pets" className="toggle-box-service">
                 <option value={1} alt='Pet Hosting' onClick={handleServiceChange}>Pet Hosting</option>
                 <option value={2} alt='Home Sitting' onClick={handleServiceChange}>Home Sitting</option>
                 <option value={3} alt='Dog Walking' onClick={handleServiceChange}>Dog Walking</option>
               </select>
+              </div>
             </div>
 
             <div className="input-box-div">
             
             <label for="input">Near?</label>
-            <svg className="icon" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-		</svg>
+            <Image 
+              className = 'search-icon'
+              src = '/icons8-interface-96.png'
+              alt = "search-icon"
+               width = {100}
+               height = {100}
+              />
               <input
                 name="input"
                 className="input-field"
