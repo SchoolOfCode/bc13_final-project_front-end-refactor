@@ -96,6 +96,8 @@ export default function Home() {
       
     <div className="feature">
 
+    <div className = "margin-div">
+
         <div className="searchBox-div">
           <div className="top-search-div">
             <div className="pet-service">
@@ -212,6 +214,7 @@ export default function Home() {
               </h1>
         </div>
         </div>
+      </div>
       </div>
       <Footer />
     </>

@@ -24,6 +24,12 @@
     justify-content: space-around;
   }
 
+/*--center field--*/
+
+
+
+/*-- search box --*/
+
 .searchBox-div {
     /* border: 1px solid blue; */
     display: flex;
@@ -43,7 +49,7 @@
     
 }
 
-/*--search bar--*/
+/*--search input field--*/
 
 .input-box-div {
     display: flex;
