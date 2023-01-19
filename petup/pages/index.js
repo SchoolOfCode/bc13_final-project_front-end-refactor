@@ -103,6 +103,7 @@ export default function Home() {
           <div className="top-search-div">
             <div className="pet-service">
               <label for="service">What service would you like?</label>
+              <svg className = "svg-luggage-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 22h-24v-15h24v15zm-15-20c-1.104 0-2 .896-2 2v2h2v-1.5c0-.276.224-.5.5-.5h5c.276 0 .5.224.5.5v1.5h2v-2c0-1.104-.896-2-2-2h-6z"/></svg>
               <select name="service" id="pets" className="toggle-box-service">
                 <option value={1} alt='Pet Hosting' onClick={handleServiceChange}>Pet Hosting</option>
                 <option value={2} alt='Home Sitting' onClick={handleServiceChange}>Home Sitting</option>
