@@ -318,13 +318,9 @@
     /* position: fixed; */
 }
 
-/* a > img {
-    position: absolute;
-} */
-
   
 .search-icon2 {
-    margin:1em 1em;
+    margin:1.1em 0.7em;
     position: absolute;
     width: 20px;
     height: 20px;

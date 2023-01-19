@@ -85,12 +85,14 @@ a {
     white-space: normal;
     font-weight: 700;
     text-align: center;
-    padding: 16px 14px 18px;
+    /* padding-left: calc(3em); */
+    /* padding: 1rem 0.8rem 1.2rem calc(3em); */
+    padding: 16px 14px 18px 30px;
     /* color: var(--green); */
-    box-shadow: inset 0 0 0 2px var(--main-yellow);
+    /* box-shadow: inset 0 0 0 2px var(--main-yellow); */
     background-color: var(--orange);
     color: var(--white);
-
+    border-radius:5px
 
 }
 

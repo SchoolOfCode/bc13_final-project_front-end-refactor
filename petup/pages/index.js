@@ -222,7 +222,7 @@ export default function Home() {
               <Button
                 onClick={() => handleClick}
                 className="search-button"
-                text="Search"
+                text="Search Now"
               >
               
 
