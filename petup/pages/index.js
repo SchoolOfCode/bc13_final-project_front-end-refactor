@@ -13,21 +13,17 @@ import {
   NumberDecrementStepper,
 } from "@chakra-ui/react";
 
-import {
-  RangeSlider,
-  RangeSliderTrack,
-  RangeSliderFilledTrack,
-  RangeSliderThumb,
-} from '@chakra-ui/react'
 // import Calendar from 'react-calendar';
 import Calendar from "../component/calendar/calendar";
 import Example from "../component/numberInput/input";
 import Radio from "../component/radioButtons/radio";
 
-// we need to track the states of different inputs
-// we can either usestates or useReducer
 
 // how we set min and max value for price?
+
+// so we have a min value and a max value
+// onchange the states get updated with their min and max value
+
 
 
 export default function Home() {
@@ -53,7 +49,9 @@ export default function Home() {
     // if service is set to dog walking, then pet will also be set to Dog
     if (e.target.value === 3) {
       setPet(2)
+      setPriceString('(per hour)')
     }
+    setPriceString('(per night)');
     setService(e.target.value);
   }
 
@@ -172,14 +170,11 @@ export default function Home() {
                 </form>
               </>
             </div>
-            <div className='price-slider'>
-                <RangeSlider aria-label={['min', 'max']} defaultValue={[10, 30]}>
-                <RangeSliderTrack minH='32'>
-                  <RangeSliderFilledTrack />
-                </RangeSliderTrack>
-                <RangeSliderThumb index={0} />
-                <RangeSliderThumb index={1} />
-              </RangeSlider>
+           <div className='price-container'>
+                <div className='maxPrice-container'>
+                  <label for='max'>Set your budget {priceString}.</label>
+                  <input type='number' className='MinMaxInput' name='max' placeholder='30'/>
+                </div>
             </div>
           </div>
           <div className="third-search-div">
