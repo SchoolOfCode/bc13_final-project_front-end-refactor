@@ -24,7 +24,7 @@
 }
 
 
-.header > a > img {
+.margin-div-header > a > img {
     height: 160%;
     width: 160%;
     /* min-width: 80px;
@@ -32,7 +32,7 @@
     
 
 }
-.header > a {
+.margin-div-header > a {
     display: flex;
     height: 100%;
     width: 10%;
