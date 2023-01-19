@@ -50,7 +50,7 @@
     flex-direction: column;
     height: 100%;
     width: 30vh;
-    border: 1px solid var(--orange);
+    /* border: 1px solid var(--orange); */
     /* padding: 19px 18px; */
     float: left;
     }
@@ -72,7 +72,7 @@
       
 
     .input-field {
-        border: 1px solid var(--orange);
+        border: 1px solid var(--green);
         /* border-radius: 5px; */
         height: 5vh;
         line-height: normal;
@@ -81,10 +81,10 @@
         width: 30vh;
         /* box-sizing: border-box; */
         user-select: auto;
-        font-size: 14px;
+        font-size: 10px;
         padding: 0 6px;
          /* padding-left: 12px;  */
-        padding-left: calc(1em + 10px + 8px);
+        padding-left: calc(1em + 10px + 10px);
         /* text-align: center; */
     }   
 

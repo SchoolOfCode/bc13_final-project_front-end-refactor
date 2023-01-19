@@ -69,7 +69,7 @@ export default function Home() {
               <input
                 name="input"
                 className="input-field"
-                placeholder="Search by city"
+                placeholder="Where would you like to look for?"
                 type="text"
                 onChange={handleChange}
               />
