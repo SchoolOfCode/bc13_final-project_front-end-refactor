@@ -212,11 +212,21 @@ export default function Home() {
               passHref
               style={{ textDecoration: "none" }}
             >
+              <Image 
+              className = 'search-icon2'
+              src = '/icons8-interface-96.png'
+              alt = "search-icon"
+               width = {100}
+               height = {100}
+              />
               <Button
                 onClick={() => handleClick}
-                className="sign-up"
+                className="search-button"
                 text="Search"
-              ></Button>
+              >
+              
+
+              </Button>
             </Link>
           </div>
         </div>
