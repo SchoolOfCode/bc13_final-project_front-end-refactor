@@ -27,16 +27,40 @@
 /*--center field--*/
 
 .margin-div{
-    border: 1px solid var(--red);
     height: 100%;
     max-width: 100%;
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: space-around;
-    padding: 0 1rem 0 1rem;
+    justify-content: middle;
+    padding: 0 4rem 0 4rem;
+    flex-direction: column;
 }
 
+.top-middle-div{
+    height: 85%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    padding: 0 4rem 0 4rem;
+}
+
+.middle-div{
+    border: 1px solid green;
+    height: 15%;
+    width:100%;
+    align-items: center;
+}
+
+.middle-div h1{
+    color: var(--white);
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
 
 /*-- search box --*/
 
@@ -49,7 +73,7 @@
     justify-content: space-around;
     min-height: 45vh;
     max-height: 55vh;
-    width: 45%;
+    width: 65%;
     padding: 2%;
     /* border-radius: 10px; */
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -162,30 +186,7 @@
 
 /*  */
 
-.tagline-div {
-    border: transparent;
-    min-height: 40%;
-    max-height: 40%;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-    align-content: space-between;
-    border-radius: 15px;
-    background-color: transparent;
-    /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); */
-    padding: 0;
-}
-.tagline-div > h1 {
-    font-size: x-large;
-    text-align: left;
-    color: #EEEEEE;
-}
-.tagline-div > p {
-    color: var(--green);
-    font-size: large;
-}
+
 .checkboxes {
     display: flex;
     align-items: center;
@@ -321,3 +322,30 @@
     fill: currentColor;
     color: var(--white);
 }
+
+/* tagline div */
+
+.tagline-div {
+    border: transparent;
+    min-height: 40%;
+    max-height: 40%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    align-content: space-between;
+    border-radius: 15px;
+    background-color: transparent;
+    /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); */
+    padding: 0;
+}
+.tagline-div > h1 {
+    font-size: x-large;
+    text-align: left;
+    color: #EEEEEE;
+}
+/* .tagline-div > p {
+    color: var(--green);
+    font-size: large;
+} */

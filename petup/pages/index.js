@@ -100,6 +100,8 @@ export default function Home() {
 
     
     <div className = "margin-div">
+      <div className = "top-middle-div">
+      
         <div className="searchBox-div">
           <div className="top-search-div">
             <div className="pet-service">
@@ -240,6 +242,11 @@ export default function Home() {
               the best sitters, 
               so you can 
               spend less & worry less
+              </h1>
+        </div>
+            </div>
+        <div className = "middle-div">
+          <h1>Looking for a sitter doesn't have to be difficult
               </h1>
         </div>
         </div>
