@@ -3,6 +3,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
+        <div className= "margin-div-footer">
         <footer>
             <Link href='/contact' style={{textDecoration: 'none'}}>
                 <h2>Contact us</h2>
@@ -10,6 +11,7 @@ const Footer = () => {
             <h2>PetBrB</h2>
             <h2>Copyright @ SoC</h2>
         </footer>
+        </div>
     )
 }
 

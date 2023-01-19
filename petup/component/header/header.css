@@ -12,6 +12,18 @@
     background-color: var(--green);
 
 }
+
+.margin-div-header{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    height:100%;
+    width: 100%;
+    padding: 0 4rem 0 4rem;
+}
+
+
 .header > a > img {
     height: 160%;
     width: 160%;

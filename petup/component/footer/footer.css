@@ -1,17 +1,31 @@
-footer {
+.margin-div-footer{
     display: flex;
     max-height: 10%;
     min-height: 10%;
-    max-width: 100%;
+    max-width: 100%; 
     background-color: var(--green);
-    color: var(--main-yellow);
+    color: var(--main-yellow); 
     align-items: center;
     justify-content: space-between;
     padding-left: 2rem;
     padding-right: 2rem ;
+    /* height:100%;
+    width: 100%; */
+    /* padding: 0 4rem 0 4rem; */
+}
+
+.margin-div-footer > footer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem 0 4rem;
     
  
 }
+
+
 footer > h2, a > h2 {
     font-size: larger;
 }

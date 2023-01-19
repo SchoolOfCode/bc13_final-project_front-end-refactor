@@ -91,13 +91,14 @@ export default function Home() {
           crossorigin="anonymous"
         ></link>
       </Head>
+      
       <Header />
       <div className="main-div">
       
     <div className="feature">
 
+    
     <div className = "margin-div">
-
         <div className="searchBox-div">
           <div className="top-search-div">
             <div className="pet-service">
