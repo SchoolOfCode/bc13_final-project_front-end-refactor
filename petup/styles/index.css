@@ -44,7 +44,7 @@
 }
 
 .input-field {
-    border: 1px solid var(--green);
+    border: 1px solid var(--orange);
     /* border-radius: 5px; */
     height: 5vh;
     line-height: normal;
