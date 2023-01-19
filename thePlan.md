@@ -6,6 +6,7 @@ Problems:
     - there is also unneccessary data we do not need currently
 - filter system needs to be on two pages but we do not know it's architecture yet
 - we need to understand how the architecture of the search system is, and how that can translate input fields to the database
+- when user selects dog walking as a service, we need to have the radio button then select dog if it has selected cat or others
 
 
 - Filter system
