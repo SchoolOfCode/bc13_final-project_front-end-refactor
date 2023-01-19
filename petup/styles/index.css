@@ -233,6 +233,23 @@
     background-color: var(--orange);
     width: 5vw;
 }
-.radio-div > label {
+
+.radio-div > form > label {
     background-color: var(--orange);
+}
+
+.price-slider {
+    width: 50%;
+    /* background-color: black; */
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.chakra-slider {
+    width: 100%;
+    min-height: 20px;
+    height: 100%;
+    /* background-color: grey; */
+    /* position: fixed; */
 }
