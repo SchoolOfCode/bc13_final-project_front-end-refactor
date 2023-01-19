@@ -88,15 +88,11 @@
     width: 30vh;
     float : left;
 }
-
-.select-div img {
-    position: absolute;
-}
-  
   
 .luggage-icon {
+    position: absolute;
     /* margin:28px 10px; */
-    margin:1em 0.5em;
+    margin:0.5em 0.5em;
     width: 23px;
     height: 23px;
     margin-right: 4px;
@@ -132,16 +128,12 @@
     /* padding: 19px 18px; */
     float: left;
     }
-
-    .input-box-div img {
-        position: absolute;
-    }
-      
       
     .search-icon {
+        position: absolute;
         margin:2.2em 0.5em;
-        width: 20px;
-		height: 20px;
+        width: 18px;
+		height: 18px;
 		margin-right: 4px;
 		float: left;
     }
@@ -320,11 +312,12 @@
 
   
 .search-icon2 {
-    margin:1.1em 0.7em;
+    margin:1em 0.5em;
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
     margin-right: 4px;
     float: left;
+    fill: currentColor;
+    color: var(--white);
 }
-      
