@@ -7,9 +7,22 @@
     align-content: center;
     justify-content: space-around;
     /* background-color: var(--white); */
-    padding-bottom: 20vh;
-   
+    background-image: url('../public/landing-page.jpg');
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;
 }
+
+  .feature{
+    background:rgba(0,0,0,0.4);
+    padding:0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+  }
 
 .searchBox-div {
     /* border: 1px solid blue; */
@@ -30,23 +43,55 @@
     
 }
 
-.input-field {
-    border: 1px solid var(--green);
-    /* border-radius: 5px; */
-    height: 5vh;
-    line-height: normal;
-    color: #282828;
-    display: block;
+/*--search bar--*/
+
+.input-box-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     width: 30vh;
-    /* box-sizing: border-box; */
-    user-select: auto;
-    font-size: 14px;
-    padding: 0 6px;
-    padding-left: 12px;
-}
+    /* border: 1px solid var(--orange); */
+    /* padding: 19px 18px; */
+    float: left;
+    }
+
+    .input-box-div svg {
+        position: absolute;
+    }
+      
+      
+    .icon {
+        margin:25px 10px;
+        width: 26px;
+		height: 26px;
+		margin-right: 4px;
+		float: left;
+		fill: currentColor;
+		color: #D3D5D3;
+    }
+      
+
+    .input-field {
+        border: 1px solid var(--green);
+        /* border-radius: 5px; */
+        height: 5vh;
+        line-height: normal;
+        color: #282828;
+        display: block;
+        width: 30vh;
+        /* box-sizing: border-box; */
+        user-select: auto;
+        font-size: 10px;
+        padding: 0 6px;
+         /* padding-left: 12px;  */
+        padding-left: calc(1em + 10px + 10px);
+        /* text-align: center; */
+    }   
 
 
 
+
+/*  */
 
 .tagline-div {
     border: transparent;
@@ -66,7 +111,7 @@
 .tagline-div > h1 {
     font-size: x-large;
     text-align: left;
-    color: white;
+    color: #EEEEEE;
 }
 .tagline-div > p {
     color: var(--green);
@@ -115,12 +160,7 @@
     border: 1px solid var(--green);
     /* border-radius: 5px; */
 }
-.input-box-div {
-display: flex;
-flex-direction: column;
-height: 100%;
-width: 30vh;
-}
+
 .third-search-div {
     display: flex;
     align-items: center;
