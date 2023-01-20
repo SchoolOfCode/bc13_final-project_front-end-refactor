@@ -67,15 +67,20 @@ const Search = ({sitterData}) => {
 
       <Header />
       <div className="search-filter-navbar">
-        <input
+      <div className="navbar-container-search">
+
+      <div className="navbar-input-fieald">
+      <input
           name="input"
           className="search-input-field"
           placeholder="Search"
           type="text"
         />
+      </div>
+        
         
         <div className="search-pet-service">
-          <select name="service" id="pets" className="toggle-box-service">
+          <select name="service" id="pets" className="search-toggle-box-service">
             <option value="Pet hosting">Pet Hosting</option>
             <option value="home sitting">Home Sitting</option>
             <option value="home sitting">Dog Walking</option>
@@ -88,11 +93,17 @@ const Search = ({sitterData}) => {
             <option value="Other">Other</option>
           </select>
         </div>
+        <div className="navbar-button-div">
         <Button className="sign-up" text="Update"></Button>
+        </div>
+       
+        </div>
       </div>
-
+      
       <div className="search-page-main-div">
+      <div className="white-main-div">
 
+      
       <div className="search-result">
 
       {/* <p>this is user input for city: ${city}</p> */}
@@ -116,6 +127,7 @@ const Search = ({sitterData}) => {
           );
         })}</div>
         <div className="map-div"><Map /></div>
+        </div>
         
       </div>
       <Footer />
