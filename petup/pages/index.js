@@ -219,7 +219,7 @@ export default function Home() {
 
            <div className='price-container'>
                 <div className='text-container'>
-                  <label for='max'>Set your budget {priceString}.</label>
+                  <label  className="budget-label" for='max'>Set your budget {priceString}.</label>
                 </div>
                 <div className='budget-container'>
                   <span class="currencyinput">£
@@ -230,7 +230,7 @@ export default function Home() {
             </div>
           </div>
           <div className="third-search-div">
-            <Calendar style={{width: '30vh'}} />
+            {/* <Calendar style={{width: '30vh'}} /> */}
             <Link
               href={{
                 pathname: "/search",

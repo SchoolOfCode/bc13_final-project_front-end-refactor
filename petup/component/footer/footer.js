@@ -7,7 +7,7 @@ const Footer = () => {
         <div className= "margin-div-footer">
         <footer>
             <Link href='/contact' style={{textDecoration: 'none'}}>
-                <h2>Contact us</h2>
+                <h2 className='contact-us'>Contact us</h2>
             </Link>
 
             <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" 
