@@ -15,8 +15,9 @@ html, body , #__next{
 }
 :root {
   --main-yellow: #eeeeee;
-  --green: #1C7C54;
-  --white: #eeeeee;
-  --orange: #E2A140;
-  --gray: #737373
+  --green: #489FB5;
+  --white: #EDE7E3;
+  --orange: #FFA62B;
+  --gray: #737373;
+  --darkblu: #16697A;
 }
