@@ -54,18 +54,24 @@ export function DisplayResults({
           // width= {144}
           alt="profile picture"
         />
-        <div className='main-taglines'>
+        <div className="main-taglines">
           <h1>{nickname}</h1>
           <h2>"{tagline}"</h2>
-          <p>{email}</p>
-          <h3>{address_region},{address_city}</h3>
+          <h3>
+            {address_region},{address_city}
+          </h3>
+          <div className="email-and-icon-div">
+            
+            <Image src="/icons8-secured-letter-50.png" width="25" height="25" alt= "email-icon"/>
+              <p>{email}</p>
+          </div>
         </div>
-        <div className='rate'>
+        <div className="rate">
           {/* <p>{address.street}, {address.city}</p> */}
           <p>From</p>
           <h1>£{price}</h1>
           <p>per night</p>
-      </div>
+        </div>
       </div>
     </>
   );
