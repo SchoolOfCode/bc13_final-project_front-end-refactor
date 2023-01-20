@@ -283,7 +283,7 @@ export default function Home() {
        
        <div className = "step1-div"> <Image
           className = "step1-icon"
-          src = "/icons8-unread-messages-100.png"
+          src = "/icons8-funnel-100.png"
           width = {100}
           height ={100}
           ></Image>

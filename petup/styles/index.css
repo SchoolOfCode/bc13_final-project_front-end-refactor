@@ -199,6 +199,8 @@
 
 /* second search div */
 
+/* for what type of pet (radio div)*/
+
 .second-search-div {
     display: flex;
     align-items: center;
@@ -267,20 +269,7 @@ height: 100%;
 }
 
 
-/* .radio{
-    height: 40%;
-    width: 40%;
-
-} */
-
-/* .radio-buttons {
-    display: flex;
-    width: 100%;
-    height: 100%;
-} */
-
-
-.checkboxes {
+/* .checkboxes {
     display: flex;
     align-items: center;
 }
@@ -293,9 +282,28 @@ height: 100%;
 }
 .checkboxes > label {
     font-size: 25px;
+} */
+
+
+/* price slider */
+
+.price-slider {
+    width: 50%;
+    /* background-color: black; */
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.chakra-slider {
+    width: 100%;
+    min-height: 20px;
+    height: 100%;
+    /* background-color: grey; */
+    /* position: fixed; */
 }
 
-
+/*third search div*/
 
 .toggle-box-service {
     display: flex;
@@ -303,7 +311,8 @@ height: 100%;
     width: 100%;
     border: 1px solid var(--green);
     /* border-radius: 5px; */
-}
+} 
+
 
 .third-search-div {
     display: flex;
@@ -363,21 +372,7 @@ height: 100%;
 
 
 
-.price-slider {
-    width: 50%;
-    /* background-color: black; */
-    border: 3px solid black;
-    display: flex;
-    align-items: center;
-    align-content: center;
-}
-.chakra-slider {
-    width: 100%;
-    min-height: 20px;
-    height: 100%;
-    /* background-color: grey; */
-    /* position: fixed; */
-}
+/* search now button*/
 
   
 .search-icon2 {
