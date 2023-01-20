@@ -238,18 +238,35 @@
     background-color: var(--orange);
 }
 
-.price-slider {
-    width: 50%;
-    /* background-color: black; */
-    border: 3px solid black;
+.price-container {
     display: flex;
-    align-items: center;
-    align-content: center;
-}
-.chakra-slider {
-    width: 100%;
-    min-height: 20px;
+    flex-direction: column;
     height: 100%;
-    /* background-color: grey; */
-    /* position: fixed; */
+    width: 40%;
+}
+
+.price-container h5 {
+    font-size: small;
+}
+
+.price-input {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.minPrice-container, .maxPrice-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.budget {
+    height: 70%;
+    width: 40%;
+}
+
+.budget-warning {
+    font-size: x-small;
+    height: 10%;
+    color: rgb(247, 41, 41);
 }
