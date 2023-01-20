@@ -7,6 +7,7 @@ import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
 import {getSitterByData} from '../lib/search.js'
 import dynamic from 'next/dynamic';
+import Button from "../component/button/button";
 
 
 const Map = dynamic(
@@ -59,36 +60,65 @@ const Search = ({sitterData}) => {
 
   return (
     <>
-        <Head>
+      <Head>
         <title>Profile</title>
       </Head>
-       
+
       <Header />
+      <div className="search-filter-navbar">
+        <input
+          name="input"
+          className="search-input-field"
+          placeholder="Search"
+          type="text"
+        />
+        
+        <div className="search-pet-service">
+          <select name="service" id="pets" className="toggle-box-service">
+            <option value="Pet hosting">Pet Hosting</option>
+            <option value="home sitting">Home Sitting</option>
+            <option value="home sitting">Dog Walking</option>
+          </select>
+        </div>
+        <div className="pet-type">
+          <select name="type" id="pet-type" className="toggle-box-type-pet">
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <Button className="sign-up" text="Update"></Button>
+      </div>
 
       <div className="search-page-main-div">
+
+      <div className="search-result">
+
       {/* <p>this is user input for city: ${city}</p> */}
        
+
         {sitterData.map((user) => {
-          return ( 
-            <div className="card-div" key = {user.id}> 
+          return (
+            <div className="card-div" key={user.id}>
               <DisplayResults
-              fullname = {user.fullname}
-              nickname = {user.nickname} 
-              email = {user.email}
-              phone_number = {user.phone_number}
-              profile_image = {user.profile_image}
-                tagline = {user.tagline} 
-                address_region = {user.address_region}
-                address_city = {user.address_city}
-              price = {user.price}/>
-           </div>
-          )
-        })}
-        <Map />
+                fullname={user.fullname}
+                nickname={user.nickname}
+                email={user.email}
+                phone_number={user.phone_number}
+                profile_image={user.profile_image}
+                tagline={user.tagline}
+                address_region={user.address_region}
+                address_city={user.address_city}
+                price={user.price}
+              />
+            </div>
+          );
+        })}</div>
+        <div className="map-div"><Map /></div>
+        
       </div>
-      <Footer/>
+      <Footer />
     </>
-    
   );
 };
 
