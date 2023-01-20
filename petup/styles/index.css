@@ -409,7 +409,6 @@
   /* -How does Pet'Brb work?- Div */
 
 .bottom-margin-div > div {
-    border: 1px solid var(--green);
     height: 4em;
     width:100%;
     color: #282828;
