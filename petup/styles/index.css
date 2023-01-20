@@ -386,6 +386,7 @@ height: 100%;
     color: var(--white);
 }
 
+
 /* tagline div */
 
 .tagline-div {
@@ -497,3 +498,36 @@ height: 100%;
         padding-left: calc(2em);
         text-align: center;
     }
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+}
+
+.price-container h5 {
+    font-size: small;
+}
+
+.price-input {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.minPrice-container, .maxPrice-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.budget {
+    height: 70%;
+    width: 40%;
+}
+
+.budget-warning {
+    font-size: x-small;
+    height: 10%;
+    color: rgb(247, 41, 41);
+}

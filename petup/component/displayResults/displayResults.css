@@ -1,25 +1,32 @@
 .display-card {
-    border : 1px solid black;
+    /* border : 1px solid black; */
     display: flex;
     /* flex-direction: column; */
     align-items: center;
     justify-content: space-between;
-    width : 100%;
+    width : 95%;
     max-height : 100%;
-    background-color: aliceblue;
-    margin: 1%;
+    background-color: rgb(241, 243, 245);
+    /* margin: 1%; */
     padding: 1%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    /* filter: drop-shadow(0 0 0.75rem rgb(157, 153, 153)); */
+    box-shadow: 10px 10px 10px -10px #888;
+    /* border: 1px solid gray; */
+    margin: 1%
+
 }
 .display-card > img {
     display: flex;
-    max-height: 140px;
-    min-height: 140px;
-    max-width: 140px;
-    min-width: 140px;
-    border-radius: 5px;
-    border: 1px solid var(--green);
+    max-height: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    min-width: 120px;
+    border-radius: 100%;
+    /* border: 1px solid var(--green); */
     image-rendering: crisp-edges;
+    filter: drop-shadow(0 0 0.75rem rgb(157, 153, 153));
+    margin: 2%;
 }
 
 .search-page-main-div {
@@ -45,12 +52,38 @@
     padding: 0;
 }
 .main-taglines > h1{
-   font-weight: 500;
+   font-weight: 700;
+   font-size: 25px;
+   margin: 2px, 0px, 2px, 0px;
+   /* border: 1px solid blue; */
+   color:black;
    
 }
 .main-taglines > h2{
     font-weight: 300;
-    
+    color: gray;
+    /* border: solid 1px green; */
+    font-size: medium;
+    font-style: italic;
+    margin: 3px 0px 3px 0px;
+    width:90%;
+ }
+
+ .main-taglines > h3 {
+    font-weight: 300;
+ }
+
+ .email-and-icon-div {
+    display: flex;
+    /* border: 2px solid pink; */
+    width: 90%;
+    height: 30px;
+    align-items: center;
+    color: rgb(200, 162, 24);
+ }
+
+ .email-and-icon-div > p {
+    margin-left: 2%;
  }
  .rate {
     display: flex;
@@ -58,7 +91,8 @@
     font-family: 'Roboto', sans-serif;
     justify-content: center;
     align-items: center;
-
+    margin: 1%;
+    /* border:1px solid orange; */
  }
  .rate > p, h1{
     margin: 0;
@@ -70,7 +104,7 @@
     margin: 0;
     padding: 0;
     max-height: 120;
-    width: 40%;
+    width: 100%;
     justify-content: center;
  }
  
