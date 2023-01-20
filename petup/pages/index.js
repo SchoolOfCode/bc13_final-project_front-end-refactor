@@ -141,14 +141,15 @@ export default function Home() {
               />
             </div>
           </div>
-          
+
           <div className="second-search-div">
             <div className="radio-div" name="radio-div">
-              {/* <label for='radio-div'>For what ype of pet?</label> */}
               <>
                 <form>
                 <fieldset className='pet-radio'>
-                  <legend>Select your pet</legend>
+                  <legend>For what type of pet?</legend>
+                  <div className = "pet-radio-box">
+                  <div className = "input-radio-div">
                     <input
                       type="radio"
                       class="btn-check"
@@ -158,23 +159,38 @@ export default function Home() {
                       onClick={handlePetChange}
                       checked={pet === 2}
                     />
+                    <Image
+                      src = "/icons8-dog-sit-90.png"
+                      width = {100}
+                      height = {100}
+                      ></Image>
                     <label class="btn btn-primary" for="dog-btn-check">
                       Dog
                     </label>
+                    </div>
                     <br />
+                    <div className = "input-radio-div">
                     <input
                       type="radio"
                       class="btn-check"
+                      className = "btn-check"
                       id="cat-btn-check"
                       autocomplete="off"
                       value={1}
                       onClick={handlePetChange}
                       checked={pet === 1}
                     />
+                     <Image
+                      src = "/icons8-pet-commands-stay-100.png"
+                      width = {100}
+                      height = {100}
+                      ></Image>
                     <label class="btn btn-primary" for="cat-btn-check">
                       Cat
                     </label>
+                    </div>
                     <br />
+                    <div className = "input-radio-div">
                     <input
                       type="radio"
                       class="btn-check"
@@ -184,13 +200,21 @@ export default function Home() {
                       onClick={handlePetChange}
                       checked={pet === 3}
                     />
+                    <Image
+                      src = "/icons8-easter-rabbit-96.png"
+                      width = {100}
+                      height = {100}
+                      ></Image>
                     <label class="btn btn-primary" for="other-btn-check">
                       Other
                     </label>
+                    </div>
+                    </div>
                 </fieldset>
                 </form>
               </>
             </div>
+
             <div className='price-slider'>
                 <RangeSlider aria-label={['min', 'max']} defaultValue={[10, 30]}>
                 <RangeSliderTrack minH='32'>
