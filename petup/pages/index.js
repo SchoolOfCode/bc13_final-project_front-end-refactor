@@ -95,7 +95,7 @@ export default function Home() {
       
       <Header />
       <div className="main-div">
-      
+      <div className="top-div">
     <div className="feature">
 
     
@@ -250,6 +250,39 @@ export default function Home() {
               </h1>
         </div>
         </div>
+      </div>
+      </div>
+     
+      <div className = "bottom-div"> <div className="bottom-margin-div">
+       <h1> How does Pet'BrB work?</h1>
+       
+       <div className = "step1-div"> <Image
+          className = "step1-icon"
+          src = "/icons8-unread-messages-100.png"
+          width = {100}
+          height ={100}
+          ></Image>
+        <p className= "step1"> 1. Search for pet sitters in an area, for why you want, for where you want, for how much you want, and for when you want</p>
+          </div>
+          <div className = "step2-div">
+        <p>2. Contact your found sitter to get to know them more and how they can help you and your needs for your pets. </p>  <Image
+          className = "step2-icon"
+          src = "/icons8-unread-messages-100.png"
+          width = {100}
+          height ={100}
+          ></Image>
+       </div>
+       <div className = "step3-div">
+       <Image
+          className = "step3-icon"
+          src = "/icons8-handshake-100.png"
+          width = {100}
+          height ={100}
+          ></Image>
+        <p className= "step3">3. Once an agree arrangement is made, you can be free of stress and enjoy your time with your pet!</p>
+       </div>
+      
+      </div>
       </div>
       </div>
       <Footer />

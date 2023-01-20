@@ -1,12 +1,26 @@
+
+/* main div and background divs */
+
 .main-div {
-    /* border: 1px solid black; */
+
     height: 80%;
+    max-width: 100%;
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: var(--white);
+    
+}
+
+.top-div{
+    height: 70%;
     max-width: 100%;
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: space-around;
-    /* background-color: var(--white); */
     background-image: url('../public/landing-page.jpg');
     background-repeat: no-repeat; 
     background-size: 100% 100%;
@@ -23,6 +37,7 @@
     align-content: center;
     justify-content: space-around;
   }
+
 
 /*--center field--*/
 
@@ -48,10 +63,10 @@
 }
 
 .middle-div{
-    border: 1px solid green;
     height: 15%;
-    width:100%;
+    width:40%;
     align-items: center;
+    
 }
 
 .middle-div h1{
@@ -59,7 +74,8 @@
     font-size: medium;
     display: flex;
     justify-content: center;
-    padding: 1rem 0;
+    text-align: center;
+    /* padding: 0.1em 0 0.5em 0; */
 }
 
 /*-- search box --*/
@@ -349,3 +365,89 @@
     color: var(--green);
     font-size: large;
 } */
+
+
+/* bottom div */
+
+.bottom-div{
+    height: 30%;
+    width :100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .bottom-margin-div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: middle; 
+    padding: 2em 4rem 2em 4rem;
+    flex-direction: column;
+  }
+
+  .bottom-margin-div > h1{
+    text-align: center;
+    font-size:medium;
+    color: black;
+    padding: 0 0 0.5em 0;
+  }
+
+  .bottom-margin-div > p {
+    text-align: center;
+    font-size:small;
+    color: black;
+    /* padding: 0.5em 0; */
+  }
+
+  /* -How does Pet'Brb work?- Div */
+
+.bottom-margin-div > div {
+    border: 1px solid var(--green);
+    height: 4em;
+    width:100%;
+    color: #282828;
+    display: flex;
+    justify-content: center ;
+    font-size: 10px;
+    align-items: center;;
+
+}
+
+.step1-icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.step1-div > p{
+    padding-left: calc(2em);
+    text-align: center;
+}
+
+    .step2-icon {
+        position: relative;
+        width: 30px;
+		height: 30px;
+    }      
+
+
+.step2-div > p {
+    padding-right: calc(2em);
+    text-align: center;
+}
+
+  
+
+    .step3-icon {
+        position: relative;
+        width: 30px;
+		height: 30px;
+    }
+      
+    .step3-div > p {
+        padding-left: calc(2em);
+        text-align: center;
+    }
