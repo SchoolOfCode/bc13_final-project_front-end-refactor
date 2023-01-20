@@ -22,15 +22,16 @@ const Map = dynamic(
 //'context' contains request specific parameters, like query parameters, etc.
 export async function getServerSideProps(context){
 //get the city from the query parameter
-  const service = (context.query.service)
-  const city = (context.query.city)
-  const pet = (context.query.pet)
+  const service = (context.query.service);
+  const city = (context.query.city);
+  const pet = (context.query.pet);
+  const budget = (context.query.budget);
   // //old code below for getting city from useRouter hook:
   //   const router = useRouter();
   //   const input = router.query.city;   //data came out as object like this data = {city: input}
 
   //get the data
-  const sitterData = await getSitterByData(service, city, pet);
+  const sitterData = await getSitterByData(service, city, pet, budget);
   
   //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
   return {

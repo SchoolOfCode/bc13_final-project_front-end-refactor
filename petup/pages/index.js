@@ -29,12 +29,10 @@ import Radio from "../component/radioButtons/radio";
 export default function Home() {
   const [city, setCity] = useState("");
   const [service, setService] = useState(1);
-  const [minPrice, setMinPrice] = useState(0)
-  const [maxPrice, setMaxPrice] = useState(70)
+  const [budget, setBudget] = useState(50)
   const [pet, setPet] = useState(2)
-  const [startDate, setStartDate] = useState("")
-  const [endData, setEndDate] = useState("")
   const [priceString, setPriceString] = useState('(per night)');
+  const [budgetWarning, setBudgetWarning] = useState('')
 
   function handleCityChange(e) {
     setCity(e.target.value);
@@ -65,12 +63,18 @@ export default function Home() {
     console.log('pet', pet)
   }
 
-  function handleMinPriceChange(e) {
-    setMinPrice(e.target.value);
-  }
-
-  function handleMaxPriceChange(e) {
-    setMaxPrice(e.target.value);
+  function handleBudgetChange(e) {
+    const regex = /^[0-9\b]+$/;
+    const value = e.target.value;
+    if (value === '' || regex.test(value)) {
+      setBudget(value);
+      setBudgetWarning('')
+    } else if (value < 0){
+      setBudget(0);
+      setBudgetWarning('You must not enter a number lower than zero');
+    } else {
+      setBudgetWarning('You must only enter a whole numerical value');
+    }
   }
 
   function handleClick() {
@@ -171,9 +175,14 @@ export default function Home() {
               </>
             </div>
            <div className='price-container'>
-                <div className='maxPrice-container'>
+                <div className='text-container'>
                   <label for='max'>Set your budget {priceString}.</label>
-                  <input type='number' className='MinMaxInput' name='max' placeholder='30'/>
+                </div>
+                <div className='budget-container'>
+                  <span class="currencyinput">£
+                    <input className='budget' name='max' placeholder='30' pattern="[0-9]+" onChange={handleBudgetChange}/>
+                    <h6 className='budget-warning'>{budgetWarning}</h6>
+                  </span>
                 </div>
             </div>
           </div>
@@ -185,7 +194,8 @@ export default function Home() {
                 query: { 
                   city: city, 
                   service: service,
-                  pet: pet 
+                  pet: pet,
+                  budget: budget 
                 },
               }}
               passHref

@@ -260,7 +260,13 @@
     flex-direction: column;
 }
 
-.MinMaxInput {
-    height: 40%;
+.budget {
+    height: 70%;
     width: 40%;
+}
+
+.budget-warning {
+    font-size: x-small;
+    height: 10%;
+    color: rgb(247, 41, 41);
 }

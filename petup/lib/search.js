@@ -13,7 +13,7 @@ export async function getAllSitters() {
     return res.rows;
 }
 
-export async function getSitterByData(service, city, pet){
+export async function getSitterByData(service, city, pet, budget){
     //get sitter service by city. do direct sql query to database
     const response = await query(`SELECT * 
     FROM users 
@@ -21,7 +21,8 @@ export async function getSitterByData(service, city, pet){
     ON users.user_id = pet_service.sitter_id 
     WHERE LOWER(address_city) LIKE LOWER($1)
     AND LOWER(service_type) LIKE LOWER($2)
-    AND LOWER(pet_type) LIKE LOWER($3)`, [city, service, pet])
+    AND LOWER(pet_type) LIKE LOWER($3)
+    AND (price) < ($4)`, [city, service, pet, budget])
 
     return response.rows;
     //search is case insensitive 
