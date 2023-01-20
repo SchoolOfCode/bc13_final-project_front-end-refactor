@@ -23,7 +23,7 @@
     justify-content: space-around;
     background-image: url('../public/landing-page.jpg');
     background-repeat: no-repeat; 
-    background-size: 100% 100%;
+    background-size: cover;
 }
 
   .feature{
