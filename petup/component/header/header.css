@@ -12,15 +12,26 @@
     background-color: var(--green);
 
 }
-.header > a > img {
+
+.margin-div-header{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    height:100%;
+    width: 100%;
+    padding: 0 4rem 0 4rem;
+}
+
+
+
+.margin-div-header > a > img {
     height: 160%;
     width: 160%;
     /* min-width: 80px;
     max-width: 150px; */
-    
-
 }
-.header > a {
+.margin-div-header > a {
     display: flex;
     height: 100%;
     width: 10%;

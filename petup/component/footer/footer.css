@@ -1,4 +1,4 @@
-footer {
+.margin-div-footer{
     display: flex;
     max-height: 10%;
     min-height: 10%;
@@ -9,9 +9,20 @@ footer {
     justify-content: space-between;
     padding-left: 2rem;
     padding-right: 2rem ;
+}
+
+.margin-div-footer > footer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem 0 4rem;
     
  
 }
+
+
 footer > h2, a > h2 {
     font-size: larger;
 }
@@ -25,4 +36,9 @@ footer > a {
     justify-content: space-between;
     padding-left: 2rem;
     padding-right: 2rem ;
+}
+
+.margin-div-footer > footer > img {
+    height: 20%;
+    width: 20%;
 }
