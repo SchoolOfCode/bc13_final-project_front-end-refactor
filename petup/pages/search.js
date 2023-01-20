@@ -115,7 +115,9 @@ const Search = ({sitterData}) => {
             </div>
           );
         })}</div>
-        <div className="map-div"><Map /></div>
+        <div className="map-div">
+          <Map sitterData={sitterData}/>
+        </div>
         
       </div>
       <Footer />
