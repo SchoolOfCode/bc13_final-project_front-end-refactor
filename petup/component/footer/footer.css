@@ -37,3 +37,8 @@ footer > a {
     padding-left: 2rem;
     padding-right: 2rem ;
 }
+
+.margin-div-footer > footer > img {
+    height: 20%;
+    width: 20%;
+}
