@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Header from "../component/header/header";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
-import {getSitterByCity} from '../lib/search.js'
+import {getSitterByData} from '../lib/search.js'
 import dynamic from 'next/dynamic';
 import Button from "../component/button/button";
 
@@ -15,42 +15,38 @@ const Map = dynamic(
     { ssr: false } // This line is important. It's what prevents server-side render
 )
 
-
-//use getStaticProps or the getServerSideProps function for any Node.js module that is run on the server-side (not available in the browser)
+/* //use getStaticProps or the getServerSideProps function for any Node.js module that is run on the server-side (not available in the browser)
 //in getStaticProps, we call the function to get data
     //getStaticProps will get the data once at build time.
-    //getServerSideProps is called at each request time
+    //getServerSideProps is called at each request time */
 
 //'context' contains request specific parameters, like query parameters, etc.
 export async function getServerSideProps(context){
+//get the city from the query parameter
+  const service = (context.query.service)
+  const city = (context.query.city)
+  const pet = (context.query.pet)
+  // //old code below for getting city from useRouter hook:
+  //   const router = useRouter();
+  //   const input = router.query.city;   //data came out as object like this data = {city: input}
 
-//get the userInput from the query parameter
-const userInput = (context.query.city)
-
-// //old code below for getting userInput from useRouter hook:
-//   const router = useRouter();
-//   const input = router.query.city;   //data came out as object like this data = {city: input}
-
- //get the data
- const sitterData = await getSitterByCity(userInput);
- 
- //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
- return {
-   props: {
-     sitterData,
-     userInput
-   }
- };
-
-   
+  //get the data
+  const sitterData = await getSitterByData(service, city, pet);
+  
+  //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
+  return {
+    props: {
+      sitterData,
+    }
+  };
 }
 
 
 
-const Search = ({sitterData, userInput}) => {
-  
-//console.log(sitterData)
-//console.log(`this is user input for city: ${userInput}`)
+const Search = ({sitterData}) => {
+ /* 
+ //console.log(sitterData)
+//console.log(`this is user input for city: ${city}`)
 
   //below is some old code from getting local data
   // function getData() {
@@ -60,8 +56,7 @@ const Search = ({sitterData, userInput}) => {
   // }
   // const response = getData(); //fetch all data
   // const result = citySearch(response, input); //get user that matches city input
-
-  
+  */   
 
   return (
     <>
@@ -96,8 +91,11 @@ const Search = ({sitterData, userInput}) => {
       </div>
 
       <div className="search-page-main-div">
+
       <div className="search-result">
-        {/* <p>this is user input for city: ${userInput}</p> */}
+
+      {/* <p>this is user input for city: ${city}</p> */}
+       
 
         {sitterData.map((user) => {
           return (

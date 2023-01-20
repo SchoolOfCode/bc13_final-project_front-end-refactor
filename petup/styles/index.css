@@ -43,23 +43,55 @@
     
 }
 
-.input-field {
-    border: 1px solid var(--green);
-    /* border-radius: 5px; */
-    height: 5vh;
-    line-height: normal;
-    color: #282828;
-    display: block;
+/*--search bar--*/
+
+.input-box-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     width: 30vh;
-    /* box-sizing: border-box; */
-    user-select: auto;
-    font-size: 14px;
-    padding: 0 6px;
-    padding-left: 12px;
-}
+    /* border: 1px solid var(--orange); */
+    /* padding: 19px 18px; */
+    float: left;
+    }
+
+    .input-box-div svg {
+        position: absolute;
+    }
+      
+      
+    .icon {
+        margin:25px 10px;
+        width: 26px;
+		height: 26px;
+		margin-right: 4px;
+		float: left;
+		fill: currentColor;
+		color: #D3D5D3;
+    }
+      
+
+    .input-field {
+        border: 1px solid var(--green);
+        /* border-radius: 5px; */
+        height: 5vh;
+        line-height: normal;
+        color: #282828;
+        display: block;
+        width: 30vh;
+        /* box-sizing: border-box; */
+        user-select: auto;
+        font-size: 10px;
+        padding: 0 6px;
+         /* padding-left: 12px;  */
+        padding-left: calc(1em + 10px + 10px);
+        /* text-align: center; */
+    }   
 
 
 
+
+/*  */
 
 .tagline-div {
     border: transparent;
@@ -128,12 +160,7 @@
     border: 1px solid var(--green);
     /* border-radius: 5px; */
 }
-.input-box-div {
-display: flex;
-flex-direction: column;
-height: 100%;
-width: 30vh;
-}
+
 .third-search-div {
     display: flex;
     align-items: center;
@@ -206,6 +233,23 @@ width: 30vh;
     background-color: var(--orange);
     width: 5vw;
 }
-.radio-div > label {
+
+.radio-div > form > label {
     background-color: var(--orange);
+}
+
+.price-slider {
+    width: 50%;
+    /* background-color: black; */
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.chakra-slider {
+    width: 100%;
+    min-height: 20px;
+    height: 100%;
+    /* background-color: grey; */
+    /* position: fixed; */
 }

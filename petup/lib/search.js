@@ -13,13 +13,15 @@ export async function getAllSitters() {
     return res.rows;
 }
 
-export async function getSitterByCity(city){
+export async function getSitterByData(service, city, pet){
     //get sitter service by city. do direct sql query to database
     const response = await query(`SELECT * 
     FROM users 
     INNER JOIN pet_service 
     ON users.user_id = pet_service.sitter_id 
-    WHERE LOWER(address_city) LIKE LOWER($1)`, [city])
+    WHERE LOWER(address_city) LIKE LOWER($1)
+    AND LOWER(service_type) LIKE LOWER($2)
+    AND LOWER(pet_type) LIKE LOWER($3)`, [city, service, pet])
 
     return response.rows;
     //search is case insensitive 
@@ -41,7 +43,7 @@ export async function getSitterByCity(city){
 
 //sample codes below to get data from database: 
 
-//**** EXTERNAL API DATABASE */
+/* //**** EXTERNAL API DATABASE */
 
 //Note: Next.js polyfills fetch() on both the client and server. You don't need to import it.
 
@@ -85,7 +87,7 @@ export async function getSitterByCity(city){
 
 // This is possible because getStaticProps only runs on the server-side.
 // It will never run on the client-side. It won’t even be included in the JS bundle for the browser. 
-// That means you can write code such as direct database queries without them being sent to browsers.
+// That means you can write code such as direct database queries without them being sent to browsers. */
 
 
 
