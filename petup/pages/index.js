@@ -28,9 +28,9 @@ import Radio from "../component/radioButtons/radio";
 
 export default function Home() {
   const [city, setCity] = useState("");
-  const [service, setService] = useState(1);
-  const [budget, setBudget] = useState(50)
-  const [pet, setPet] = useState(2)
+  const [service, setService] = useState('pet_hosting');
+  const [budget, setBudget] = useState(100)
+  const [pet, setPet] = useState('pet_dog')
   const [priceString, setPriceString] = useState('(per night)');
   const [budgetWarning, setBudgetWarning] = useState('')
 
@@ -40,13 +40,12 @@ export default function Home() {
 
   /**
    * 
-   * Takes in a value which is an int. Values correspond to these values in the database:
-   * 1 = 'Pet Hosting', 2 = 'Home Sitting', 3 = 'Dog Walking'
+   * Takes in a value which is a string that corresponds to the type of service
    */
   function handleServiceChange(e) {
     // if service is set to dog walking, then pet will also be set to Dog
-    if (e.target.value === 3) {
-      setPet(2)
+    if (e.target.value == 'dog_walking') {
+      setPet('pet_dog')
       setPriceString('(per hour)')
     }
     setPriceString('(per night)');
@@ -103,9 +102,9 @@ export default function Home() {
             <div className="pet-service">
               <label for="service">What service would you like?</label>
               <select name="service" id="pets" className="toggle-box-service">
-                <option value={1} alt='Pet Hosting' onClick={handleServiceChange}>Pet Hosting</option>
-                <option value={2} alt='Home Sitting' onClick={handleServiceChange}>Home Sitting</option>
-                <option value={3} alt='Dog Walking' onClick={handleServiceChange}>Dog Walking</option>
+                <option value='pet_hosting' alt='Pet Hosting' onClick={handleServiceChange}>Pet Hosting</option>
+                <option value='house_sitting' alt='Home Sitting' onClick={handleServiceChange}>Home Sitting</option>
+                <option value='dog_walking' alt='Dog Walking' onClick={handleServiceChange}>Dog Walking</option>
               </select>
             </div>
 
@@ -137,9 +136,9 @@ export default function Home() {
                       class="btn-check"
                       id="dog-btn-check"
                       autocomplete="off"
-                      value={2} 
+                      value='pet_dog' 
                       onClick={handlePetChange}
-                      checked={pet === 2}
+                      checked={pet === 'pet_dog'}
                     />
                     <label class="btn btn-primary" for="dog-btn-check">
                       Dog
@@ -150,9 +149,9 @@ export default function Home() {
                       class="btn-check"
                       id="cat-btn-check"
                       autocomplete="off"
-                      value={1}
+                      value='pet_cat'
                       onClick={handlePetChange}
-                      checked={pet === 1}
+                      checked={pet === 'pet_cat'}
                     />
                     <label class="btn btn-primary" for="cat-btn-check">
                       Cat
@@ -163,9 +162,9 @@ export default function Home() {
                       class="btn-check"
                       id="other-btn-check"
                       autocomplete="off"
-                      value={3} 
+                      value='pet_other' 
                       onClick={handlePetChange}
-                      checked={pet === 3}
+                      checked={pet === 'pet_other'}
                     />
                     <label class="btn btn-primary" for="other-btn-check">
                       Other
