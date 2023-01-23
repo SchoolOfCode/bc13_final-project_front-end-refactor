@@ -39,11 +39,12 @@ export function DisplayResults({
   address_region,
   address_city,
   price,
+  handleClick
 }) {
 
   return (
     <>
-      <div className="display-card">
+      <button className="display-card" onClick={() => handleClick()}> 
         {/*to refactor later to use Image component from Next.js instead of img tag */}
 
         <img
@@ -66,7 +67,7 @@ export function DisplayResults({
           <h1>£{price}</h1>
           <p>per night</p>
       </div>
-      </div>
+      </button>
     </>
   );
 }

@@ -8,6 +8,7 @@ import Footer from "../component/footer/footer";
 import {getSitterByData} from '../lib/search.js'
 import dynamic from 'next/dynamic';
 import Button from "../component/button/button";
+import {useState} from 'react';
 
 
 const Map = dynamic(
@@ -58,7 +59,17 @@ const Search = ({sitterData}) => {
   // const response = getData(); //fetch all data
   // const result = citySearch(response, input); //get user that matches city input
   */   
+  
 
+  // map component needs cetner coordinates to put on the mpa as an [0,0] data 
+  // depending on which card is clicked, we need to update a state here with that users coordinates, by setting them
+  // map will have those coordinates sent down and it will center whichever card is clicked
+  const [coordinates, setCoordinates] = useState([sitterData[0].latitude, sitterData[0].longitude])
+
+  function handleClick(lat, long) {
+    setCoordinates([lat, long])
+    console.log('You clicked me!')
+  }
   return (
     <>
       <Head>
@@ -111,12 +122,13 @@ const Search = ({sitterData}) => {
                 address_region={user.address_region}
                 address_city={user.address_city}
                 price={user.price}
+                handleClick={() => handleClick(user.latitude, user.longitude)}
               />
             </div>
           );
         })}</div>
         <div className="map-div">
-          <Map sitterData={sitterData}/>
+          <Map sitterData={sitterData} coordinates={coordinates}/>
         </div>
         
       </div>
