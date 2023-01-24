@@ -123,7 +123,9 @@ const Search = ({sitterData}) => {
                 tagline={user.tagline}
                 address_region={user.address_region}
                 address_city={user.address_city}
-                price={user.price}
+                pet_hosting_rate = {user.pet_hosting_rate}
+                house_sitting_rate = {user.house_sitting_rate}
+                dog_walking_rate = {user.dog_walking_rate}
               />
             </div>
           );
