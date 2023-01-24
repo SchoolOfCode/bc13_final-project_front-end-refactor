@@ -33,9 +33,12 @@ export function DisplayResults({
   tagline,
   address_region,
   address_city,
+  price,
+  handleClick
   pet_hosting_rate,
   house_sitting_rate,
   dog_walking_rate
+
 }) {
 
   //compute the lowest rate 
@@ -44,7 +47,10 @@ export function DisplayResults({
 
   return (
     <>
+      <button className="display-card" onClick={() => handleClick()}> 
+        {/*to refactor later to use Image component from Next.js instead of img tag */}
       <div className="display-card">
+
 
         <img
           priority
@@ -69,10 +75,10 @@ export function DisplayResults({
         <div className="rate">
           {/* <p>{address.street}, {address.city}</p> */}
           <p>From</p>
-          <h1>£{minRate}</h1>
-          {/* <p>per night</p> */}
-        </div>
+          <h1>£{price}</h1>
+          <p>per night</p>
       </div>
+      </button>
     </>
   );
 }
