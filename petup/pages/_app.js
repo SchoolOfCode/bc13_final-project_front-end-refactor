@@ -22,7 +22,7 @@ import '../styles/sitter.page.css'
 import { SessionProvider } from "next-auth/react"
 
 export default function App({
-  Component,
+  Component, session,
   pageProps: { session, ...pageProps },
 }) {
   return (
