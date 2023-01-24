@@ -166,6 +166,7 @@ export default function Home() {
                       src = "/icons8-dog-sit-90.png"
                       width = {100}
                       height = {100}
+                      alt="dog-icon-sitting"
                       ></Image>
                     <label class="btn btn-primary" for="dog-btn-check">
                       Dog
@@ -187,6 +188,7 @@ export default function Home() {
                       src = "/icons8-pet-commands-stay-100.png"
                       width = {100}
                       height = {100}
+                      alt=" cat-icon"
                       ></Image>
                     <label class="btn btn-primary" for="cat-btn-check">
                       Cat
@@ -207,6 +209,7 @@ export default function Home() {
                       src = "/icons8-easter-rabbit-96.png"
                       width = {100}
                       height = {100}
+                      alt="rabbit-icon"
                       ></Image>
                     <label class="btn btn-primary" for="other-btn-check">
                       Other
@@ -285,13 +288,14 @@ export default function Home() {
       </div>
      
       <div className = "bottom-div"> <div className="bottom-margin-div">
-       <h1> How does Pet'BrB work?</h1>
+       <h1> How does PetBrB work?</h1>
        
        <div className = "step1-div"> <Image
           className = "step1-icon"
           src = "/icons8-funnel-100.png"
           width = {100}
           height ={100}
+          alt="small-icon-funnel"
           ></Image>
         <p className= "step1"> 1. Search for pet sitters in an area, for why you want, for where you want, for how much you want, and for when you want</p>
           </div>
@@ -301,6 +305,7 @@ export default function Home() {
           src = "/icons8-unread-messages-100.png"
           width = {100}
           height ={100}
+          alt="small-icon-unread-message"
           ></Image>
        </div>
        <div className = "step3-div">
@@ -309,6 +314,7 @@ export default function Home() {
           src = "/icons8-handshake-100.png"
           width = {100}
           height ={100}
+          alt="small-icon-handshake"
           ></Image>
         <p className= "step3">3. Once an agree arrangement is made, you can be free of stress and enjoy your time with your pet!</p>
        </div>
