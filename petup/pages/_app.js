@@ -17,6 +17,7 @@ import '../component/radioButtons/radio.css'
 import '../styles/search.css'
 import '../component/map/map.css'
 import '../styles/sitter.page.css'
+import '../styles/contact.css'
 
 
 import { SessionProvider } from "next-auth/react"
