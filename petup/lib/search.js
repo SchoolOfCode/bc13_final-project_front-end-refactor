@@ -157,12 +157,29 @@ export async function getUserData(email) {
 
   return response.rows;
 }
-//refactor this function to give data based on the filter below:
-// 1. get all service by city(for utmost basic search, no filter)
-// 2. get service by city and type of pets (1 filter)
-// 3. get service by city, type of service, type of pet  (2 and 3 can be combined)
-// 4. get service by city, type of service, type of pet, price range (min and max)
-// 5. get service by city, type of service, type of pet, proce range, date of availability
+
+export async function getAllSitterID(){
+ 
+  const response = await query(`SELECT * from users`) 
+  const arrayID = response.rows;
+  
+  return arrayID.map((user) => {
+    return {
+      params: {
+        id: String(user.user_id),
+      },
+    };
+  });
+
+}
+
+export async function getSitterbyID(ID){
+  const response = await query (`SELECT * from users
+  WHERE user_id = $1`, [ID])
+
+  return response.rows;
+}
+
 
 
 

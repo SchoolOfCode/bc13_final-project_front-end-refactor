@@ -30,8 +30,10 @@ const Header = () => {
 
   return (
     <div className="header">
+    <div className = "margin-div-header">
     <Link href='/'>
-      <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" width={100} height={100}/>
+      {/* <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" width={100} height={100}/> */}
+      <img src='https://i.ibb.co/6D4qNm8/petbrb-high-resolution-logo-white-on-transparent-background.png' alt="logo"></img>
     </Link>
     
       
@@ -65,6 +67,7 @@ const Header = () => {
           <Button className="sign-up" text="Sign up" /> </>)
           } 
       </div>
+    </div>
     </div>
   );
 };

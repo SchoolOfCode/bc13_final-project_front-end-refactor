@@ -1,16 +1,26 @@
 import Link from 'next/link'
-import React from 'react'
+import React from "react";
+import Image from "next/image";
 
 const Footer = () => {
-    return (
-        <footer>
-            <Link href='/contact' style={{textDecoration: 'none'}}>
-                <h2>Contact us</h2>
-            </Link>
-            <h2>PetBrB</h2>
-            <h2>Copyright @ SoC</h2>
-        </footer>
-    )
-}
+  return (
+    <div className="margin-div-footer">
+      <footer>
+        <Link href="/contact" style={{ textDecoration: "none" }}>
+          <h2 className="contact-us">Contact us</h2>
+        </Link>
+        <img
+          src="https://i.ibb.co/6D4qNm8/petbrb-high-resolution-logo-white-on-transparent-background.png"
+          alt="foe"
+          style={{width: '10rem', height: '2rem'}}
+        ></img>
+        {/* <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" 
+            width={100} 
+            height={100}/> */}
+        <h2>Copyright @ SoC</h2>
+      </footer>
+    </div>
+  );
+};
 
 export default Footer

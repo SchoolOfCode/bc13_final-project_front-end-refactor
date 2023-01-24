@@ -1,15 +1,29 @@
+
+/* main div and background divs */
+
 .main-div {
-    /* border: 1px solid black; */
+
     height: 80%;
+    max-width: 100%;
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: var(--white);
+    
+}
+
+.top-div{
+    height: 70%;
     max-width: 100%;
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: space-around;
-    /* background-color: var(--white); */
     background-image: url('../public/landing-page.jpg');
     background-repeat: no-repeat; 
-    background-size: 100% 100%;
+    background-size: cover;
 }
 
   .feature{
@@ -24,8 +38,49 @@
     justify-content: space-around;
   }
 
+
+/*--center field--*/
+
+.margin-div{
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: middle;
+    padding: 0 4rem 0 4rem;
+    flex-direction: column;
+}
+
+.top-middle-div{
+    height: 85%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    padding: 0 4rem 0 4rem;
+}
+
+.middle-div{
+    height: 15%;
+    width:40%;
+    align-items: center;
+    
+}
+
+.middle-div h1{
+    color: var(--white);
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* padding: 0.1em 0 0.5em 0; */
+}
+
+/*-- search box --*/
+
 .searchBox-div {
-    /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -33,7 +88,7 @@
     justify-content: space-around;
     min-height: 45vh;
     max-height: 55vh;
-    width: 45%;
+    width: 65%;
     padding: 2%;
     /* border-radius: 10px; */
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -43,31 +98,81 @@
     
 }
 
-/*--search bar--*/
+/*-- top search field --*/
 
+.top-search-div {
+    display: flex;
+    height: 20%;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    font-size: small;
+}
+
+
+/* --service input field-- */
+.pet-service {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+    float : left;
+}
+
+.select-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    float : left;
+}
+  
+.luggage-icon {
+    position: absolute;
+    /* margin:28px 10px; */
+    margin:0.5em 0.5em;
+    width: 23px;
+    height: 23px;
+    margin-right: 4px;
+    float: left;
+}
+
+.select-div > select {
+    border: 1px solid var(--green);
+    /* border-radius: 5px; */
+    height: 5vh;
+    line-height: normal;
+    color: #282828;
+    display: block;
+    /* width: 30vh; */
+    width: 90%;
+    /* box-sizing: border-box; */
+    user-select: auto;
+    font-size: 10px;
+    padding: 0 6px;
+     /* padding-left: 12px;  */
+    padding-left: calc(1em + 10px + 15px);
+    /* text-align: center; */
+
+}
+
+/*--search input field--*/
 .input-box-div {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 30vh;
-    /* border: 1px solid var(--orange); */
-    /* padding: 19px 18px; */
+    width: 40%;
     float: left;
     }
-
-    .input-box-div svg {
+      
+    .search-icon {
         position: absolute;
-    }
-      
-      
-    .icon {
-        margin:25px 10px;
-        width: 26px;
-		height: 26px;
+        margin:2.2em 0.5em;
+        width: 18px;
+		height: 18px;
 		margin-right: 4px;
 		float: left;
-		fill: currentColor;
-		color: #D3D5D3;
     }
       
 
@@ -78,46 +183,97 @@
         line-height: normal;
         color: #282828;
         display: block;
-        width: 30vh;
+        /* width: 30vh; */
+        width: 90%;
         /* box-sizing: border-box; */
         user-select: auto;
         font-size: 10px;
         padding: 0 6px;
          /* padding-left: 12px;  */
-        padding-left: calc(1em + 10px + 10px);
+        padding-left: calc(3em);
         /* text-align: center; */
     }   
 
 
 
 
-/*  */
+/* second search div */
 
-.tagline-div {
-    border: transparent;
-    min-height: 40%;
-    max-height: 40%;
-    width: 30%;
+/* for what type of pet (radio div)*/
+
+.second-search-div {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-    align-content: space-between;
-    border-radius: 15px;
-    background-color: transparent;
-    /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); */
-    padding: 0;
+    align-items: center;
+    justify-content: space-around;
+    height: 20%;
+    width: 100%;
 }
-.tagline-div > h1 {
-    font-size: x-large;
-    text-align: left;
-    color: #EEEEEE;
+
+.radio-div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    /* gap: 1vw; */
+    /* flex-direction: column; */
+    /* width: 30vw; */
+    width:40%;
+    height: 100%;
+    /* border: 2px solid transparent; */
 }
-.tagline-div > p {
-    color: var(--green);
-    font-size: large;
+
+.radio-div > form {
+    width : 100%;
+    height: 100%;
 }
-.checkboxes {
+
+.pet-radio{
+/* border: 1px solid grey; */
+width: 100%;
+height: 100%;
+}
+
+.pet-radio > legend{
+    font-size:12px;
+}
+
+.pet-radio-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.input-radio-div{
+    width: 100%;
+}
+
+.input-radio-div > img {
+    position: absolute;
+    margin:0.5em 0.5em;
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+    float: left;
+}
+
+.input-radio-div > label {
+    background-color : white;
+    color: #282828;
+    font-size: 12px;
+    border-color: grey; 
+    border-radius: 0;
+    width: 100%;
+    padding-left: calc(1em + 10px + 15px);
+    
+}
+.budget-label {
+    font-size: 12px;
+}
+
+
+/* .checkboxes {
     display: flex;
     align-items: center;
 }
@@ -130,36 +286,37 @@
 }
 .checkboxes > label {
     font-size: 25px;
-}
-.top-search-div {
+} */
+
+
+/* price slider */
+
+.price-slider {
+    width: 50%;
+    /* background-color: black; */
+    border: 3px solid black;
     display: flex;
-    height: 20%;
-    width: 100%;
     align-items: center;
     align-content: center;
-    justify-content: space-around;
-    font-size: small;
 }
-.second-search-div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 20%;
+.chakra-slider {
     width: 100%;
-}
-.pet-service {
-    display: flex;
-    flex-direction: column;
+    min-height: 20px;
     height: 100%;
-    width: 30vh;
+    /* background-color: grey; */
+    /* position: fixed; */
 }
+
+/*third search div*/
+
 .toggle-box-service {
     display: flex;
     min-height: 5vh;
     width: 100%;
     border: 1px solid var(--green);
     /* border-radius: 5px; */
-}
+} 
+
 
 .third-search-div {
     display: flex;
@@ -172,16 +329,7 @@
 .third-search-div > a {
     display: flex;
 }
-.radio-div {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: space-around;
-    /* gap: 1vw; */
-    /* flex-direction: column; */
-    width: 30vw;
-    height: 100%;
-}
+
 .number-input {
     display: flex;
     flex-direction: column;
@@ -190,15 +338,7 @@
     justify-content: center;
     align-items: center;
 }
-.radio{
-    height: 40%;
-    width: 40%;
-}
-.radio-buttons {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
+
 .btn-primary {
     min-width: 3vh;
     max-width: 10vh;
@@ -234,9 +374,134 @@
     width: 5vw;
 }
 
-.radio-div > form > label {
-    background-color: var(--orange);
+
+
+/* search now button*/
+
+  
+.search-icon2 {
+    margin:1em 0.5em;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    margin-right: 4px;
+    float: left;
+    fill: currentColor;
+    color: var(--white);
 }
+
+
+/* tagline div */
+
+.tagline-div {
+    border: transparent;
+    min-height: 40%;
+    max-height: 40%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    align-content: space-between;
+    border-radius: 15px;
+    background-color: transparent;
+    /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); */
+    padding: 0;
+}
+.tagline-div > h1 {
+    font-size: x-large;
+    text-align: left;
+    color: #EEEEEE;
+}
+/* .tagline-div > p {
+    color: var(--green);
+    font-size: large;
+} */
+
+
+/* bottom div */
+
+.bottom-div{
+    height: 30%;
+    width :100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .bottom-margin-div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: middle; 
+    padding: 2em 4rem 2em 4rem;
+    flex-direction: column;
+  }
+
+  .bottom-margin-div > h1{
+    text-align: center;
+    font-size:medium;
+    color: black;
+    padding: 0 0 0.5em 0;
+  }
+
+  .bottom-margin-div > p {
+    text-align: center;
+    font-size:small;
+    color: black;
+    /* padding: 0.5em 0; */
+  }
+
+  /* -How does Pet'Brb work?- Div */
+
+.bottom-margin-div > div {
+    height: 4em;
+    width:100%;
+    color: #282828;
+    display: flex;
+    justify-content: center ;
+    font-size: 10px;
+    align-items: center;;
+
+}
+
+.step1-icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.step1-div > p{
+    padding-left: calc(2em);
+    text-align: center;
+}
+
+    .step2-icon {
+        position: relative;
+        width: 30px;
+		height: 30px;
+    }      
+
+
+.step2-div > p {
+    padding-right: calc(2em);
+    text-align: center;
+}
+
+  
+
+    .step3-icon {
+        position: relative;
+        width: 30px;
+		height: 30px;
+    }
+      
+    .step3-div > p {
+        padding-left: calc(2em);
+        text-align: center;
+    }
 
 .price-container {
     display: flex;
@@ -263,10 +528,17 @@
 .budget {
     height: 70%;
     width: 40%;
+    border-color: var(--green);
 }
 
 .budget-warning {
     font-size: x-small;
     height: 10%;
     color: rgb(247, 41, 41);
+}
+.btn-primary {
+    columns: var(--green);
+}
+.input-radio-div label:hover {
+    background-color: var(--green);
 }

@@ -4,6 +4,7 @@ import Head from "next/head";
 import Button from "../component/button/button";
 import { useState } from "react";
 import Footer from "../component/footer/footer";
+import Image from 'next/image';
 
 import {
   NumberInput,
@@ -92,29 +93,46 @@ export default function Home() {
           crossorigin="anonymous"
         ></link>
       </Head>
+      
       <Header />
       <div className="main-div">
-      
+      <div className="top-div">
     <div className="feature">
 
+    
+    <div className = "margin-div">
+      <div className = "top-middle-div">
+      
         <div className="searchBox-div">
           <div className="top-search-div">
             <div className="pet-service">
               <label for="service">What service would you like?</label>
+              <div className = "select-div">
+              <Image
+              className = 'luggage-icon'
+              src = '/icons8-luggage-96.png'
+              alt = "luggage-icon"
+               width = {100}
+               height = {100}
+              />
               <select name="service" id="pets" className="toggle-box-service">
                 <option value='pet_hosting' alt='Pet Hosting' onClick={handleServiceChange}>Pet Hosting</option>
                 <option value='house_sitting' alt='Home Sitting' onClick={handleServiceChange}>Home Sitting</option>
                 <option value='dog_walking' alt='Dog Walking' onClick={handleServiceChange}>Dog Walking</option>
               </select>
+              </div>
             </div>
 
             <div className="input-box-div">
             
             <label for="input">Near?</label>
-            <svg className="icon" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-		</svg>
+            <Image 
+              className = 'search-icon'
+              src = '/icons8-interface-96.png'
+              alt = "search-icon"
+               width = {100}
+               height = {100}
+              />
               <input
                 name="input"
                 className="input-field"
@@ -124,13 +142,15 @@ export default function Home() {
               />
             </div>
           </div>
+
           <div className="second-search-div">
             <div className="radio-div" name="radio-div">
-              {/* <label for='radio-div'>For what ype of pet?</label> */}
               <>
                 <form>
                 <fieldset className='pet-radio'>
-                  <legend>Select your pet</legend>
+                  <legend>For what type of pet?</legend>
+                  <div className = "pet-radio-box">
+                  <div className = "input-radio-div">
                     <input
                       type="radio"
                       class="btn-check"
@@ -140,23 +160,38 @@ export default function Home() {
                       onClick={handlePetChange}
                       checked={pet === 'pet_dog'}
                     />
+                    <Image
+                      src = "/icons8-dog-sit-90.png"
+                      width = {100}
+                      height = {100}
+                      ></Image>
                     <label class="btn btn-primary" for="dog-btn-check">
                       Dog
                     </label>
+                    </div>
                     <br />
+                    <div className = "input-radio-div">
                     <input
                       type="radio"
                       class="btn-check"
+                      className = "btn-check"
                       id="cat-btn-check"
                       autocomplete="off"
                       value='pet_cat'
                       onClick={handlePetChange}
                       checked={pet === 'pet_cat'}
                     />
+                     <Image
+                      src = "/icons8-pet-commands-stay-100.png"
+                      width = {100}
+                      height = {100}
+                      ></Image>
                     <label class="btn btn-primary" for="cat-btn-check">
                       Cat
                     </label>
+                    </div>
                     <br />
+                    <div className = "input-radio-div">
                     <input
                       type="radio"
                       class="btn-check"
@@ -166,16 +201,24 @@ export default function Home() {
                       onClick={handlePetChange}
                       checked={pet === 'pet_other'}
                     />
+                    <Image
+                      src = "/icons8-easter-rabbit-96.png"
+                      width = {100}
+                      height = {100}
+                      ></Image>
                     <label class="btn btn-primary" for="other-btn-check">
                       Other
                     </label>
+                    </div>
+                    </div>
                 </fieldset>
                 </form>
               </>
             </div>
+
            <div className='price-container'>
                 <div className='text-container'>
-                  <label for='max'>Set your budget {priceString}.</label>
+                  <label  className="budget-label" for='max'>Set your budget {priceString}.</label>
                 </div>
                 <div className='budget-container'>
                   <span class="currencyinput">£
@@ -186,7 +229,7 @@ export default function Home() {
             </div>
           </div>
           <div className="third-search-div">
-            <Calendar style={{width: '30vh'}} />
+            {/* <Calendar style={{width: '30vh'}} /> */}
             <Link
               href={{
                 pathname: "/search",
@@ -200,11 +243,26 @@ export default function Home() {
               passHref
               style={{ textDecoration: "none" }}
             >
+              {/* <Image 
+              className = 'search-icon2'
+              src = '/icons8-interface-96.png'
+              alt = "search-icon"
+               width = {100}
+               height = {100}
+              /> */}
+              <svg className="search-icon2" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+		</svg>
+		
               <Button
                 onClick={() => handleClick}
-                className="sign-up"
-                text="Search"
-              ></Button>
+                className="search-button"
+                text="Search Now"
+              >
+              
+
+              </Button>
             </Link>
           </div>
         </div>
@@ -215,7 +273,46 @@ export default function Home() {
               spend less & worry less
               </h1>
         </div>
+            </div>
+        <div className = "middle-div">
+          <h1>Looking for a sitter doesn't have to be difficult
+              </h1>
         </div>
+        </div>
+      </div>
+      </div>
+     
+      <div className = "bottom-div"> <div className="bottom-margin-div">
+       <h1> How does Pet'BrB work?</h1>
+       
+       <div className = "step1-div"> <Image
+          className = "step1-icon"
+          src = "/icons8-funnel-100.png"
+          width = {100}
+          height ={100}
+          ></Image>
+        <p className= "step1"> 1. Search for pet sitters in an area, for why you want, for where you want, for how much you want, and for when you want</p>
+          </div>
+          <div className = "step2-div">
+        <p>2. Contact your found sitter to get to know them more and how they can help you and your needs for your pets. </p>  <Image
+          className = "step2-icon"
+          src = "/icons8-unread-messages-100.png"
+          width = {100}
+          height ={100}
+          ></Image>
+       </div>
+       <div className = "step3-div">
+       <Image
+          className = "step3-icon"
+          src = "/icons8-handshake-100.png"
+          width = {100}
+          height ={100}
+          ></Image>
+        <p className= "step3">3. Once an agree arrangement is made, you can be free of stress and enjoy your time with your pet!</p>
+       </div>
+      
+      </div>
+      </div>
       </div>
       <Footer />
     </>

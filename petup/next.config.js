@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   reactStrictMode: true,
-//   path: false,
-//   fs: false,
-// }ß
 
-// module.exports = nextConfig
+//  const nextConfig = {
+//  reactStrictMode: true,
+ 
+//  }
+
+//  module.exports = nextConfig
 
 //the module.exports is updated with the following code 
 //to tell webpack not to resolve the module on the client-side(!isServer)

@@ -1,7 +1,5 @@
 import React from "react";
-import Link from "next/link";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import Header from "../component/header/header";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
@@ -9,6 +7,8 @@ import {getSitterByData} from '../lib/search.js'
 import dynamic from 'next/dynamic';
 import Button from "../component/button/button";
 import {useState} from 'react';
+import Link from "next/link";
+
 
 
 const Map = dynamic(
@@ -23,19 +23,17 @@ const Map = dynamic(
 
 //'context' contains request specific parameters, like query parameters, etc.
 export async function getServerSideProps(context){
-//get the city from the query parameter
+//get the input from the query parameter
   const service = (context.query.service);
   const city = (context.query.city);
   const pet = (context.query.pet);
   const budget = (context.query.budget);
-  // //old code below for getting city from useRouter hook:
-  //   const router = useRouter();
-  //   const input = router.query.city;   //data came out as object like this data = {city: input}
 
   //get the data
   const sitterData = await getSitterByData(service, city, pet, budget);
-  
+ 
   //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
+  console.log(sitterData)
   return {
     props: {
       sitterData,
@@ -78,15 +76,20 @@ const Search = ({sitterData}) => {
 
       <Header />
       <div className="search-filter-navbar">
-        <input
+      <div className="navbar-container-search">
+
+      <div className="navbar-input-fieald">
+      <input
           name="input"
           className="search-input-field"
           placeholder="Search"
           type="text"
         />
+      </div>
+        
         
         <div className="search-pet-service">
-          <select name="service" id="pets" className="toggle-box-service">
+          <select name="service" id="pets" className="search-toggle-box-service">
             <option value="Pet hosting">Pet Hosting</option>
             <option value="home sitting">Home Sitting</option>
             <option value="home sitting">Dog Walking</option>
@@ -99,11 +102,17 @@ const Search = ({sitterData}) => {
             <option value="Other">Other</option>
           </select>
         </div>
+        <div className="navbar-button-div">
         <Button className="sign-up" text="Update"></Button>
+        </div>
+       
+        </div>
       </div>
-
+      
       <div className="search-page-main-div">
+      <div className="white-main-div">
 
+      
       <div className="search-result">
 
       {/* <p>this is user input for city: ${city}</p> */}
@@ -111,7 +120,8 @@ const Search = ({sitterData}) => {
 
         {sitterData.map((user) => {
           return (
-            <div className="card-div" key={user.id}>
+            <div className="card-div" key={user.user_id}>
+            <Link href={`/search/${user.user_id}`}>
               <DisplayResults
                 fullname={user.fullname}
                 nickname={user.nickname}
@@ -124,6 +134,7 @@ const Search = ({sitterData}) => {
                 price={user.price}
                 handleClick={() => handleClick(user.latitude, user.longitude)}
               />
+              </Link>
             </div>
           );
         })}</div>
