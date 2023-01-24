@@ -1,6 +1,6 @@
 .sitter-main-div {
     display: flex;
-    height: 80%;
+    min-height: 50rem;
     width: 100%;
     justify-content: center;
     background-color: #cecece;
@@ -8,7 +8,7 @@
 .paragraphs {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
     width: 70%;
     background-color: var(--white);
     /* padding: 2%; */
@@ -17,17 +17,18 @@
     align-content: center;
     align-items: center;
 }
-.paragraphs h1,p {
+/* .paragraphs h1,p {
     /* display: flex;
     flex-direction: column;
-    align-items: center; */
-    margin-top: 1rem;
+    /* align-items: center; */
+    /* margin-top: 1rem; */
   
-}
+/* }   */
 .paragraphs p {
     margin-left: 10em;
     margin-right: 10rem;
 }
-.paragraphs button {
-    margin-top: 3rem;
+.sitter-button {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
