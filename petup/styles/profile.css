@@ -1,0 +1,86 @@
+.profile-page{
+    display: flex;
+    height: 80vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+}
+/* .name-picture-div {
+    display: flex;
+    height: 20rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    color: black;
+}
+.sitter-bio-address {
+    display: flex;
+} */
+.sitter-first-main-div {
+    display: flex;
+    height: 15rem;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+.name-bio-div{
+    display: flex;
+    height: 100%;
+    width: 60%;
+    /* border: 1px solid red;  */
+    flex-direction: column;
+    justify-content: space-around;
+}
+.sitter-pic-div {
+    display: flex;
+    height: 100%;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+}
+.sitter-name-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid blue; */
+    height: 30%;
+    width: 100%;
+}
+.sitter-bio-div {
+    display: flex;
+    /* border: 1px solid white; */
+    width: 100%;
+    height: 50%;
+    align-items: center;
+}
+.h1 {
+    border: 1px solid black;
+    padding: 1rem;
+    min-width: 15rem;
+}
+.sitter-second-main-div {
+    display: flex;
+    border: 1px solid black;
+    height: 20rem;
+    width: 100%;
+    margin-top: 1%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.sitter-address-div {
+    display: flex;
+    border: 1px solid red;
+    height: 30%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.sitter-service-div{
+    display: flex;
+    border: 1px solid red;
+    height: 50%;
+    width: 100%;
+}
+.sitter-address-box{
+    display: flex;
+    justify-content: center;
+}
