@@ -27,6 +27,7 @@ export async function getSitterByData(service, city, petType, budget){
     FROM users 
     WHERE LOWER(address_city) LIKE LOWER($1)
     AND LOWER($2) IS TRUE
+    AND sitting_services_enabled IS TRUE
     AND LOWER($3) IS TRUE
     AND ($4) <= ($5)`, [city, service, petType, serviceRate, budget])
 
