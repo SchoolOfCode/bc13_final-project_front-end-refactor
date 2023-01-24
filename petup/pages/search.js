@@ -1,11 +1,9 @@
 import React from "react";
-import Link from "next/link";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import Header from "../component/header/header";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
-import {getAllSitters} from '../lib/search.js'
+import {getSitterByData} from '../lib/search.js'
 import dynamic from 'next/dynamic';
 import Button from "../component/button/button";
 
@@ -22,20 +20,49 @@ const Map = dynamic(
 
 //'context' contains request specific parameters, like query parameters, etc.
 export async function getServerSideProps(context){
-//get the city from the query parameter
+//get the input from the query parameter
   const service = (context.query.service);
   const city = (context.query.city);
   const pet = (context.query.pet);
   const budget = (context.query.budget);
-  // //old code below for getting city from useRouter hook:
-  //   const router = useRouter();
-  //   const input = router.query.city;   //data came out as object like this data = {city: input}
+  
+  //logic to convert services and pets to boolean
+  let dog_walking = false;
+  let house_sitting = false;
+  let pet_hosting = false;
+  let dog = false;
+  let cat = false;
+  let other = false;
+
+  switch (service) {
+    case '1' : pet_hosting = true; 
+              break;
+    case '2' : house_sitting = true;
+              break;
+    case '3' : dog_walking = true;
+              break;
+    default: console.log('sevices not found');
+  }
+  
+  switch (pet) {
+    case '1' : 
+              cat = true;
+              break;
+    case '2' : 
+              dog = true;
+              break;
+    case '3' :  
+              other = true;
+              break;
+    default: console.log('pets not found');
+  }
+ 
+  console.log(dog_walking, house_sitting, pet_hosting, dog, cat, other)
 
   //get the data
   // const sitterData = await getSitterByData(service, city, pet, budget);
-  const sitterData = await getAllSitters()
-  console.log(sitterData)
-
+  const sitterData = await getSitterByData(city, dog_walking, house_sitting, pet_hosting, budget, dog, cat, other)
+  //const sitterData = await getAllSitters();
   //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
   return {
     props: {

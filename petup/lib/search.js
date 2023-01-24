@@ -15,19 +15,20 @@ export async function getAllSitters() {
 
 export async function getSitterByData(city, dog_walking, house_sitting, pet_hosting, budget, dog, cat, other){
   //get sitter service by city. do direct sql query to database
+ 
   const response = await query(`  
-  SELECT * from users
+    SELECT * from users
     WHERE sitting_services_enabled IS true 
-    AND LOWER (address_city) LIKE LOWER($1)
-    AND dog_walking IS ($2)
-    AND house_sitting IS ($3)
-    AND pet_hosting IS ($4)
-    AND pet_hosting_rate < ($5)
-    AND house_sitting_rate < ($5)
-    AND dog_walking_rate < ($5)
-    AND pet_dog IS ($6)
-    AND pet_cat IS ($7)
-    AND pet_other IS ($8)`, [city, dog_walking, house_sitting, pet_hosting, budget, dog, cat, other]) 
+    AND LOWER (address_city) LIKE LOWER ($1)
+    AND dog_walking IS ${dog_walking}
+    OR house_sitting IS ${house_sitting}
+    OR pet_hosting IS ${pet_hosting}
+    AND pet_hosting_rate < ($2)
+    AND house_sitting_rate < ($2)
+    AND dog_walking_rate < ($2)
+    AND pet_dog IS ${dog}
+    OR pet_cat IS ${cat}
+    OR pet_other IS ${other}`, [city,budget]) 
 
   return response.rows;
   //search is case insensitive 
@@ -54,33 +55,33 @@ export async function getSitterByData(city, dog_walking, house_sitting, pet_host
 
 //   }
 
-  //for dog walking service 
-  export async function getSitterByDogWalking(city, budget){
-    const response = await query(`
-    SELECT * from users
-    WHERE sitting_services_enabled IS true 
-    AND LOWER (address_city) LIKE LOWER($1)
-    AND dog_walking IS true
-    AND pet_dog IS true
-    AND dog_walking_rate < ($2)`, [city, budget]) 
+  // //for dog walking service 
+  // export async function getSitterByDogWalking(city, budget){
+  //   const response = await query(`
+  //   SELECT * from users
+  //   WHERE sitting_services_enabled IS true 
+  //   AND LOWER (address_city) LIKE LOWER($1)
+  //   AND dog_walking IS true
+  //   AND pet_dog IS true
+  //   AND dog_walking_rate < ($2)`, [city, budget]) 
     
-    return response.rows;
+  //   return response.rows;
 
-  }
+  // }
 
-  // for house sitting service 
-  export async function getSitterByHouseSitting(city, budget){
-    const response = await query(`
-    SELECT * from users
-    WHERE sitting_services_enabled IS true 
-    AND LOWER (address_city) LIKE LOWER($1)
-    AND house_sitting IS true
-    AND pet_dog IS true
-    AND dog_walking_rate < ($2)`, [city, budget]) 
+  // // for house sitting service 
+  // export async function getSitterByHouseSitting(city, budget){
+  //   const response = await query(`
+  //   SELECT * from users
+  //   WHERE sitting_services_enabled IS true 
+  //   AND LOWER (address_city) LIKE LOWER($1)
+  //   AND house_sitting IS true
+  //   AND pet_dog IS true
+  //   AND dog_walking_rate < ($2)`, [city, budget]) 
     
-    return response.rows;
+  //   return response.rows;
 
-  }
+  // }
 
 
   // for pet hosting service 
