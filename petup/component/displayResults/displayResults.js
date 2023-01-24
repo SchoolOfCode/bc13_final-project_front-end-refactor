@@ -1,33 +1,28 @@
 import Image from 'next/image' // to use Image component with URL, it needs to be configured in package.json
 
-//data looks like this:
-// {
-//   user_id: 25,
-//   fullname: 'Sunni Wilkerson',
-//   nickname: 'Kenneth',
-//   email: 'donitahoff@hotmail.com',
-//   phone_number: '+231-4545-657-749',
-//   profile_image: 'https://xsgames.co/randomusers/assets/avatars/female/20.jpg',
-//   address_region: 'London',
-//   address_city: 'Westminster',
-//   address_postcode: 'WC2R 2AB',
-//   latitude: 51.509981,
-//   longitude: -0.117073,
-//   service_id: 48,
-//   sitter_id: 25,
-//   tagline: 'florida notebook attitudes postings fighter grant minneapolis evolution ended dimensions',
-//   summary: 'moldova violin metric papers fleet runtime landscape accessed cal percent calculators anne tricks right p by voip friendly reported assets thu dennis believe accomplish affect mug compressed democratic measure dinner',
-//   pet_type: '1',
-//   service_type: '1',
-//   price: 22.08,
-//   how_many_pets: 4,
-//   pet_size: '2'
-// }
-
-//note on pet_service :
-// - pet_type  = {1 : 'cat', 2 : 'dog', 3: 'others'}
-// - service_type = {1: 'pet hosting', 2: 'house sitting', 3: 'dog walking', 4: 'additional services' }
-// - pet_size = {1: 'small', 2: 'medium', 3:'large'}
+//sample of new data: 
+// user_id: 23,
+//     fullname: 'Malisa Roth',
+//     nickname: 'Lela',
+//     email: 'eloisa-miles@yahoo.com',
+//     phone_number: '+58-5410-933-353',
+//     tagline: 'thread hypothesis km tips dip other muslim memory series grip',
+//     profile_image: 'https://xsgames.co/randomusers/assets/avatars/female/34.jpg',
+//     address_region: 'London',
+//     address_city: 'Westminster',
+//     address_postcode: 'WC2E 7AE',
+//     latitude: 51.510077,
+//     longitude: -0.118708,
+//     sitting_services_enabled: true,
+//     dog_walking: true,
+//     house_sitting: true,
+//     pet_hosting: true,
+//     pet_hosting_rate: 34,
+//     house_sitting_rate: 49,
+//     dog_walking_rate: 25,
+//     pet_dog: true,
+//     pet_cat: true,
+//     pet_other: true
 
 export function DisplayResults({
   fullname,
@@ -39,12 +34,16 @@ export function DisplayResults({
   address_region,
   address_city,
   price,
+  handleClick
 }) {
+
 
   return (
     <>
-      <div className="display-card">
+      <button className="display-card" onClick={() => handleClick()}> 
         {/*to refactor later to use Image component from Next.js instead of img tag */}
+      <div className="display-card">
+
 
         <img
           priority
@@ -71,8 +70,9 @@ export function DisplayResults({
           <p>From</p>
           <h1>£{price}</h1>
           <p>per night</p>
-        </div>
       </div>
+      </div>
+      </button>
     </>
   );
 }
