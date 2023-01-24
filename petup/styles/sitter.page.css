@@ -9,17 +9,28 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.title-sitter {
+    margin-top: 0.7rem;
+    margin-bottom: 0.5rem;
+    width: 80%;
+}
+
+.title-sitter h1 {
+    color: black;
+}
 .paragraphs {
     display: flex;
     flex-direction: column;
     min-height: 80%;
-    width: 60%;
+    width: 70%;
     background-color: var(--white);
     /* padding: 2%; */
     /* padding-left: 2%;
     padding-right: 2%; */
     align-content: center;
     align-items: center;
+    text-align: center;
 }
 /* .paragraphs h1,p {
     /* display: flex;
@@ -29,10 +40,27 @@
   
 /* }   */
 .paragraphs p {
-    margin-left: 10em;
-    margin-right: 10rem;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 1em;
 }
 .sitter-button {
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+#text {
+    text-align: center;
+    align-items: center;
+}
+/* why does this button not do fucking text align?! */
+#button {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+span {
+    color: var(--darkblu);
+    font-weight: 500;
 }
