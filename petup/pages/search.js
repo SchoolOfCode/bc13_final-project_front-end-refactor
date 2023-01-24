@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Header from "../component/header/header";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
-import {getSitterByData} from '../lib/search.js'
+import {getAllSitters, getSitterByData} from '../lib/search.js'
 import dynamic from 'next/dynamic';
 import Button from "../component/button/button";
 
@@ -32,8 +32,10 @@ export async function getServerSideProps(context){
   //   const input = router.query.city;   //data came out as object like this data = {city: input}
 
   //get the data
-  const sitterData = await getSitterByData(service, city, pet, budget);
-  
+  // const sitterData = await getSitterByData(service, city, pet, budget);
+  const sitterData = await getAllSitters()
+  console.log(sitterData)
+
   //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
   return {
     props: {
