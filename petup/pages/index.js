@@ -87,6 +87,7 @@ export default function Home() {
       {" "}
       <Head>
         <title>Home</title>
+        <meta name="description" content="PetBrB homepage. Search engine that allows you to search for Pet sitter by location and type of pet care you require. Options between Cat,Dog and Other. Input field with price prompt, for your desired budget."></meta>
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -224,7 +225,7 @@ export default function Home() {
                 <div className='budget-container'>
                   <span class="currencyinput">£
                     <input className='budget' name='max' placeholder='30' pattern="[0-9]+" onChange={handleBudgetChange}/>
-                    <h6 className='budget-warning'>{budgetWarning}</h6>
+                    <p className='budget-warning'>{budgetWarning}</p>
                   </span>
                 </div>
             </div>

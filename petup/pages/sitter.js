@@ -13,13 +13,13 @@ const componentName = () => {
       <Header />
       <div className="sitter-main-div">
         <div className="paragraphs">
-          <h1>Why becoming a sitter?</h1>
+          <h1>Why become a sitter?</h1>
           <p>
-            Are you passionate about working with children and want to make a
+            Are you passionate about working with animals and want to make a
             difference in their lives? Then becoming a sitter with us is the
-            perfect opportunity for you! Our agency connects families with
+            perfect opportunity for you! Our agency connects owners with
             responsible and reliable sitters who can provide a safe and
-            nurturing environment for children.
+            nurturing environment for their pets.
           </p>
           <p>
             As a sitter with our agency, you'll have the opportunity to work
