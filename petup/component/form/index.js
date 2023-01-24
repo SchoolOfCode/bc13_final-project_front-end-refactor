@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 // async function setUserFormData(context) {
 
-//   const { fullName, tagline, region, city, postcode, becomeSitter, petTypes, petHosting, dogWalking, houseSitting } = context;
+//   const { fullName, tagline, address_region, address_city, address_postcode, sitting_services_enabled, petTypes, petHosting, dogWalking, houseSitting } = context;
 
 //   // atm we do not have any phone number data
 //   const phoneNumber = '';
@@ -15,14 +15,14 @@ import { useState } from 'react';
 //     nickname, 
 //     email,
 //     phoneNumber, 
-//     profileImage,
+//     profile_image,
 //     tagline,
-//     region, 
-//     city, 
-//     postcode, 
+//     address_region, 
+//     address_city, 
+//     address_postcode, 
 //     latitude, 
 //     longitude,
-//     becomeSitter,
+//     sitting_services_enabled,
 //     dogWalking.enabled,
 //     houseSitting.enabled,
 //     petHosting.enabled,
@@ -34,11 +34,11 @@ import { useState } from 'react';
 //     petTypes.other);
 // }
 
-// validate postcode with nominatim api
+// validate address_postcode with nominatim api
 // 
 function Form() {
   
-  const [existingUser, setExistingUser] = useState(false);
+  const [existingUser, setExistingUser] = useState(true);
   const [userEmail, setUserEmail] = useState('');
   const [userImage, setUserImage] = useState(''); 
     /** this hook takes in an object as its parameter
@@ -46,56 +46,58 @@ function Form() {
      */
     const formik = useFormik({
       /* 
-      becomeSitter: if true then the user will show up on searches
+      sitting_services_enabled: if true then the user will show up on searches
       petTypes: an object with boolean fields for each type of pet which signifies which pets the user wants to be a sitter for
       petHosting: if true then the user will show up on the filter for petHosting
       houseSitting: if true then the user will show up on the filter for houseSitting
       dogWalking: if true then the user will show up on the filter for dogWalking
        */  
       initialValues: {
-            fullname: existingUser ? userData.fullname : '',
+            fullname: '',
             nickname: '',
             email: userEmail,
-            profileImage: userImage,
-            tagline: existingUser ? userData.tagline : '',
-            region: existingUser ? userData.region : '',
-            city: existingUser ? userData.city : '',
-            postcode: existingUser ? userData.postcode : '',
-            becomeSitter: existingUser ? userData.sitting_services_enabled : false,
-            petTypes: {
-              dog: existingUser ? userData.pet_dog : false,
-              cat: existingUser ? userData.pet_cat : false,
-              other: existingUser ? userData.pet_other : false
-            },
-            petHosting: {
-              enabled: existingUser ? userData.pet_hosting : false,
-              rate: existingUser ? userData.pet_hosting_rate : 0
-            },
-            houseSitting: {
-              enabled: existingUser ? userData.house_sitting : false,
-              rate: existingUser ? userData.house_sitting : 0
-            },
-            dogWalking: {
-              enabled: existingUser ? userData.dog_walking : false,
-              rate: existingUser ? userData.dog_walking_rate : 0
-            }
+            tagline: '',
+            profile_image: userImage,
+            address_region: '',
+            address_city: '',
+            address_postcode: '',
+            latitude: '',
+            longitude: '',
+            sitting_services_enabled: false,
+            dog_walking: false,
+            house_sitting: false,
+            pet_hosting: false,
+            pet_hosting_rate: 0,
+            house_sitting_rate: 0,
+            dog_walking_rate: 0,
+            pet_dog: false,
+            pet_cat: false,
+            pet_other: false
         }, 
         // takes in the values object and creates a function of the devs choice
         // here we can use next query to submit values into database and then refresh the page with a get request to retrieve user data
-        onSubmit: (values, {setSubmitting}) => {
+        onSubmit: async (values, {setSubmitting}) => {
           console.log('values', values);
           setSubmitting(true);
-          // setUserFormData(values);
-          setSubmitting(false);
+          const response = await fetch('http://localhost:3000/api/profile', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: values,
+        });
+        console.log('response', response)  
+        setSubmitting(false);
         },
 
         // validate: (values) => {
         //   let errors = {};
               // if (values.tagline is longer than 140 characters)
-        //   if (values.becomeSitter === true) {
-        //     errors.postcode = 'Required';
-        //     errors.city = 'Required';
-        //     errors.region = 'Required';
+        //   if (values.sitting_services_enabled === true) {
+        //     errors.address_postcode = 'Required';
+        //     errors.address_city = 'Required';
+        //     errors.address_region = 'Required';
         //     errors.fullName = 'Required';
         //     errors.lastName = 'Required';
         //     errors.tagline = 'Required';
@@ -138,36 +140,36 @@ function Form() {
           </div>
 
           <div className='address'>
-            <label htmlFor='city'>City</label>
-            <input type='text' id='city' name='city' onChange={formik.handleChange} value={formik.values.city}/>
+            <label htmlFor='address_city'>City</label>
+            <input type='text' id='address_city' name='address_city' onChange={formik.handleChange} value={formik.values.address_city}/>
 
-            <label htmlFor='region'>Region</label>
-            <input type='text' id='region' name='region' onChange={formik.handleChange} value={formik.values.region}/>
+            <label htmlFor='address_region'>Region</label>
+            <input type='text' id='address_region' name='address_region' onChange={formik.handleChange} value={formik.values.address_region}/>
 
-            <label htmlFor='postcode'>Postcode</label>
-            <input type='text' id='postcode' name='postcode' onChange={formik.handleChange} value={formik.values.postcode}/>
+            <label htmlFor='address_postcode'>Postcode</label>
+            <input type='text' id='address_postcode' name='address_postcode' onChange={formik.handleChange} value={formik.values.address_postcode}/>
           </div>
 
-          <div className='becomeSitter'>
+          <div className='sitting_services_enabled'>
             <h5>Do you wish to enable sitting services?</h5>
-            <label htmlFor='becomeSitter'>
-              <input type='checkbox' name='becomeSitter' value={formik.values.becomeSitter} onClick={formik.handleChange} />
-              { formik.values.becomeSitter ? 'Sitting services are enabled and you will show up on other users searches' : 'Your sitting services are not enabled' }
+            <label htmlFor='sitting_services_enabled'>
+              <input type='checkbox' name='sitting_services_enabled' value={formik.values.sitting_services_enabled} onClick={formik.handleChange} />
+              { formik.values.sitting_services_enabled ? 'Sitting services are enabled and you will show up on other users searches' : 'Your sitting services are not enabled' }
             </label>
           </div>
 
           <div className='petTypes'>
           <label htmlFor='petTypes'>What type of pets would you like to host?</label>
             <label htmlFor='petTypeDog'>
-              <input type='checkbox' name='petTypeDog' value={formik.values.petTypes.dog} onClick={formik.handleChange} />
+              <input type='checkbox' name='petTypeDog' value={formik.values.pet_dog} onClick={formik.handleChange} />
               Dog
             </label>
             <label htmlFor='petTypeCat'>
-              <input type='checkbox' name='petTypeCat' value={formik.values.petTypes.cat} onClick={formik.handleChange} />
+              <input type='checkbox' name='petTypeCat' value={formik.values.pet_cat} onClick={formik.handleChange} />
               Cat
             </label>
             <label htmlFor='petTypeOther'>
-              <input type='checkbox' name='petTypeOther' value={formik.values.petTypes.other} onClick={formik.handleChange} />
+              <input type='checkbox' name='petTypeOther' value={formik.values.pet_other} onClick={formik.handleChange} />
               Other
             </label>
           </div>
@@ -177,33 +179,33 @@ function Form() {
 
             <div className='petHosting'>
               <label htmlFor='petHosting'>
-                <input type='checkbox' name='petHosting' value={formik.values.petHosting.enabled} onClick={formik.handleChange}/>
+                <input type='checkbox' name='petHosting' value={formik.values.pet_hosting} onClick={formik.handleChange}/>
                 Pet Hosting
               </label>
               <label htmlFor='petHostingRate'>
-                <input type='number' name='petHostingRate' value={formik.values.petHosting.rate} onChange={formik.handleChange}/>
+                <input type='number' name='petHostingRate' value={formik.values.pet_hosting_rate} onChange={formik.handleChange}/>
                 for how much? {'(per night)'}
               </label>
             </div>
 
             <div className='houseSitting'>
               <label htmlFor='houseSitting'>
-                <input type='checkbox' name='houseSitting' value={formik.values.houseSitting.enabled} onClick={formik.handleChange}/>
+                <input type='checkbox' name='houseSitting' value={formik.values.house_sitting} onClick={formik.handleChange}/>
                 House Sitting
               </label>
               <label htmlFor='houseSittingRate'>
-                <input type='number' name='houseSittingRate' value={formik.values.houseSitting.rate} onChange={formik.handleChange}/>
+                <input type='number' name='houseSittingRate' value={formik.values.house_sitting_rate} onChange={formik.handleChange}/>
                 for how much? {'(per night)'}
               </label>
             </div>
 
             <div className='dogWalking'>
               <label htmlFor='dogWalking'>
-                <input type='checkbox' name='dogWalking' value={formik.values.dogWalking.enabled} onClick={formik.handleChange}/>
+                <input type='checkbox' name='dogWalking' value={formik.values.dog_walking} onClick={formik.handleChange}/>
                 Dog Walking
               </label>
               <label htmlFor='dogWalkingRate'>
-                <input type='number' name='dogWalkingRate' value={formik.values.dogWalking.rate} onChange={formik.handleChange}/>
+                <input type='number' name='dogWalkingRate' value={formik.values.dog_walking_rate} onChange={formik.handleChange}/>
                 for how much? {'(per hour)'}
               </label>
             </div>
