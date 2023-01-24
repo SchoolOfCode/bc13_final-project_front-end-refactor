@@ -2,7 +2,7 @@
 
 .main-div {
 
-    height: 80%;
+    /* height: 80%; */
     max-width: 100%;
     display: flex;
     align-items: flex-start;
@@ -14,7 +14,7 @@
 }
 
 .top-div {
-    height: 70%;
+    height: 40rem;
     min-width: 100%;
     display: flex;
     align-items: center;
@@ -118,7 +118,7 @@
     height: 100%;
     width: 40%;
     float: left;
-    font-size: medium;
+    font-size: small;
 }
 
 .select-div {
@@ -165,14 +165,14 @@
     height: 100%;
     width: 40%;
     float: left;
-    font-size: medium;
+    font-size: small;
 }
 
 .search-icon {
     position: absolute;
     margin: 2.2em 0.5em;
-    width: 18px;
-    height: 18px;
+    width: 1rem;
+    height: 1rem;
     margin-right: 4px;
     float: left;
 }
@@ -209,6 +209,8 @@
     justify-content: space-around;
     height: 20%;
     width: 100%;
+    margin:0;
+    padding: 0;
 }
 
 .radio-div {
@@ -219,7 +221,7 @@
     /* gap: 1vw; */
     /* flex-direction: column; */
     /* width: 30vw; */
-    width: 40%;
+    width: 60%;
     height: 100%;
     /* border: 2px solid transparent; */
     
@@ -237,7 +239,7 @@
 }
 
 .pet-radio>legend {
-    font-size: medium;
+    font-size: small;
 }
 
 .pet-radio-box {
@@ -245,10 +247,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 
 }
 
 .input-radio-div {
+    height: 100%;
     width: 100%;
 }
 
@@ -267,13 +271,14 @@
     font-size: 12px;
     border-color: grey;
     border-radius: 0;
-    width: 100%;
+    height: 2rem;
+    min-width: 6rem;
     padding-left: calc(1em + 10px + 15px);
 
 }
 
 .budget-label {
-    font-size: medium;
+    font-size: small;
 }
 
 
@@ -444,13 +449,13 @@
 }
 
 .bottom-margin-div {
-    height: 100%;
+    height: 15rem;
     width: 100%;
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: middle;
-    padding-top: 1rem;
+    justify-content: center;
+    /* padding-top: 1rem; */
     flex-direction: column;
 }
 
@@ -484,42 +489,48 @@
 }
 
 .step1-icon {
-    position: relative;
-    width: 30px;
-    height: 30px;
+    /* position: relative; */
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
 .step1-div>p {
-    padding-left: calc(2em);
-    text-align: center;
+    margin-left: 0.5rem;
     font-size: medium;
 }
 
 .step2-icon {
-    position: relative;
-    width: 30px;
-    height: 30px;
+    /* position: relative; */
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
 
 .step2-div>p {
-    padding-right: calc(2em);
-    text-align: center;
+    margin-right: 0.5rem;
     font-size: medium;
 }
 
 
 
 .step3-icon {
-    position: relative;
-    width: 30px;
-    height: 30px;
+    /* position: relative; */
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
 .step3-div>p {
-    padding-left: calc(2em);
+    /* padding-left: calc(2em);
     text-align: center;
+    font-size: medium; */
+    margin-left: 0.5rem;
     font-size: medium;
+}
+.step1-div, .step2-div, .step3-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .price-container {

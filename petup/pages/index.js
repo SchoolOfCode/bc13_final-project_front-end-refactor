@@ -223,7 +223,7 @@ export default function Home() {
 
            <div className='price-container'>
                 <div className='text-container'>
-                  <label  className="budget-label" for='max'>Set your budget {priceString}.</label>
+                  <label  className="budget-label" for='max'>Budget? {priceString}.</label>
                 </div>
                 <div className='budget-container'>
                   <span class="currencyinput">£
@@ -297,7 +297,7 @@ export default function Home() {
           height ={100}
           alt="small-icon-funnel"
           ></Image>
-        <p className= "step1"> 1. Search for pet sitters in an area, for why you want, for where you want, for how much you want, and for when you want</p>
+        <p className= "step1"> 1. Search for pet sitters in an area, for where you want, for how much you want, and for when you want</p>
           </div>
           <div className = "step2-div">
         <p>2. Contact your found sitter to get to know them more and how they can help you and your needs for your pets. </p>  <Image

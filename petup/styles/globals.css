@@ -18,7 +18,9 @@ html, body , #__next{
   --main-yellow: #eeeeee;
   --green: #489FB5;
   --white: #EDE7E3;
-  --orange: #FFA62B;
+  /* --old: E08304 */
+  --orange: #E08304;
   --gray: #737373;
   --darkblu: #16697A;
 }
+/* FFA62B */
