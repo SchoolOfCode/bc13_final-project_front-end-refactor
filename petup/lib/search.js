@@ -13,22 +13,17 @@ export async function getAllSitters() {
     return res.rows;
 }
 
-export async function getSitterByData(city, dog_walking, house_sitting, pet_hosting, budget, dog, cat, other){
+export async function getSitterByData(service, city, pet, budget){
   //get sitter service by city. do direct sql query to database
- 
   const response = await query(`  
-    SELECT * from users
-    WHERE sitting_services_enabled IS true 
-    AND LOWER (address_city) LIKE LOWER ($1)
-    AND dog_walking IS ${dog_walking}
-    OR house_sitting IS ${house_sitting}
-    OR pet_hosting IS ${pet_hosting}
-    AND pet_hosting_rate < ($2)
-    AND house_sitting_rate < ($2)
-    AND dog_walking_rate < ($2)
-    AND pet_dog IS ${dog}
-    OR pet_cat IS ${cat}
-    OR pet_other IS ${other}`, [city,budget]) 
+  SELECT * 
+  FROM users 
+  INNER JOIN pet_service 
+  ON users.user_id = pet_service.sitter_id 
+  WHERE LOWER(address_city) LIKE LOWER($1)
+  AND LOWER(service_type) LIKE LOWER($2)
+  AND LOWER(pet_type) LIKE LOWER($3)
+  AND (price) < ($4)`, [city, service, pet, budget])
 
   return response.rows;
   //search is case insensitive 
@@ -58,60 +53,9 @@ export async function getSitterbyID(ID){
   return response.rows;
 }
 
-// export async function getSitterByData(service, city, pet, budget){
-//     //get sitter service by city. do direct sql query to database
-//     const response = await query(`  
-//     SELECT * 
-//     FROM users 
-//     INNER JOIN pet_service 
-//     ON users.user_id = pet_service.sitter_id 
-//     WHERE LOWER(address_city) LIKE LOWER($1)
-//     AND LOWER(service_type) LIKE LOWER($2)
-//     AND LOWER(pet_type) LIKE LOWER($3)
-//     AND (price) < ($4)`, [city, service, pet, budget])
-
-//     return response.rows;
-//     //search is case insensitive 
-//     //refactor later to use wildcard expression '%'
-
-//   }
-
-  // //for dog walking service 
-  // export async function getSitterByDogWalking(city, budget){
-  //   const response = await query(`
-  //   SELECT * from users
-  //   WHERE sitting_services_enabled IS true 
-  //   AND LOWER (address_city) LIKE LOWER($1)
-  //   AND dog_walking IS true
-  //   AND pet_dog IS true
-  //   AND dog_walking_rate < ($2)`, [city, budget]) 
-    
-  //   return response.rows;
-
-  // }
-
-  // // for house sitting service 
-  // export async function getSitterByHouseSitting(city, budget){
-  //   const response = await query(`
-  //   SELECT * from users
-  //   WHERE sitting_services_enabled IS true 
-  //   AND LOWER (address_city) LIKE LOWER($1)
-  //   AND house_sitting IS true
-  //   AND pet_dog IS true
-  //   AND dog_walking_rate < ($2)`, [city, budget]) 
-    
-  //   return response.rows;
-
-  // }
 
 
-  // for pet hosting service 
-//refactor this function to give data based on the filter below:
-// 1. get all service by city(for utmost basic search, no filter)
-// 2. get service by city and type of pets (1 filter)
-// 3. get service by city, type of service, type of pet  (2 and 3 can be combined)
-// 4. get service by city, type of service, type of pet, price range (min and max)
-// 5. get service by city, type of service, type of pet, proce range, date of availability
+ 
 
 
 

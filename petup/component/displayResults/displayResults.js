@@ -45,7 +45,6 @@ export function DisplayResults({
   return (
     <>
       <div className="display-card">
-        {/*to refactor later to use Image component from Next.js instead of img tag */}
 
         <img
           priority
