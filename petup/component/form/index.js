@@ -1,61 +1,46 @@
 import { useFormik, Formik } from 'formik';
-import Link from 'next/link';
-import { useSession } from 'next-auth/react';
-import { setUserData, checkUserExists, getUserData } from '../../lib/search';
+import { useState } from 'react';
 
-const { data: session, status } = useSession()
-const userEmail = session?.user.email;
-const userImage = session?.user.image;
+// async function setUserFormData(context) {
 
-async function getServerSideProps(userEmail) {
-  const userData = getUserData(userEmail)
+//   const { fullName, tagline, region, city, postcode, becomeSitter, petTypes, petHosting, dogWalking, houseSitting } = context;
 
-    return {
-      props: {
-        userData
-      }
-    }
-}
+//   // atm we do not have any phone number data
+//   const phoneNumber = '';
+//   // WE NEED THE PROFILE IMAGE text link here
+//   // LAT AND LONG based on the value retrieved from the API
 
-async function setUserFormData(context) {
-
-  const { fullName, tagline, region, city, postcode, becomeSitter, petTypes, petHosting, dogWalking, houseSitting } = context;
-
-  // atm we do not have any phone number data
-  const phoneNumber = '';
-  // WE NEED THE PROFILE IMAGE text link here
-  // LAT AND LONG based on the value retrieved from the API
-
-  const setUserData = await setUserData(
-    fullname, 
-    nickname, 
-    email,
-    phoneNumber, 
-    profileImage,
-    tagline,
-    region, 
-    city, 
-    postcode, 
-    latitude, 
-    longitude,
-    becomeSitter,
-    dogWalking.enabled,
-    houseSitting.enabled,
-    petHosting.enabled,
-    petHosting.rate,
-    houseSitting.rate,
-    dogWalking.rate,
-    petTypes.dog,
-    petTypes.cat,
-    petTypes.other);
-}
+//   const setUserData = await setUserData(
+//     fullname, 
+//     nickname, 
+//     email,
+//     phoneNumber, 
+//     profileImage,
+//     tagline,
+//     region, 
+//     city, 
+//     postcode, 
+//     latitude, 
+//     longitude,
+//     becomeSitter,
+//     dogWalking.enabled,
+//     houseSitting.enabled,
+//     petHosting.enabled,
+//     petHosting.rate,
+//     houseSitting.rate,
+//     dogWalking.rate,
+//     petTypes.dog,
+//     petTypes.cat,
+//     petTypes.other);
+// }
 
 // validate postcode with nominatim api
-
-function Form({ userData }) {
-
-  const [isExistingUser, setIsExistingUser] = useState(checkUserExists(userEmail));
+// 
+function Form() {
   
+  const [existingUser, setExistingUser] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
+  const [userImage, setUserImage] = useState(''); 
     /** this hook takes in an object as its parameter
      * this will then allow us to get back an object which contains a variety of props and methods we can use with out form
      */
@@ -100,7 +85,7 @@ function Form({ userData }) {
         onSubmit: (values, {setSubmitting}) => {
           console.log('values', values);
           setSubmitting(true);
-          setUserFormData(values);
+          // setUserFormData(values);
           setSubmitting(false);
         },
 
@@ -149,7 +134,7 @@ function Form({ userData }) {
 
           <div className='tagline'>
             <label htmlFor='tagline'>Bio</label>
-            <input type='text' id='tagline' name='tagline' maxlength={140} onChange={formik.handleChange} value={formik.values.tagline}/>
+            <input type='text' id='tagline' name='tagline' maxLength={140} onChange={formik.handleChange} value={formik.values.tagline}/>
           </div>
 
           <div className='address'>

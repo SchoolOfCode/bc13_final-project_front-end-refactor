@@ -26,11 +26,11 @@ export async function getSitterByData(service, city, petType, budget){
   const response = await query(`SELECT * 
     FROM users 
     WHERE LOWER(address_city) LIKE LOWER($1)
-    AND LOWER($2) IS TRUE
+    AND ${service} IS TRUE
     AND sitting_services_enabled IS TRUE
-    AND LOWER($3) IS TRUE
-    AND ($4) <= ($5)`, [city, service, petType, serviceRate, budget])
-
+    AND ${petType} IS TRUE
+    AND ${serviceRate} <= ($2)`, [city, budget])
+  //service, petType, serviceRate, 
     return response.rows;
     //search is case insensitive 
     //refactor later to use wildcard expression '%
