@@ -10,7 +10,7 @@ import {useState} from 'react';
 import Link from "next/link";
 
 
-
+//test
 const Map = dynamic(
     () => import('../component/map/index.js'), // replace '@components/map' with your component's location
     { ssr: false } // This line is important. It's what prevents server-side render
