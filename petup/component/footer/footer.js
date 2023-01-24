@@ -11,7 +11,7 @@ const Footer = () => {
         </Link>
         <img
           src="https://i.ibb.co/6D4qNm8/petbrb-high-resolution-logo-white-on-transparent-background.png"
-          alt="foe"
+          alt="PetBrB-logo"
           style={{width: '10rem', height: '2rem'}}
         ></img>
         {/* <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" 

@@ -51,7 +51,7 @@ export function DisplayResults({
           className="profile-img"
           // height= {144}
           // width= {144}
-          alt="profile picture"
+          alt="profile-picture"
         />
         <div className="main-taglines">
           <h1>{nickname}</h1>
