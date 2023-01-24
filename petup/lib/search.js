@@ -36,6 +36,27 @@ export async function getSitterByData(city, dog_walking, house_sitting, pet_host
 
 }
 
+export async function getAllSitterID(){
+ 
+  const response = await query(`SELECT * from users`) 
+  const arrayID = response.rows;
+  
+  return arrayID.map((user) => {
+    return {
+      params: {
+        id: String(user.user_id),
+      },
+    };
+  });
+
+}
+
+export async function getSitterbyID(ID){
+  const response = await query (`SELECT * from users
+  WHERE user_id = $1`, [ID])
+
+  return response.rows;
+}
 
 // export async function getSitterByData(service, city, pet, budget){
 //     //get sitter service by city. do direct sql query to database

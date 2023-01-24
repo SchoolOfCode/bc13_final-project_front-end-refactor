@@ -4,31 +4,56 @@
 ///export getStaticProps to fetch required data to render this dynamic page
 
 //import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getAllSitterID, getSitterbyID } from '../../lib/search.js';
 import Head from 'next/head';
+import Image from 'next/image';
 //import Date from '../../components/date';
 //import utilStyles from '../../styles/utils.module.css';
 
 //this page will render post page with the same Layout 
 //for each dynamic post page. 
 
-export default function Post({ postData }) {
+export default function Post({ sData }) {
+    const sitterData = sData[0];
     return (
       <>
         <Head>
-        <title>{postData.title}</title>
+        <title>{sitterData.nickname}</title>
         </Head>
         
-        <article>
-             <h1 className = {utilStyles.headingXl}>{postData.id}</h1>
-            <div className= {utilStyles.lightText}>
-              {/* {postData.date} */}
-              <Date dateString={postData.date} />
-            </div>
+             <h1 >{sitterData.fullname}</h1>
+
+             <div className="display-card">
+        {/*to refactor later to use Image component from Next.js instead of img tag */}
+
+        <img
+          priority
+          src={sitterData.profile_image}
+          className="profile-img"
+          // height= {144}
+          // width= {144}
+          alt="profile picture"
+        />
+        <div className="main-taglines">
+          <h1>{sitterData.nickname}</h1>
+          <h2>"{sitterData.tagline}"</h2>
+          <h3>
+            {sitterData.address_region},{sitterData.address_city}
+          </h3>
+          <div className="email-and-icon-div">
+            
+            <Image src="/icons8-secured-letter-50.png" width="25" height="25" alt= "email-icon"/>
+              <p>{sitterData.email}</p>
+          </div>
+        </div>
+        <div className="rate">
+    
+        </div>
+      </div>
+    </>
         
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </article>
-      </>
+            
+    
     );
   }
 
@@ -37,7 +62,8 @@ export default function Post({ postData }) {
 
 export async function getStaticPaths() {
     // Return a list of possible value for id
-    const paths = getAllPostIds();
+    const paths = await getAllSitterID();
+    console.log(paths)
   return {
     paths,
     fallback: false,
@@ -65,10 +91,11 @@ export async function getStaticPaths() {
     //so we can access params.id in getStaticProps
   export async function getStaticProps({ params }) {
     // Fetch necessary data for the blog post using params.id
-    const postData = await getPostData(params.id);
+    const sData = await getSitterbyID(params.id);
+    
   return {
     props: {
-      postData,
+      sData,
     },
   };
   }
