@@ -119,6 +119,7 @@ const Search = ({sitterData}) => {
        
 
         {sitterData.map((user) => {
+          const price = Math.max(user.dog_walking_rate, user.pet_hosting_rate, user.house_sitting_rate)
           return (
             <div className="card-div" key={user.user_id}>
             <Link href={`/search/${user.user_id}`}>
@@ -131,17 +132,19 @@ const Search = ({sitterData}) => {
                 tagline={user.tagline}
                 address_region={user.address_region}
                 address_city={user.address_city}
-                price={user.price}
+                price={price}
                 handleClick={() => handleClick(user.latitude, user.longitude)}
               />
               </Link>
             </div>
           );
         })}</div>
+
         <div className="map-div">
           <Map sitterData={sitterData} coordinates={coordinates}/>
         </div>
         
+      </div>
       </div>
       <Footer />
     </>

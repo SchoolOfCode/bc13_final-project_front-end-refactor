@@ -35,14 +35,7 @@ export function DisplayResults({
   address_city,
   price,
   handleClick
-  pet_hosting_rate,
-  house_sitting_rate,
-  dog_walking_rate
-
 }) {
-
-  //compute the lowest rate 
-  const minRate = Math.min(pet_hosting_rate, house_sitting_rate, dog_walking_rate);
 
 
   return (
@@ -77,6 +70,7 @@ export function DisplayResults({
           <p>From</p>
           <h1>£{price}</h1>
           <p>per night</p>
+      </div>
       </div>
       </button>
     </>
