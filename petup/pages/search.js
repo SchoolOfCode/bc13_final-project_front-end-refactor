@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Header from "../component/header/header";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
-import {getAllSitters, getSitterByData} from '../lib/search.js'
+import {getAllSitters} from '../lib/search.js'
 import dynamic from 'next/dynamic';
 import Button from "../component/button/button";
 
