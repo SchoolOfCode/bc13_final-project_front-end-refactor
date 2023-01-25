@@ -103,7 +103,7 @@ const Search = ({sitterData}) => {
           const price = Math.max(user.dog_walking_rate, user.pet_hosting_rate, user.house_sitting_rate)
           return (
             <div className="card-div" key={user.user_id}>
-            <Link href={`/search/${user.user_id}`}>
+            <Link href={`/search/${user.user_id}`} style={{textDecoration: 'none', cursor:'pointer'}}>
               <DisplayResults
                 fullname={user.fullname}
                 nickname={user.nickname}
