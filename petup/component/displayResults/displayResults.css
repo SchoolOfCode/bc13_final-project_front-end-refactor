@@ -14,8 +14,12 @@
     /* box-shadow: 10px 10px 10px -10px #888; */
     /* border: 1px solid gray; */
     margin: 1%;
-   
+    
+}
 
+.display-card:hover {
+   transform:scale(1.03);
+   cursor: pointer;
 }
 .display-card > img {
     display: flex;
@@ -51,6 +55,7 @@
 .main-taglines h1, h3, h2, p {
     margin: 0;
     padding: 0;
+    display: flex;
 }
 .main-taglines > h1{
    font-weight: 700;
@@ -63,11 +68,11 @@
 .main-taglines > h2{
     font-weight: 300;
     color: gray;
-    /* border: solid 1px green; */
     font-size: medium;
     font-style: italic;
     margin: 3px 0px 3px 0px;
     max-width:85%;
+    text-align: left;
  }
 
  .main-taglines > h3 {

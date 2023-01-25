@@ -8,7 +8,7 @@ const Map = ({sitterData, coordinates}) => {
   const [centerCoord, setCenterCoord] = useState({lat: coordinates[0], long: coordinates[1]});
 
   return (
-        <MapContainer className= "container" center={[centerCoord.lat, centerCoord.long]} zoom={13} scrollWheelZoom={false}>
+        <MapContainer className= "container" center={[centerCoord.lat, centerCoord.long]} zoom={13} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
