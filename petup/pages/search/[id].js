@@ -92,14 +92,14 @@ export default function Post({ sData }) {
         {/* <img
 
         {/* back button */}
-        <div className = "back-button" >
-                <button className = "sign-in" onClick={() => router.back()}>Return to results</button>
+        {/* <div className = "back-button" > */}
+                {/* <button className = "sign-in" onClick={() => router.back()}>Return to results</button>
             </div>
         
 
-        <div className="profile-page">
+        <div className="profile-page"> */}
         
-        <img
+        {/* <img
 
           priority
           src={sitterData.profile_image}
@@ -107,7 +107,7 @@ export default function Post({ sData }) {
           height= {144}
             width= {144}
           alt="profile picture"
-        /> */}
+        />  */}
       {/* <div className="main-info">
           {/* <h1>Name</h1>
           <h2>{sitterData.fullname}</h2> */}
