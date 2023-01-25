@@ -10,7 +10,6 @@ import {useState} from 'react';
 import Link from "next/link";
 
 
-//test
 const Map = dynamic(
     () => import('../component/map/index.js'), // replace '@components/map' with your component's location
     { ssr: false } // This line is important. It's what prevents server-side render
@@ -44,20 +43,6 @@ export async function getServerSideProps(context){
 
 
 const Search = ({sitterData}) => {
- /* 
- //console.log(sitterData)
-//console.log(`this is user input for city: ${city}`)
-
-  //below is some old code from getting local data
-  // function getData() {
-  //   const response = getAllUsers(); //response is already parsed into JS object
-  //   // const data = response.json() // no need to parse again. 
-  //   return response;
-  // }
-  // const response = getData(); //fetch all data
-  // const result = citySearch(response, input); //get user that matches city input
-  */   
-  
 
   // map component needs cetner coordinates to put on the mpa as an [0,0] data 
   // depending on which card is clicked, we need to update a state here with that users coordinates, by setting them
@@ -113,11 +98,7 @@ const Search = ({sitterData}) => {
       <div className="white-main-div">
 
       
-      <div className="search-result">
-
-      {/* <p>this is user input for city: ${city}</p> */}
-       
-
+      <div className="search-result">       
         {sitterData.map((user) => {
           const price = Math.max(user.dog_walking_rate, user.pet_hosting_rate, user.house_sitting_rate)
           return (
@@ -153,5 +134,3 @@ const Search = ({sitterData}) => {
 
 export default Search;
 
-
-//refactor later to use dynamic routing?  
