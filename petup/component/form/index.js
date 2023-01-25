@@ -92,7 +92,8 @@ function Form() {
         const updatedUser = parsedResponse
         console.log(updatedUser)
 
-        alert("Profile is updated")
+        //alert("Profile is updated")
+       
         setSubmitting(false);
         },
 
