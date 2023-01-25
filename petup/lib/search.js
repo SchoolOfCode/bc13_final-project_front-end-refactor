@@ -1,7 +1,6 @@
 //this script is for fetching external data into our app. 
 //either fetch exernal API database or query database directly. 
 
-import { user } from '../db/sampledata' // this is old dummy data. will refactor to show newer data
 import {query} from '../db/index' // import query function for writing SQL query
 
 
@@ -109,30 +108,29 @@ pet_other = $21
   pet_other
       ])
 
-      return updatedUser.rows;
+      return updatedUser.rows[0];
   } else {
-    const createdUser = await query(`INSERT INTO users 
-      (fullname = $1,
-        nickname = $2,
-        email = $3,
-        phone_number = $4,
-        tagline = $5,
-        profile_image = $6,
-        address_region = $7,
-        address_city = $8,
-        address_postcode = $9,
-        latitude = $10,
-        longitude = $11,
-        sitting_services_enabled = $12,
-    dog_walking = $13,
-    house_sitting = $14,
-    pet_hosting = $15,
-    pet_hosting_rate = $16,
-    house_sitting_rate = $17,
-    dog_walking_rate = $18,
-    pet_dog = $19,
-    pet_cat = $20,
-    pet_other = $21) 
+    const createdUser = await query(`INSERT INTO users (fullname,
+      nickname,
+      email,
+      phone_number,
+      tagline,
+      profile_image,
+      address_region,
+      address_city,
+      address_postcode,
+      latitude,
+      longitude,
+      sitting_services_enabled,
+dog_walking,
+house_sitting,
+pet_hosting,
+pet_hosting_rate,
+house_sitting_rate,
+dog_walking_rate,
+pet_dog,
+pet_cat,
+pet_other)
       VALUES (
         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21
       )
@@ -160,7 +158,7 @@ pet_other = $21
   pet_other
       ])
 
-      return createdUser.rows;
+      return createdUser.rows[0];
   }
 }
 
