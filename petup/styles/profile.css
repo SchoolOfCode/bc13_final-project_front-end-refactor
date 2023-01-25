@@ -104,3 +104,13 @@
     justify-content: center;
     border: 1px solid red;
 }
+.data-box{
+    display: flex;
+    max-height: 20%;
+    border: 1px solid black
+    ;
+}
+.data-box > img {
+    height: 2rem;
+    width: 2rem;
+}

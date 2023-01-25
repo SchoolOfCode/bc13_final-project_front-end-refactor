@@ -63,7 +63,7 @@ export default function Post({ sData }) {
             <div className="sitter-service-box">
               <h2>Pet hosted</h2>
               {sitterData.pet_dog ? (
-              <div className="input-radio-div">
+              <div className="data-box">
                 <Image
                   src="/icons8-dog-sit-90.png"
                   width={100}
@@ -75,7 +75,7 @@ export default function Post({ sData }) {
               <></>
             )}
             {sitterData.pet_cat ? (
-              <div className="input-radio-div">
+              <div className="data-box">
                 {" "}
                 <Image
                   src="/icons8-pet-commands-stay-100.png"
@@ -88,7 +88,7 @@ export default function Post({ sData }) {
               <></>
             )}
             {sitterData.pet_other ? (
-              <div className="input-radio-div">
+              <div className="data-box">
                 <Image
                   src="/icons8-easter-rabbit-96.png"
                   width={100}
@@ -103,7 +103,7 @@ export default function Post({ sData }) {
             <div className="sitter-service-box">
               <h2>Service</h2>
               {sitterData.pet_hosting ? (
-              <div className="input-radio-div">
+              <div className="data-box">
                 <Image
                   src="/icons8-pet-commands-stay-100.png"
                   width={100}
@@ -115,7 +115,7 @@ export default function Post({ sData }) {
               <></>
             )}
             {sitterData.house_sitting ? (
-              <div className="input-radio-div">
+              <div className="data-box">
                 <Image
                   src="/icons8-pet-commands-stay-100.png"
                   width={100}
@@ -127,7 +127,7 @@ export default function Post({ sData }) {
               <></>
             )}
             {sitterData.dog_walking ? (
-              <div className="input-radio-div">
+              <div className="data-box">
                 <Image
                   src="/icons8-pet-commands-stay-100.png"
                   width={100}
@@ -142,21 +142,21 @@ export default function Post({ sData }) {
             <div className="sitter-service-box">
               <h2>Rate</h2>
               {sitterData.pet_hosting ? (
-              <div className="input-radio-div">
+              <div className="data-box">
                 <p>GBP {sitterData.pet_hosting_rate}</p>
               </div>
             ) : (
               <></>
             )}
             {sitterData.house_sitting ? (
-              <div className="input-radio-div">
+              <div className="data-box">
               <p>GBP {sitterData.house_sitting_rate}</p>
               </div>
             ) : (
               <></>
             )}
             {sitterData.dog_walking ? (
-              <div className="input-radio-div">
+              <div className="data-box">
               <p>GBP {sitterData.dog_walking_rate}</p>
               </div>
             ) : (
