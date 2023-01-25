@@ -221,7 +221,7 @@ export default function Home() {
             </div>
 
            <div className='price-container'>
-                  <legend  className="budget-label" for='max'>For how much? {priceString}.</legend>
+                  <legend  className="budget-label" for='max'>For how much? {priceString}</legend>
                 <div className='budget-container'>
                   <input className='budget' name='min' placeholder='Min £0'/>
                     <input className='budget' name='max' placeholder='Max £100' pattern="[0-9]+" onChange={handleBudgetChange}/>
@@ -231,7 +231,7 @@ export default function Home() {
           </div>
 
           <div className="third-search-div">
-          <div className = "date-div">
+          {/* <div className = "date-div">
           <label for="date-search">Dates</label>
             <div className = "date-search">
               <p> Start date </p>  <Image
@@ -241,7 +241,7 @@ export default function Home() {
                       alt=" chevron-right"
                       ></Image> <p>End date</p>
             </div>
-            </div>
+            </div> */}
 
             <Link
               href={{
