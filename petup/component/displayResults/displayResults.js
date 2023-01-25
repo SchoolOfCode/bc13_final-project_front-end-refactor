@@ -41,7 +41,6 @@ export function DisplayResults({
   return (
     <>
       <button className="display-card" onClick={() => handleClick()}> 
-        {/*to refactor later to use Image component from Next.js instead of img tag */}
       <div className="display-card">
 
 
@@ -49,8 +48,6 @@ export function DisplayResults({
           priority
           src={profile_image}
           className="profile-img"
-          // height= {144}
-          // width= {144}
           alt="profile-picture"
         />
         <div className="main-taglines">
@@ -66,7 +63,6 @@ export function DisplayResults({
           </div>
         </div>
         <div className="rate">
-          {/* <p>{address.street}, {address.city}</p> */}
           <p>From</p>
           <h1>£{price}</h1>
           <p>per night</p>
