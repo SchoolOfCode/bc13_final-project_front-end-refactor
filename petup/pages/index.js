@@ -34,6 +34,7 @@ export default function Home() {
   const [pet, setPet] = useState('pet_dog')
   const [priceString, setPriceString] = useState('(per night)');
   const [budgetWarning, setBudgetWarning] = useState('')
+ 
 
   function handleCityChange(e) {
     setCity(e.target.value);
@@ -152,6 +153,7 @@ export default function Home() {
                   <legend>For what type of pet?</legend>
                   <div className = "pet-radio-box">
                   <div className = "input-radio-div">
+                  <label class="btn btn-primary" for="dog-btn-check">
                     <input
                       type="radio"
                       class="btn-check"
@@ -167,12 +169,12 @@ export default function Home() {
                       height = {100}
                       alt="dog-icon-sitting"
                       ></Image>
-                    <label class="btn btn-primary" for="dog-btn-check">
                       Dog
                     </label>
                     </div>
                     <br />
                     <div className = "input-radio-div">
+                    <label class="btn btn-primary" for="cat-btn-check">
                     <input
                       type="radio"
                       class="btn-check"
@@ -189,12 +191,12 @@ export default function Home() {
                       height = {100}
                       alt=" cat-icon"
                       ></Image>
-                    <label class="btn btn-primary" for="cat-btn-check">
                       Cat
                     </label>
                     </div>
                     <br />
                     <div className = "input-radio-div">
+                    <label class="btn btn-primary" for="other-btn-check">
                     <input
                       type="radio"
                       class="btn-check"
@@ -210,7 +212,6 @@ export default function Home() {
                       height = {100}
                       alt="rabbit-icon"
                       ></Image>
-                    <label class="btn btn-primary" for="other-btn-check">
                       Other
                     </label>
                     </div>

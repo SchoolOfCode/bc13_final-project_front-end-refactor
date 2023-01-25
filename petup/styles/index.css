@@ -256,13 +256,18 @@
     width: 100%;
 }
 
-.input-radio-div>img {
-    position: absolute;
-    margin: 0.5em 0.5em;
+.input-radio-div > .btn-primary{
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-radio-div > .btn-primary > img {
+    position: relative;
+    /* margin: 0.5em 0.5em; */
     width: 18px;
     height: 18px;
-    margin-right: 4px;
-    float: left;
+    /* margin-right: 4px;
+    float: left; */
 }
 
 .input-radio-div>label {
@@ -273,9 +278,19 @@
     border-radius: 0;
     height: 2rem;
     min-width: 6rem;
-    padding-left: calc(1em + 10px + 15px);
+    /* padding-left: calc(1em + 10px + 15px); */
 
 }
+
+.input-radio-div label:hover {
+    background-color: var(--green);
+}
+
+.input-radio-div label:focus-within {
+    background-color: var(--green);
+}
+
+/** budget **/
 
 .budget-label {
     font-size: small;
@@ -572,6 +587,3 @@
     columns: var(--green);
 }
 
-.input-radio-div label:hover {
-    background-color: var(--green);
-}
