@@ -3,8 +3,12 @@ import Head from "next/head";
 import Header from "../component/header/header";
 import Footer from "../component/footer/footer.js";
 import Button from "../component/button/button";
+import { useSession, signIn, signOut } from "next-auth/react"
+import Link from "next/link";
 
 const componentName = () => {
+  const { data: session, status } = useSession()
+
   return (
     <>
       <Head>
@@ -25,7 +29,26 @@ const componentName = () => {
           <p style={{marginTop: '1rem'}}>
           We are looking for individuals who are <span>responsible, dependable</span> and possess a genuine <span>love for animals</span>. In addition, you must have your own reliable transportation and be able to pass a background check. If you're ready to make a difference in the lives of pets and their owners, apply to become a pet sitter with us today!
           </p>
-          <Button  className='sign-up sitter-button' id='button' text='Apply Now'/>
+
+          {status === "authenticated" ?   
+        <div className="">
+        <Link
+              href={{
+                pathname: "/profile",
+                query: { 
+                },
+              }}
+              passHref
+              style={{ textDecoration: "none" }}
+            >
+        <Button  className='sign-up sitter-button' id='button' text='Apply Now'/>
+        </Link>
+        </div>
+         : 
+          (<> <Button  className='sign-up sitter-button' id='button' text='Apply Now'/> </>)
+          } 
+
+          
         </div>
       </div>
       <Footer />

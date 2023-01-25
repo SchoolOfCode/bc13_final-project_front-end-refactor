@@ -1,5 +1,6 @@
 import { useFormik, Formik } from 'formik';
 import { useState } from 'react';
+import Swal from 'sweetalert2'
 
 // async function setUserFormData(context) {
 
@@ -56,13 +57,14 @@ function Form() {
             fullname: '',
             nickname: '',
             email: userEmail,
+            phone_number: '',
             tagline: '',
             profile_image: userImage,
             address_region: '',
             address_city: '',
             address_postcode: '',
-            latitude: '',
-            longitude: '',
+            latitude: 0.00,
+            longitude: 0.00,
             sitting_services_enabled: false,
             dog_walking: false,
             house_sitting: false,
@@ -77,7 +79,7 @@ function Form() {
         // takes in the values object and creates a function of the devs choice
         // here we can use next query to submit values into database and then refresh the page with a get request to retrieve user data
         onSubmit: async (values, {setSubmitting}) => {
-          console.log('values', values);
+         
           setSubmitting(true);
           const response = await fetch('http://localhost:3000/api/profile', {
             method: 'POST',
@@ -85,9 +87,19 @@ function Form() {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: values,
+            body: JSON.stringify(values),
         });
-        console.log('response', response)  
+        const parsedResponse = await response.json() 
+        const updatedUser = parsedResponse
+        console.log(updatedUser)
+
+        //alert("Profile is updated")
+        Swal.fire(
+          'Profile successfully updated',
+          'Have a pawsome day!',
+          'success'
+        )
+       
         setSubmitting(false);
         },
 
@@ -129,9 +141,11 @@ function Form() {
     return (
       <Formik>
         <form onSubmit={formik.handleSubmit}>
-          <div className='userName'>
-            <label htmlFor='fullName'>First Name</label>
-            <input type='text' id='fullName' name='fullName' onChange={formik.handleChange} value={formik.values.fullName}/>
+          <div className='username'>
+            <label htmlFor='nickname'>First Name</label>
+            <input type='text' id='fullname' name='nickname' onChange={formik.handleChange} value={formik.values.nickname}/>
+            <label htmlFor='fullname'>Last Name</label>
+            <input type='text' id='fullname' name='fullname' onChange={formik.handleChange} value={formik.values.fullname}/>
           </div>
 
           <div className='tagline'>
@@ -160,16 +174,16 @@ function Form() {
 
           <div className='petTypes'>
           <label htmlFor='petTypes'>What type of pets would you like to host?</label>
-            <label htmlFor='petTypeDog'>
-              <input type='checkbox' name='petTypeDog' value={formik.values.pet_dog} onClick={formik.handleChange} />
+            <label htmlFor='pet_dog'>
+              <input type='checkbox' name='pet_dog' value={formik.values.pet_dog} onClick={formik.handleChange} />
               Dog
             </label>
-            <label htmlFor='petTypeCat'>
-              <input type='checkbox' name='petTypeCat' value={formik.values.pet_cat} onClick={formik.handleChange} />
+            <label htmlFor='pet_cat'>
+              <input type='checkbox' name='pet_cat' value={formik.values.pet_cat} onClick={formik.handleChange} />
               Cat
             </label>
-            <label htmlFor='petTypeOther'>
-              <input type='checkbox' name='petTypeOther' value={formik.values.pet_other} onClick={formik.handleChange} />
+            <label htmlFor='pet_other'>
+              <input type='checkbox' name='pet_other' value={formik.values.pet_other} onClick={formik.handleChange} />
               Other
             </label>
           </div>
@@ -178,34 +192,34 @@ function Form() {
             <h5>What services would you like to offer?</h5>
 
             <div className='petHosting'>
-              <label htmlFor='petHosting'>
-                <input type='checkbox' name='petHosting' value={formik.values.pet_hosting} onClick={formik.handleChange}/>
+              <label htmlFor='pet_hosting'>
+                <input type='checkbox' name='pet_hosting' value={formik.values.pet_hosting} onClick={formik.handleChange}/>
                 Pet Hosting
               </label>
-              <label htmlFor='petHostingRate'>
-                <input type='number' name='petHostingRate' value={formik.values.pet_hosting_rate} onChange={formik.handleChange}/>
+              <label htmlFor='pet_hosting_rate'>
+                <input type='number' name='pet_hosting_rate' value={formik.values.pet_hosting_rate} onChange={formik.handleChange}/>
                 for how much? {'(per night)'}
               </label>
             </div>
 
             <div className='houseSitting'>
-              <label htmlFor='houseSitting'>
-                <input type='checkbox' name='houseSitting' value={formik.values.house_sitting} onClick={formik.handleChange}/>
+              <label htmlFor='house_sitting'>
+                <input type='checkbox' name='house_sitting' value={formik.values.house_sitting} onClick={formik.handleChange}/>
                 House Sitting
               </label>
-              <label htmlFor='houseSittingRate'>
-                <input type='number' name='houseSittingRate' value={formik.values.house_sitting_rate} onChange={formik.handleChange}/>
+              <label htmlFor='house_sitting_rate'>
+                <input type='number' name='house_sitting_rate' value={formik.values.house_sitting_rate} onChange={formik.handleChange}/>
                 for how much? {'(per night)'}
               </label>
             </div>
 
             <div className='dogWalking'>
-              <label htmlFor='dogWalking'>
-                <input type='checkbox' name='dogWalking' value={formik.values.dog_walking} onClick={formik.handleChange}/>
+              <label htmlFor='dog_walking'>
+                <input type='checkbox' name='dog_walking' value={formik.values.dog_walking} onClick={formik.handleChange}/>
                 Dog Walking
               </label>
-              <label htmlFor='dogWalkingRate'>
-                <input type='number' name='dogWalkingRate' value={formik.values.dog_walking_rate} onChange={formik.handleChange}/>
+              <label htmlFor='dog_walking_rate'>
+                <input type='number' name='dog_walking_rate' value={formik.values.dog_walking_rate} onChange={formik.handleChange}/>
                 for how much? {'(per hour)'}
               </label>
             </div>
