@@ -105,7 +105,7 @@ export default function Post({ sData }) {
               {sitterData.pet_hosting ? (
               <div className="data-box">
                 <Image
-                  src="/icons8-pet-commands-stay-100.png"
+                  src="/icons8-luggage-96.png"
                   width={100}
                   height={100}
                 ></Image>
@@ -117,7 +117,7 @@ export default function Post({ sData }) {
             {sitterData.house_sitting ? (
               <div className="data-box">
                 <Image
-                  src="/icons8-pet-commands-stay-100.png"
+                  src="/icons8-country-house-100.png"
                   width={100}
                   height={100}
                 ></Image>
@@ -129,7 +129,7 @@ export default function Post({ sData }) {
             {sitterData.dog_walking ? (
               <div className="data-box">
                 <Image
-                  src="/icons8-pet-commands-stay-100.png"
+                  src="/icons8-dog-walking-100.png"
                   width={100}
                   height={100}
                 ></Image>
