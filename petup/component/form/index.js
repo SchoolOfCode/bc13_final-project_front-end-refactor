@@ -1,5 +1,6 @@
 import { useFormik, Formik } from 'formik';
 import { useState } from 'react';
+import Swal from 'sweetalert2'
 
 // async function setUserFormData(context) {
 
@@ -93,6 +94,11 @@ function Form() {
         console.log(updatedUser)
 
         //alert("Profile is updated")
+        Swal.fire(
+          'Profile successfully updated',
+          'Have a pawsome day!',
+          'success'
+        )
        
         setSubmitting(false);
         },

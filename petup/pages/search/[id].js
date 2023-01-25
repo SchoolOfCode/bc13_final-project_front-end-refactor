@@ -22,8 +22,8 @@ export default function Post({ sData }) {
         {/* <h1 >{sitterData.fullname}</h1> */}
 
         {/* back button */}
-        <div className = "back-button">
-                <button className = "sign-in" onClick={() => router.back()}>Back</button>
+        <div className = "back-button" >
+                <button className = "sign-in" onClick={() => router.back()}>Return to results</button>
             </div>
         
 
