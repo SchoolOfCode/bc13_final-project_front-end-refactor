@@ -48,7 +48,7 @@
     align-items: center;
     align-content: center;
     justify-content: middle;
-    padding: 0 4rem 0 4rem;
+    /* padding: 0 4rem 0 4rem; */
     flex-direction: column;
 }
 
@@ -88,7 +88,8 @@
     justify-content: space-around;
     min-height: 45vh;
     max-height: 55vh;
-    width: 52%;
+    /* width: 52%; */
+    width: 60vw;
     padding: 2%;
     /* border-radius: 10px; */
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -116,20 +117,21 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 40%;
+    width: 50%;
     float: left;
     font-size: small;
 
 }
 
-.pet-service > label {
-    float: left;
+.pet-service > legend {
+    text-align : left;
+    font-size: small;
 }
 
 .select-div {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 4em;
     width: 100%;
     float: left;
 }
@@ -137,7 +139,7 @@
 .luggage-icon {
     position: absolute;
     /* margin:28px 10px; */
-    margin: 0.5em 0.5em;
+    margin: 0.8rem 0.8rem;
     width: 23px;
     height: 23px;
     margin-right: 4px;
@@ -168,19 +170,20 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 40%;
-    float: left;
+    
+    width: 50%;
+    /* float: left; */
     font-size: small;
 }
 
-.input-box-div > label {
-    margin-left : 0;
-    float: left;
+.input-box-div > legend {
+    text-align : left;
+    font-size: small;
 }
 
 .search-icon {
     position: absolute;
-    margin: 2.2em 0.5em;
+    margin: 3.2em 1.5em;
     width: 1rem;
     height: 1rem;
     margin-right: 4px;
@@ -192,6 +195,7 @@
     border: 1px solid var(--green);
     /* border-radius: 5px; */
     height: 5vh;
+    /* height: 4.5em; */
     line-height: normal;
     color: #282828;
     display: block;
@@ -217,13 +221,16 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    align-content: center;
     height: 20%;
     width: 100%;
     margin:0;
     padding: 0;
+    font-size: small;
 }
 
 .radio-div {
+    float: left;
     display: flex;
     align-items: center;
     align-content: center;
@@ -231,7 +238,7 @@
     /* gap: 1vw; */
     /* flex-direction: column; */
     /* width: 30vw; */
-    width: 60%;
+    width: 50%;
     height: 100%;
     /* border: 2px solid transparent; */
     
@@ -246,30 +253,36 @@
     /* border: 1px solid grey; */
     width: 100%;
     height: 100%;
+    padding-right: 5%;
 }
 
-.pet-radio>legend {
+
+.pet-radio > legend {
     font-size: small;
-    float: left;
+    text-align: left;
 }
 
 .pet-radio-box {
+    /* border: 1px solid var(--green); */
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
+    width: 100%;
 
 }
 
 .input-radio-div {
-    height: 100%;
     width: 100%;
+    height: 4em;
+    
 }
 
 .input-radio-div > .btn-primary{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .input-radio-div > .btn-primary > img {
@@ -287,8 +300,10 @@
     font-size: 12px;
     border: 1px solid var(--green);
     border-radius: 0;
-    height: 2rem;
-    min-width: 6rem;
+    /* height: 2rem; */
+    /* min-width: 3rem; */
+    width: 100%;
+    height: 100%;
     /* padding-left: calc(1em + 10px + 15px); */
 
 }
@@ -303,47 +318,65 @@
 
 /** budget **/
 
+
+
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+.price-container h5 {
+    font-size: small;
+}
+
+.price-input {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.price-container > legend {
+    text-align: left;
+    padding-left: 2%;
+    
+}
+
+
+.budget-container {
+    width : 100%;
+    height: 100%;
+    float: left;
+    display:flex
+}
+
+.minPrice-container,
+.maxPrice-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.budget {
+    height: 4em;
+    width: 40%;
+    font-size: 12px;
+    /* border-color: var(--green); */
+    border: 1px solid var(--green);
+    align-items: space-around; 
+}
+
 .budget-label {
     font-size: small;
     float: left;
 }
 
-/** dates **/
-
-.date-div > label {
-    color: #282828;
-    font-size: 12px;
-    float: left;
+.budget-warning {
+    font-size: x-small;
+    height: 10%;
+    color: rgb(247, 41, 41);
 }
 
-.date-div {
-    width: 50%;
-}
-
-.date-search > img {
-    position: relative;
-    /* margin: 0.5em 0.5em; */
-    width: 18px;
-    height: 18px;
-}
-
-.date-search{
-    border: 1px solid var(--green);
-    align-items: center;
-    background-color: white;
-    width : 100%;
-    min-width: 10rem;
-    height : 2rem;
-    color: #282828;
-    font-size: 12px;
-    display: flex;
-    justify-content : space-between;
-}
-
-.date-search > p {
-   width: 2rem;
-   font-size: 10px;
-}
 
 
 /* .checkboxes {
@@ -404,6 +437,44 @@
 .third-search-div>a {
     display: flex;
 }
+
+/** dates **/
+
+.date-div > label {
+    color: #282828;
+    font-size: 12px;
+    float: left;
+}
+
+.date-div {
+    width: 50%;
+}
+
+.date-search > img {
+    position: relative;
+    /* margin: 0.5em 0.5em; */
+    width: 18px;
+    height: 18px;
+}
+
+.date-search{
+    border: 1px solid var(--green);
+    align-items: center;
+    background-color: white;
+    width : 100%;
+    min-width: 10rem;
+    height: 4em;
+    color: #282828;
+    font-size: 12px;
+    display: flex;
+    justify-content : space-between;
+}
+
+.date-search > p {
+   width: 2rem;
+   font-size: 10px;
+}
+
 
 .number-input {
     display: flex;
@@ -597,41 +668,6 @@
     align-content: center;
 }
 
-.price-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 40%;
-}
-
-.price-container h5 {
-    font-size: small;
-}
-
-.price-input {
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
-
-.minPrice-container,
-.maxPrice-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.budget {
-    height: 70%;
-    width: 40%;
-    /* border-color: var(--green); */
-    border: 1px solid var(--green);
-}
-
-.budget-warning {
-    font-size: x-small;
-    height: 10%;
-    color: rgb(247, 41, 41);
-}
 
 .btn-primary {
     columns: var(--green);

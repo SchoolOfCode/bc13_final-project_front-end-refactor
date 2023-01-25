@@ -108,7 +108,7 @@ export default function Home() {
         <div className="searchBox-div">
           <div className="top-search-div">
             <div className="pet-service">
-              <label for="service">What service would you like?</label>
+              <legend for="service">What service would you like?</legend>
               <div className = "select-div">
               <Image
               className = 'luggage-icon'
@@ -126,8 +126,7 @@ export default function Home() {
             </div>
 
             <div className="input-box-div">
-            
-            <label for="input">Near?</label>
+            <legend for="input">Near?</legend>
             <Image 
               className = 'search-icon'
               src = '/icons8-interface-96.png'
@@ -222,14 +221,11 @@ export default function Home() {
             </div>
 
            <div className='price-container'>
-                <div className='text-container'>
-                  <label  className="budget-label" for='max'>Budget? {priceString}.</label>
-                </div>
+                  <legend  className="budget-label" for='max'>For how much? {priceString}.</legend>
                 <div className='budget-container'>
-                  <span class="currencyinput">£
-                    <input className='budget' name='max' placeholder='30' pattern="[0-9]+" onChange={handleBudgetChange}/>
+                  <input className='budget' name='min' placeholder='Min £0'/>
+                    <input className='budget' name='max' placeholder='Max £100' pattern="[0-9]+" onChange={handleBudgetChange}/>
                     <p className='budget-warning'>{budgetWarning}</p>
-                  </span>
                 </div>
             </div>
           </div>
