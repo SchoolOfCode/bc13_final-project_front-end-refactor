@@ -1,20 +1,25 @@
 //Pages that are named in [] are dynamic routes in Next.js.
 
-import { getAllSitterID, getSitterbyID } from "../../lib/search.js";
-import Head from "next/head";
-import Image from "next/image";
+
+import { useRouter } from "next/router"
+import { getAllSitterID, getSitterbyID } from '../../lib/search.js';
+import Head from 'next/head';
+import Image from 'next/image';
 import Header from "../../component/header/header";
 import Footer from "../../component/footer/footer";
 
 export default function Post({ sData }) {
-  const sitterData = sData[0];
+    const sitterData = sData[0];
+    const router = useRouter();
+    
+    return (
+      <>
+        <Head>
 
-  return (
-    <>
-      <Head>
         <title>{sitterData.nickname}</title>
       </Head>
       <Header />
+
 
       <div className="profile-page">
         <h1 style={{ color: "black" }}>{sitterData.fullname}</h1>
@@ -85,6 +90,17 @@ export default function Post({ sData }) {
       
         </div>
         {/* <img
+
+        {/* back button */}
+        <div className = "back-button" >
+                <button className = "sign-in" onClick={() => router.back()}>Return to results</button>
+            </div>
+        
+
+        <div className="profile-page">
+        
+        <img
+
           priority
           src={sitterData.profile_image}
           className="profile-img"

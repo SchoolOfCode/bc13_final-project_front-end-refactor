@@ -432,10 +432,10 @@
     color: #EEEEEE;
 }
 
-/* .tagline-div > p {
-    color: var(--green);
-    font-size: large;
-} */
+.tagline-div h1 span {
+    color: var(--white);
+    font-style: italic;
+}
 
 
 /* bottom div */

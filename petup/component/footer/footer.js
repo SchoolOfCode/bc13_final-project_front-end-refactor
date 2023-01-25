@@ -17,7 +17,7 @@ const Footer = () => {
         {/* <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" 
             width={100} 
             height={100}/> */}
-        <h2>Copyright @ SoC</h2>
+        <h2>Built by Team reFACtor</h2>
       </footer>
     </div>
   );

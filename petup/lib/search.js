@@ -1,7 +1,6 @@
 //this script is for fetching external data into our app. 
 //either fetch exernal API database or query database directly. 
 
-import { user } from '../db/sampledata' // this is old dummy data. will refactor to show newer data
 import {query} from '../db/index' // import query function for writing SQL query
 
 
@@ -36,7 +35,27 @@ export async function getSitterByData(service, city, petType, budget){
     //refactor later to use wildcard expression '%
 }
 
-export async function setUserData(fullname, nickname, email, phoneNumber, profileImage, tagline, addressRegion, addressCity, addressPostcode, latitude, longitude, sittingServicesEnabled, dogWalking, houseSitting, petHosting, petHostingRate, houseSittingRate, dogWalkingRate, petDog, petCat, petOther) {
+export async function setUserData(fullname,
+  nickname,
+  email,
+  phone_number,
+  tagline,
+  profile_image,
+  address_region,
+  address_city,
+  address_postcode,
+  latitude,
+  longitude,
+  sitting_services_enabled,
+dog_walking,
+house_sitting,
+pet_hosting,
+pet_hosting_rate,
+house_sitting_rate,
+dog_walking_rate,
+pet_dog,
+pet_cat,
+pet_other) {
   // run the check if exists request
   const isExistingUser = await query(
     'SELECT 1 FROM users WHERE email = $1', [email]);
@@ -44,95 +63,102 @@ export async function setUserData(fullname, nickname, email, phoneNumber, profil
   if (isExistingUser === 1) {
     // UPDATE - also takes every bit of info from the form BUT email and profile image
     const updatedUser = await query(`UPDATE users SET 
-      fullname = $1, 
-      nickname = $2, 
-      phone_number = $3, 
-      tagline = $4,
-      address_region = $5, 
-      address_city = $6, 
-      address_postcode = $7, 
-      latitude = $8, 
-      longitude = $9,
-      sitting_services_enabled = $10,
-      dog_walking = $11,
-      house_sitting = $12,
-      pet_hosting = $13,
-      pet_hosting_rate = $14,
-      house_sitting_rate = $15,
-      dog_walking_rate = $16,
-      pet_dog = $17,
-      pet_cat = $18,
-      pet_other = $19) 
-      WHERE email = $20`, [
-        fullname, 
-        nickname, 
-        phoneNumber, 
+    fullname = $1,
+    nickname = $2,
+    email = $3,
+    phone_number = $4,
+    tagline = $5,
+    profile_image = $6,
+    address_region = $7,
+    address_city = $8,
+    address_postcode = $9,
+    latitude = $10,
+    longitude = $11,
+    sitting_services_enabled = $12,
+dog_walking = $13,
+house_sitting = $14,
+pet_hosting = $15,
+pet_hosting_rate = $16,
+house_sitting_rate = $17,
+dog_walking_rate = $18,
+pet_dog = $19,
+pet_cat = $20,
+pet_other = $21
+      RETURNING *`, [
+        fullname,
+        nickname,
+        email,
+        phone_number,
         tagline,
-        addressRegion, 
-        addressCity, 
-        addressPostcode, 
-        latitude, 
+        profile_image,
+        address_region,
+        address_city,
+        address_postcode,
+        latitude,
         longitude,
-        sittingServicesEnabled,
-        dogWalking,
-        houseSitting,
-        petHosting,
-        petHostingRate,
-        houseSittingRate,
-        dogWalkingRate,
-        petDog,
-        petCat,
-        petOther,
-        email
+        sitting_services_enabled,
+  dog_walking,
+  house_sitting,
+  pet_hosting,
+  pet_hosting_rate,
+  house_sitting_rate,
+  dog_walking_rate,
+  pet_dog,
+  pet_cat,
+  pet_other
       ])
+
+      return updatedUser.rows[0];
   } else {
-    const createdUser = await query(`INSERT INTO users 
-      (fullname, 
-      nickname, 
+    const createdUser = await query(`INSERT INTO users (fullname,
+      nickname,
       email,
-      phone_number, 
-      profile_image,
+      phone_number,
       tagline,
-      address_region, 
-      address_city, 
-      address_postcode, 
-      latitude, 
+      profile_image,
+      address_region,
+      address_city,
+      address_postcode,
+      latitude,
       longitude,
       sitting_services_enabled,
-      dog_walking,
-      house_sitting,
-      pet_hosting,
-      pet_hosting_rate,
-      house_sitting_rate,
-      dog_walking_rate,
-      pet_dog,
-      pet_cat,
-      pet_other) 
+dog_walking,
+house_sitting,
+pet_hosting,
+pet_hosting_rate,
+house_sitting_rate,
+dog_walking_rate,
+pet_dog,
+pet_cat,
+pet_other)
       VALUES (
         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21
-      );`, [
-        fullname, 
-        nickname, 
+      )
+      RETURNING *;`, [
+        fullname,
+        nickname,
         email,
-        phoneNumber, 
-        profileImage,
+        phone_number,
         tagline,
-        addressRegion, 
-        addressCity, 
-        addressPostcode, 
-        latitude, 
+        profile_image,
+        address_region,
+        address_city,
+        address_postcode,
+        latitude,
         longitude,
-        sittingServicesEnabled,
-        dogWalking,
-        houseSitting,
-        petHosting,
-        petHostingRate,
-        houseSittingRate,
-        dogWalkingRate,
-        petDog,
-        petCat,
-        petOther
+        sitting_services_enabled,
+  dog_walking,
+  house_sitting,
+  pet_hosting,
+  pet_hosting_rate,
+  house_sitting_rate,
+  dog_walking_rate,
+  pet_dog,
+  pet_cat,
+  pet_other
       ])
+
+      return createdUser.rows[0];
   }
 }
 

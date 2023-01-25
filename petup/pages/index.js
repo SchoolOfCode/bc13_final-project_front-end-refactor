@@ -273,8 +273,7 @@ export default function Home() {
         <div className="tagline-div">
           <h1>Helping you find
               the best sitters, 
-              so you can 
-              spend less & worry less
+              so you can <span>spend less</span> & <span>worry less</span>
               </h1>
         </div>
             </div>

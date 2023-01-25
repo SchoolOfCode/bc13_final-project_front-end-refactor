@@ -3,8 +3,12 @@ import Head from "next/head";
 import Header from "../component/header/header";
 import Footer from "../component/footer/footer.js";
 import Button from "../component/button/button";
+import { useSession, signIn, signOut } from "next-auth/react"
+import Link from "next/link";
 
 const componentName = () => {
+  const { data: session, status } = useSession()
+
   return (
     <>
       <Head>
@@ -13,30 +17,38 @@ const componentName = () => {
       <Header />
       <div className="sitter-main-div">
         <div className="paragraphs">
-          <h1 style={{marginTop: '1rem'}}>Why become a sitter?</h1>
+          <div className='title-sitter'>
+            <h1 style={{marginTop: '1rem'}}>Why become a sitter?</h1>
+          </div>
           <p style={{marginTop: '1rem'}}>
-            Are you passionate about working with animals and want to make a
-            difference in their lives? Then becoming a sitter with us is the
-            perfect opportunity for you! Our agency connects owners with
-            responsible and reliable sitters who can provide a safe and
-            nurturing environment for their pets.
+          Are you an animal lover looking for a <span>rewarding and flexible job opportunity</span>? We are currently seeking experienced and reliable pet sitters to join our team. As a pet sitter, you will have the opportunity to work with a variety of animals and provide quality care for pets while their owners are away. 
           </p>
           <p style={{marginTop: '1rem'}}>
-            As a sitter with our agency, you'll have the opportunity to work
-            with a variety of families and children of different ages and
-            backgrounds. You'll be able to choose the hours and days that work
-            best for you, and you'll be able to set your own rates. Plus, you'll
-            have access to resources and support to help you succeed as a
-            sitter.
+          Duties may include daily check-ins, feeding, administering medication, providing exercise and playtime, and general companionship. Our pet sitters are <span>independent contractors</span>, which allows you to set <span>your own schedule</span> and take on as many clients as you're comfortable with.
           </p>
           <p style={{marginTop: '1rem'}}>
-            To become a sitter with our agency, you'll need to complete an
-            application and go through a background check. We also require all
-            of our sitters to have experience working with children and to be
-            CPR and First Aid certified. We want to ensure that our families are
-            getting the best care for their children.
+          We are looking for individuals who are <span>responsible, dependable</span> and possess a genuine <span>love for animals</span>. In addition, you must have your own reliable transportation and be able to pass a background check. If you're ready to make a difference in the lives of pets and their owners, apply to become a pet sitter with us today!
           </p>
-          <Button  className='sign-up sitter-button'  text='Apply now!'/>
+
+          {status === "authenticated" ?   
+        <div className="">
+        <Link
+              href={{
+                pathname: "/profile",
+                query: { 
+                },
+              }}
+              passHref
+              style={{ textDecoration: "none" }}
+            >
+        <Button  className='sign-up sitter-button' id='button' text='Apply Now'/>
+        </Link>
+        </div>
+         : 
+          (<> <Button  className='sign-up sitter-button' id='button' text='Apply Now'/> </>)
+          } 
+
+          
         </div>
       </div>
       <Footer />

@@ -1,0 +1,6 @@
+.contactus-divone {
+display:flex;
+height:80%;
+width:100%;
+background-color: var(--main-yellow);
+}
