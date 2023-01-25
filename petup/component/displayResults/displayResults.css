@@ -55,7 +55,7 @@
 .main-taglines h1, h3, h2, p {
     margin: 0;
     padding: 0;
-    display: flex;
+    /* display: flex; */
 }
 .main-taglines > h1{
    font-weight: 700;
