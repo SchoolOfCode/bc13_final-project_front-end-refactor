@@ -34,6 +34,7 @@ export default function Home() {
   const [pet, setPet] = useState('pet_dog')
   const [priceString, setPriceString] = useState('(per night)');
   const [budgetWarning, setBudgetWarning] = useState('')
+ 
 
   function handleCityChange(e) {
     setCity(e.target.value);
@@ -107,7 +108,7 @@ export default function Home() {
         <div className="searchBox-div">
           <div className="top-search-div">
             <div className="pet-service">
-              <label for="service">What service would you like?</label>
+              <legend for="service">What service would you like?</legend>
               <div className = "select-div">
               <Image
               className = 'luggage-icon'
@@ -125,8 +126,7 @@ export default function Home() {
             </div>
 
             <div className="input-box-div">
-            
-            <label for="input">Near?</label>
+            <legend for="input">Near?</legend>
             <Image 
               className = 'search-icon'
               src = '/icons8-interface-96.png'
@@ -152,6 +152,7 @@ export default function Home() {
                   <legend>For what type of pet?</legend>
                   <div className = "pet-radio-box">
                   <div className = "input-radio-div">
+                  <label class="btn btn-primary" for="dog-btn-check">
                     <input
                       type="radio"
                       class="btn-check"
@@ -167,12 +168,12 @@ export default function Home() {
                       height = {100}
                       alt="dog-icon-sitting"
                       ></Image>
-                    <label class="btn btn-primary" for="dog-btn-check">
                       Dog
                     </label>
                     </div>
                     <br />
                     <div className = "input-radio-div">
+                    <label class="btn btn-primary" for="cat-btn-check">
                     <input
                       type="radio"
                       class="btn-check"
@@ -189,12 +190,12 @@ export default function Home() {
                       height = {100}
                       alt=" cat-icon"
                       ></Image>
-                    <label class="btn btn-primary" for="cat-btn-check">
                       Cat
                     </label>
                     </div>
                     <br />
                     <div className = "input-radio-div">
+                    <label class="btn btn-primary" for="other-btn-check">
                     <input
                       type="radio"
                       class="btn-check"
@@ -210,7 +211,6 @@ export default function Home() {
                       height = {100}
                       alt="rabbit-icon"
                       ></Image>
-                    <label class="btn btn-primary" for="other-btn-check">
                       Other
                     </label>
                     </div>
@@ -221,19 +221,28 @@ export default function Home() {
             </div>
 
            <div className='price-container'>
-                <div className='text-container'>
-                  <label  className="budget-label" for='max'>Budget? {priceString}.</label>
-                </div>
+                  <legend  className="budget-label" for='max'>For how much? {priceString}</legend>
                 <div className='budget-container'>
-                  <span class="currencyinput">£
-                    <input className='budget' name='max' placeholder='30' pattern="[0-9]+" onChange={handleBudgetChange}/>
+                  <input className='budget' name='min' placeholder='Min £0'/>
+                    <input className='budget' name='max' placeholder='Max £100' pattern="[0-9]+" onChange={handleBudgetChange}/>
                     <p className='budget-warning'>{budgetWarning}</p>
-                  </span>
                 </div>
             </div>
           </div>
+
           <div className="third-search-div">
-            {/* <Calendar style={{width: '30vh'}} /> */}
+          {/* <div className = "date-div">
+          <label for="date-search">Dates</label>
+            <div className = "date-search">
+              <p> Start date </p>  <Image
+                      src = "/icons8-chevron-right-90.png"
+                      width = {100}
+                      height = {100}
+                      alt=" chevron-right"
+                      ></Image> <p>End date</p>
+            </div>
+            </div> */}
+
             <Link
               href={{
                 pathname: "/search",

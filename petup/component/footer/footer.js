@@ -6,9 +6,11 @@ const Footer = () => {
   return (
     <div className="margin-div-footer">
       <footer>
+      <h1 className="title">
         <Link href="/contact" style={{ textDecoration: "none" }}>
-          <h2 className="contact-us">Contact us</h2>
+        <span className='sitter-title'>Contact us</span>
         </Link>
+        </h1>
         <img
           src="https://i.ibb.co/6D4qNm8/petbrb-high-resolution-logo-white-on-transparent-background.png"
           alt="PetBrB-logo"
@@ -17,7 +19,12 @@ const Footer = () => {
         {/* <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" 
             width={100} 
             height={100}/> */}
-        <h2>Built by Team reFACtor</h2>
+          <h1 className="title">
+          <Link href="" style={{ textDecoration: "none" }}>
+            <span className='sitter-title'>Built by Team reFACtor</span>
+            </Link>
+        </h1>
+       
       </footer>
     </div>
   );
