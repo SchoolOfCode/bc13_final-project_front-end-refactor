@@ -119,6 +119,11 @@
     width: 40%;
     float: left;
     font-size: small;
+
+}
+
+.pet-service > label {
+    float: left;
 }
 
 .select-div {
@@ -166,6 +171,11 @@
     width: 40%;
     float: left;
     font-size: small;
+}
+
+.input-box-div > label {
+    margin-left : 0;
+    float: left;
 }
 
 .search-icon {
@@ -240,6 +250,7 @@
 
 .pet-radio>legend {
     font-size: small;
+    float: left;
 }
 
 .pet-radio-box {
@@ -274,7 +285,7 @@
     background-color: white;
     color: #282828;
     font-size: 12px;
-    border-color: grey;
+    border: 1px solid var(--green);
     border-radius: 0;
     height: 2rem;
     min-width: 6rem;
@@ -294,6 +305,44 @@
 
 .budget-label {
     font-size: small;
+    float: left;
+}
+
+/** dates **/
+
+.date-div > label {
+    color: #282828;
+    font-size: 12px;
+    float: left;
+}
+
+.date-div {
+    width: 50%;
+}
+
+.date-search > img {
+    position: relative;
+    /* margin: 0.5em 0.5em; */
+    width: 18px;
+    height: 18px;
+}
+
+.date-search{
+    border: 1px solid var(--green);
+    align-items: center;
+    background-color: white;
+    width : 100%;
+    min-width: 10rem;
+    height : 2rem;
+    color: #282828;
+    font-size: 12px;
+    display: flex;
+    justify-content : space-between;
+}
+
+.date-search > p {
+   width: 2rem;
+   font-size: 10px;
 }
 
 
@@ -574,7 +623,8 @@
 .budget {
     height: 70%;
     width: 40%;
-    border-color: var(--green);
+    /* border-color: var(--green); */
+    border: 1px solid var(--green);
 }
 
 .budget-warning {

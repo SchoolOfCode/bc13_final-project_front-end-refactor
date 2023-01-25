@@ -233,8 +233,20 @@ export default function Home() {
                 </div>
             </div>
           </div>
+
           <div className="third-search-div">
-            {/* <Calendar style={{width: '30vh'}} /> */}
+          <div className = "date-div">
+          <label for="date-search">Dates</label>
+            <div className = "date-search">
+              <p> Start date </p>  <Image
+                      src = "/icons8-chevron-right-90.png"
+                      width = {100}
+                      height = {100}
+                      alt=" chevron-right"
+                      ></Image> <p>End date</p>
+            </div>
+            </div>
+
             <Link
               href={{
                 pathname: "/search",
