@@ -50,16 +50,26 @@ export default function Post({ sData }) {
         <div className="sitter-second-main-div">
           <div className="sitter-address-div">
             <div className="sitter-address-box">
-              <h2>{sitterData.address_region}</h2>
+              <h2 className="h2">{sitterData.address_region}</h2>
             </div>
             <div className="sitter-address-box">
-              <h2>{sitterData.address_city}</h2>
+              <h2 className="h2">{sitterData.address_city}</h2>
             </div>
             <div className="sitter-address-box">
-              <h2>{sitterData.address_postcode}</h2>
+              <h2 className="h2">{sitterData.address_postcode}</h2>
             </div>
           </div>
-          <div className="sitter-service-div"></div>
+          <div className="sitter-service-div">
+            <div className="sitter-service-box">
+              <h2>Pet hosted</h2>
+            </div>
+            <div className="sitter-service-box">
+              <h2>Service</h2>
+            </div>
+            <div className="sitter-service-box">
+              <h2>Rate</h2>
+            </div>
+          </div>
         </div>
       </div>
       {/* 

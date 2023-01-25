@@ -69,7 +69,7 @@
 .sitter-address-div {
     display: flex;
     border: 1px solid red;
-    height: 30%;
+    height: 5rem;
     width: 100%;
     justify-content: space-around;
     align-items: center;
@@ -83,4 +83,24 @@
 .sitter-address-box{
     display: flex;
     justify-content: center;
+}
+.h2 {
+    display: flex;
+    border: 1px solid black;
+    padding: 1rem;
+}
+.sitter-service-div{
+    display: flex;
+    height: 15rem;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-around;
+}
+.sitter-service-box {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    border: 1px solid red;
 }
