@@ -23,7 +23,7 @@ export default function Post({ sData }) {
 
         {/* back button */}
         <div className = "back-button">
-                <button onClick={() => router.back()}>Back</button>
+                <button className = "sign-in" onClick={() => router.back()}>Back</button>
             </div>
         
 
