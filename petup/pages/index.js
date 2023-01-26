@@ -226,7 +226,7 @@ export default function Home() {
            <div className='price-container'>
                   <legend  className="budget-label" for='max'>For how much? {priceString}</legend>
                 <div className='budget-container'>
-                  <input className='budget' name='min' placeholder='Min £0'/>
+                  <input className='budget' name='min' placeholder='Min £0' disabled style={{cursor: 'no-drop'}}/>
                     <input className='budget' name='max' placeholder='Max £100' pattern="[0-9]+" onChange={handleBudgetChange}/>
                     <p className='budget-warning'>{budgetWarning}</p>
                 </div>
