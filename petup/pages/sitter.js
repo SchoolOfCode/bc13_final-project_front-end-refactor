@@ -45,7 +45,7 @@ const componentName = () => {
         </Link>
         </div>
          : 
-          (<> <Button  className='sign-up sitter-button' id='button' text='Apply Now'/> </>)
+          (<> <div className = "sign-in-instruction"><p>Please sign in to set up a sitter profile page</p></div> </>)
           } 
 
           

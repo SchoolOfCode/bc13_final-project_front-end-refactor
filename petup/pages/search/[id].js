@@ -19,7 +19,7 @@ export default function Post({ sData }) {
         </Head>
         <Header />
 
-        <div className="profile-page">
+        
          <div className = "back-button" >
          <button className = "back" onClick={() => router.back()}>Return to results</button>
          <h1 style={{ color: "black" }}>{sitterData.fullname}</h1>
@@ -180,7 +180,7 @@ export default function Post({ sData }) {
               </div>
             </div>
           </div>
-        </div>
+       
         {/* 
         {" "}
         <h1>{sitterData.nickname}</h1>

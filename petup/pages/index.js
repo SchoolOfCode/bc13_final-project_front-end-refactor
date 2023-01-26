@@ -111,11 +111,11 @@ export default function Home() {
               <legend for="service">What service would you like?</legend>
               <div className = "select-div">
               <Image
-              className = 'luggage-icon'
+              className = 'logo-icon'
               src = '/icons8-luggage-96.png'
               alt = "luggage-icon"
-               width = {100}
-               height = {100}
+               width = {23}
+               height = {23}
               />
               <select name="service" id="pets" className="toggle-box-service">
                 <option value='pet_hosting' alt='Pet Hosting' onClick={handleServiceChange}>Pet Hosting</option>
@@ -125,22 +125,25 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="input-box-div">
+            <div className="pet-service">
             <legend for="input">Near?</legend>
+            <div className="select-div">
             <Image 
-              className = 'search-icon'
+              className = 'logo-icon'
               src = '/icons8-interface-96.png'
               alt = "search-icon"
-               width = {100}
-               height = {100}
+               width = {23}
+               height = {23}
               />
               <input
                 name="input"
-                className="input-field"
+                className="toggle-box-service"
                 placeholder="Where would you like to look for?"
                 type="text"
                 onChange={handleCityChange}
               />
+            </div>
+        
             </div>
           </div>
 
@@ -152,7 +155,7 @@ export default function Home() {
                   <legend>For what type of pet?</legend>
                   <div className = "pet-radio-box">
                   <div className = "input-radio-div">
-                  <label class="btn btn-primary" for="dog-btn-check">
+                  <label class="btn btn-primary" for="dog-btn-check" >
                     <input
                       type="radio"
                       class="btn-check"
@@ -254,7 +257,7 @@ export default function Home() {
                 },
               }}
               passHref
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", width: '300px',position: 'relative' }}
             >
               {/* <Image 
               className = 'search-icon2'
@@ -272,6 +275,7 @@ export default function Home() {
                 onClick={() => handleClick}
                 className="search-button"
                 text="Search Now"
+                // style={{width: '100%'}}
               >
               
 

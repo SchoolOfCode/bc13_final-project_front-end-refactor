@@ -1,6 +1,8 @@
+
 import { useFormik, Formik } from 'formik';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2'
+
 
 // async function setUserFormData(context) {
 
@@ -12,16 +14,16 @@ import Swal from 'sweetalert2'
 //   // LAT AND LONG based on the value retrieved from the API
 
 //   const setUserData = await setUserData(
-//     fullname, 
-//     nickname, 
+//     fullname,
+//     nickname,
 //     email,
-//     phoneNumber, 
+//     phoneNumber,
 //     profile_image,
 //     tagline,
-//     address_region, 
-//     address_city, 
-//     address_postcode, 
-//     latitude, 
+//     address_region,
+//     address_city,
+//     address_postcode,
+//     latitude,
 //     longitude,
 //     sitting_services_enabled,
 //     dogWalking.enabled,
@@ -36,23 +38,30 @@ import Swal from 'sweetalert2'
 // }
 
 // validate address_postcode with nominatim api
+
 // 
-function Form() {
+function Form(email, image) {
   
-  const [existingUser, setExistingUser] = useState(true);
-  const [userEmail, setUserEmail] = useState('');
-  const [userImage, setUserImage] = useState(''); 
+  // const [existingUser, setExistingUser] = useState(true);
+  const [lat, setLat] = useState(0.0);
+  const [long, setLong] = useState(0.0);
+  const [userEmail, setUserEmail] = useState(email.email);
+  const [userImage, setUserImage] = useState(email.image); 
     /** this hook takes in an object as its parameter
      * this will then allow us to get back an object which contains a variety of props and methods we can use with out form
      */
+    
     const formik = useFormik({
       /* 
+
       sitting_services_enabled: if true then the user will show up on searches
       petTypes: an object with boolean fields for each type of pet which signifies which pets the user wants to be a sitter for
       petHosting: if true then the user will show up on the filter for petHosting
       houseSitting: if true then the user will show up on the filter for houseSitting
       dogWalking: if true then the user will show up on the filter for dogWalking
-       */  
+
+       */ 
+
       initialValues: {
             fullname: '',
             nickname: '',
@@ -63,8 +72,8 @@ function Form() {
             address_region: '',
             address_city: '',
             address_postcode: '',
-            latitude: 0.00,
-            longitude: 0.00,
+            latitude: lat,
+            longitude: long,
             sitting_services_enabled: false,
             dog_walking: false,
             house_sitting: false,
@@ -79,70 +88,82 @@ function Form() {
         // takes in the values object and creates a function of the devs choice
         // here we can use next query to submit values into database and then refresh the page with a get request to retrieve user data
         onSubmit: async (values, {setSubmitting}) => {
-         
           setSubmitting(true);
+          const res = await fetch(`https://api.postcodes.io/postcodes/${values.address_postcode}`)
+          const data = await res.json();
+          console.log('postcode', values.address_postcode)
+          console.log('data', data)
+          values.longitude = data.result.longitude;
+          values.latitude = data.result.latitude;
+          console.log('long', values.longitude) 
+          console.log('lat', values.latitude) 
+          console.log(values);
+
           const response = await fetch('http://localhost:3000/api/profile', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
+            
             body: JSON.stringify(values),
         });
-        const parsedResponse = await response.json() 
-        const updatedUser = parsedResponse
-        console.log(updatedUser)
+          const parsedResponse = await response.json() 
+          const updatedUser = parsedResponse
+          console.log(updatedUser)
 
-        //alert("Profile is updated")
-        Swal.fire(
-          'Profile successfully updated',
-          'Have a pawsome day!',
-          'success'
-        )
-       
-        setSubmitting(false);
-        },
+          //alert("Profile is updated")
+          Swal.fire(
+            'Profile successfully updated',
+            'Have a pawsome day!',
+            'success'
+          )
+        
+          setSubmitting(false);
+          },
 
-        // validate: (values) => {
-        //   let errors = {};
-              // if (values.tagline is longer than 140 characters)
-        //   if (values.sitting_services_enabled === true) {
-        //     errors.address_postcode = 'Required';
-        //     errors.address_city = 'Required';
-        //     errors.address_region = 'Required';
-        //     errors.fullName = 'Required';
-        //     errors.lastName = 'Required';
-        //     errors.tagline = 'Required';
-        //     if (values.petHosting.enabled === false && values.dogWalking.enabled === false && values.houseSitting.enabled === false ) {
-        //       errors.petHosting = 'Required';
-        //       errors.dogWalking = 'Required';
-        //       errors.houseSitting = 'Required';
-        //     }
-        //     if (values.petTypes.dog === false && values.petTypes.cat === false && values.petTypes.other === false) {
-        //       // errors.petTypes.dog = 'Required';
-        //       // errors.petTypes.cat = 'Required';
-        //       // errors.petTypes.other = 'Required'
-        //     }
-        //     if (values.petHosting.enabled === true) {
-        //       errors.petHosting.rate = 'Required';
-        //     }
-        //     if (values.dogWalking.enabled === true) {
-        //       errors.dogWalking.rate = 'Required';
-        //       // errors.petTypes.dog = 'Required';
-        //     }
-        //     if (values.houseSitting.enabled === true) {
-        //       errors.houseSitting.rate = 'Required';
-        //     }
-        //   }
-        //   return errors;
-        // } 
-    })
 
-    return (
-      <Formik>
-        <form className="form-div" onSubmit={formik.handleSubmit}>
-          <div className="username">
-            <div className="first-name-div">
+    // validate: (values) => {
+    //   let errors = {};
+    // if (values.tagline is longer than 140 characters)
+    //   if (values.sitting_services_enabled === true) {
+    //     errors.address_postcode = 'Required';
+    //     errors.address_city = 'Required';
+    //     errors.address_region = 'Required';
+    //     errors.fullName = 'Required';
+    //     errors.lastName = 'Required';
+    //     errors.tagline = 'Required';
+    //     if (values.petHosting.enabled === false && values.dogWalking.enabled === false && values.houseSitting.enabled === false ) {
+    //       errors.petHosting = 'Required';
+    //       errors.dogWalking = 'Required';
+    //       errors.houseSitting = 'Required';
+    //     }
+    //     if (values.petTypes.dog === false && values.petTypes.cat === false && values.petTypes.other === false) {
+    //       // errors.petTypes.dog = 'Required';
+    //       // errors.petTypes.cat = 'Required';
+    //       // errors.petTypes.other = 'Required'
+    //     }
+    //     if (values.petHosting.enabled === true) {
+    //       errors.petHosting.rate = 'Required';
+    //     }
+    //     if (values.dogWalking.enabled === true) {
+    //       errors.dogWalking.rate = 'Required';
+    //       // errors.petTypes.dog = 'Required';
+    //     }
+    //     if (values.houseSitting.enabled === true) {
+    //       errors.houseSitting.rate = 'Required';
+    //     }
+    //   }
+    //   return errors;
+    // }
+  });
+
+  return (
+ 
+    <Formik >
+    <form className="form-div profile-page" onSubmit={formik.handleSubmit}>
+          <div className="username sitter-first-main-div">
+            <div className="first-name-div name-bio-div">
               <label htmlFor="nickname">First Name</label>
               <input
                 type="text"
@@ -327,9 +348,9 @@ function Form() {
           <button type="submit" className="submitButton">
             Submit
           </button></div>
-        </form>
-      </Formik>
-    );
+        </form> 
+    </Formik>
+  );
 }
 
 export default Form;
