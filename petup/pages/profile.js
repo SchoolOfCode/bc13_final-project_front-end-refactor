@@ -28,7 +28,7 @@ function profile() {
       <Header></Header>
       <div className='profile-page-main-div'>
       <h1>Set your profile information</h1>
-      <h5>Here you can also set your sitting services</h5>
+      <h6>Here you can also set your sitting services</h6>
       <Form></Form>
       </div>
       <Footer></Footer>

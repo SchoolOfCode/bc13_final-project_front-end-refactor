@@ -140,97 +140,196 @@ function Form() {
 
     return (
       <Formik>
-        <form onSubmit={formik.handleSubmit}>
-          <div className='username'>
-            <label htmlFor='nickname'>First Name</label>
-            <input type='text' id='fullname' name='nickname' onChange={formik.handleChange} value={formik.values.nickname}/>
-            <label htmlFor='fullname'>Last Name</label>
-            <input type='text' id='fullname' name='fullname' onChange={formik.handleChange} value={formik.values.fullname}/>
+        <form className="form-div" onSubmit={formik.handleSubmit}>
+          <div className="username">
+            <div className="first-name-div">
+              <label htmlFor="nickname">First Name</label>
+              <input
+                type="text"
+                id="fullname"
+                name="nickname"
+                onChange={formik.handleChange}
+                value={formik.values.nickname}
+              />
+            </div>
+            <div className="last-name-div">
+              <label htmlFor="fullname">Last Name</label>
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                onChange={formik.handleChange}
+                value={formik.values.fullname}
+              />
+            </div>
           </div>
 
-          <div className='tagline'>
-            <label htmlFor='tagline'>Bio</label>
-            <input type='text' id='tagline' name='tagline' maxLength={140} onChange={formik.handleChange} value={formik.values.tagline}/>
+          <div className="tagline">
+            <label htmlFor="tagline">Bio</label>
+            <input
+              type="text"
+              id="tagline"
+              name="tagline"
+              maxLength={140}
+              onChange={formik.handleChange}
+              value={formik.values.tagline}
+            />
           </div>
 
-          <div className='address'>
-            <label htmlFor='address_city'>City</label>
-            <input type='text' id='address_city' name='address_city' onChange={formik.handleChange} value={formik.values.address_city}/>
+          <div className="address">
+          <div className='address-city-div'>
+            <label htmlFor="address_city">City</label>
+            <input
+              type="text"
+              id="address_city"
+              name="address_city"
+              onChange={formik.handleChange}
+              value={formik.values.address_city}
+            /></div>
 
-            <label htmlFor='address_region'>Region</label>
-            <input type='text' id='address_region' name='address_region' onChange={formik.handleChange} value={formik.values.address_region}/>
+            <div className='address-region-div'>
+            <label htmlFor="address_region">Region</label>
+            <input
+              type="text"
+              id="address_region"
+              name="address_region"
+              onChange={formik.handleChange}
+              value={formik.values.address_region}
+            /></div>
 
-            <label htmlFor='address_postcode'>Postcode</label>
-            <input type='text' id='address_postcode' name='address_postcode' onChange={formik.handleChange} value={formik.values.address_postcode}/>
+            <div className='address-postcode-div'>
+            <label htmlFor="address_postcode">Postcode</label>
+            <input
+              type="text"
+              id="address_postcode"
+              name="address_postcode"
+              onChange={formik.handleChange}
+              value={formik.values.address_postcode}
+            />
+            </div>
           </div>
 
-          <div className='sitting_services_enabled'>
+          <div className="sitting_services_enabled">
             <h5>Do you wish to enable sitting services?</h5>
-            <label htmlFor='sitting_services_enabled'>
-              <input type='checkbox' name='sitting_services_enabled' value={formik.values.sitting_services_enabled} onClick={formik.handleChange} />
-              { formik.values.sitting_services_enabled ? 'Sitting services are enabled and you will show up on other users searches' : 'Your sitting services are not enabled' }
+            <label htmlFor="sitting_services_enabled">
+              <input
+                type="checkbox"
+                name="sitting_services_enabled"
+                value={formik.values.sitting_services_enabled}
+                onClick={formik.handleChange}
+              />
+              {formik.values.sitting_services_enabled
+                ? "Sitting services are enabled and you will show up on other users searches"
+                : "Your sitting services are not enabled"}
             </label>
           </div>
-
-          <div className='petTypes'>
-          <label htmlFor='petTypes'>What type of pets would you like to host?</label>
-            <label htmlFor='pet_dog'>
-              <input type='checkbox' name='pet_dog' value={formik.values.pet_dog} onClick={formik.handleChange} />
+<div className='form-bottom-div'>
+          <div className="petTypes">
+            <label htmlFor="petTypes">
+              What type of pets would you like to host?
+            </label>
+            <label htmlFor="pet_dog">
+              <input
+                type="checkbox"
+                name="pet_dog"
+                value={formik.values.pet_dog}
+                onClick={formik.handleChange}
+              />
               Dog
             </label>
-            <label htmlFor='pet_cat'>
-              <input type='checkbox' name='pet_cat' value={formik.values.pet_cat} onClick={formik.handleChange} />
+            <label htmlFor="pet_cat">
+              <input
+                type="checkbox"
+                name="pet_cat"
+                value={formik.values.pet_cat}
+                onClick={formik.handleChange}
+              />
               Cat
             </label>
-            <label htmlFor='pet_other'>
-              <input type='checkbox' name='pet_other' value={formik.values.pet_other} onClick={formik.handleChange} />
+            <label htmlFor="pet_other">
+              <input
+                type="checkbox"
+                name="pet_other"
+                value={formik.values.pet_other}
+                onClick={formik.handleChange}
+              />
               Other
             </label>
           </div>
-          
-          <div className='services'>
+
+          <div className="services">
             <h5>What services would you like to offer?</h5>
 
-            <div className='petHosting'>
-              <label htmlFor='pet_hosting'>
-                <input type='checkbox' name='pet_hosting' value={formik.values.pet_hosting} onClick={formik.handleChange}/>
+            <div className="petHosting">
+              <label htmlFor="pet_hosting">
+                <input
+                  type="checkbox"
+                  name="pet_hosting"
+                  value={formik.values.pet_hosting}
+                  onClick={formik.handleChange}
+                />
                 Pet Hosting
               </label>
-              <label htmlFor='pet_hosting_rate'>
-                <input type='number' name='pet_hosting_rate' value={formik.values.pet_hosting_rate} onChange={formik.handleChange}/>
-                for how much? {'(per night)'}
+              <label htmlFor="pet_hosting_rate">
+                <input
+                  type="number"
+                  name="pet_hosting_rate"
+                  value={formik.values.pet_hosting_rate}
+                  onChange={formik.handleChange}
+                />
+                for how much? {"(per night)"}
               </label>
             </div>
 
-            <div className='houseSitting'>
-              <label htmlFor='house_sitting'>
-                <input type='checkbox' name='house_sitting' value={formik.values.house_sitting} onClick={formik.handleChange}/>
+            <div className="houseSitting">
+              <label htmlFor="house_sitting">
+                <input
+                  type="checkbox"
+                  name="house_sitting"
+                  value={formik.values.house_sitting}
+                  onClick={formik.handleChange}
+                />
                 House Sitting
               </label>
-              <label htmlFor='house_sitting_rate'>
-                <input type='number' name='house_sitting_rate' value={formik.values.house_sitting_rate} onChange={formik.handleChange}/>
-                for how much? {'(per night)'}
+              <label htmlFor="house_sitting_rate">
+                <input
+                  type="number"
+                  name="house_sitting_rate"
+                  value={formik.values.house_sitting_rate}
+                  onChange={formik.handleChange}
+                />
+                for how much? {"(per night)"}
               </label>
             </div>
 
-            <div className='dogWalking'>
-              <label htmlFor='dog_walking'>
-                <input type='checkbox' name='dog_walking' value={formik.values.dog_walking} onClick={formik.handleChange}/>
+            <div className="dogWalking">
+              <label htmlFor="dog_walking">
+                <input
+                  type="checkbox"
+                  name="dog_walking"
+                  value={formik.values.dog_walking}
+                  onClick={formik.handleChange}
+                />
                 Dog Walking
               </label>
-              <label htmlFor='dog_walking_rate'>
-                <input type='number' name='dog_walking_rate' value={formik.values.dog_walking_rate} onChange={formik.handleChange}/>
-                for how much? {'(per hour)'}
+              <label htmlFor="dog_walking_rate">
+                <input
+                  type="number"
+                  name="dog_walking_rate"
+                  value={formik.values.dog_walking_rate}
+                  onChange={formik.handleChange}
+                />
+                for how much? {"(per hour)"}
               </label>
             </div>
           </div>
-          
-          <button type='submit' className='submitButton'>
+
+          <button type="submit" className="submitButton">
             Submit
-          </button>
+          </button></div>
         </form>
       </Formik>
-  )
+    );
 }
 
 export default Form;
