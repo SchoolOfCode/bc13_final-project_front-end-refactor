@@ -24,15 +24,17 @@ import Footer from '../component/footer/footer.js'
 
 function profile() {
   return (
-    <div>
+    <>
       <Header></Header>
-      <div className='profile-page-main-div'>
+      {/* < className='profile-page-main-div'>
       <h1>Set your profile information</h1>
-      <h6>Here you can also set your sitting services</h6>
+      <h6>Here you can also set your sitting services</h6> */}
+      <div className="profile-page">
       <Form></Form>
       </div>
+      
       <Footer></Footer>
-    </div>
+    </>
   )
 }
 

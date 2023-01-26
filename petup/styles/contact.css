@@ -16,6 +16,8 @@
     min-height: 25rem;
     width: 80%;
     justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 .contact-left {
     display: flex;
