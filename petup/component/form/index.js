@@ -161,9 +161,9 @@ function Form(email, image) {
   return (
  
     <Formik >
-    <form className="form-div profile-page" onSubmit={formik.handleSubmit}>
-          <div className="username sitter-first-main-div">
-            <div className="first-name-div name-bio-div">
+    <form className="form-div" onSubmit={formik.handleSubmit}>
+          <div className="username ">
+            <div className="first-name-div">
               <label htmlFor="nickname">First Name</label>
               <input
                 type="text"

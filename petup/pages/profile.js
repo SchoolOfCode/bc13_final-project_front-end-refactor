@@ -40,14 +40,11 @@ function profile() {
       <Form email={userEmail} image={userImage} ></Form>
 
       </div>
+      </div>
       
       <Footer></Footer>
-    <div/>
-    </div>
     </>
-   )
-
-   //test
+  )
 }
 
-export default profile; 
+export default profile;
