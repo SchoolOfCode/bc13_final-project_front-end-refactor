@@ -37,13 +37,13 @@ import Swal from 'sweetalert2'
 
 // validate address_postcode with nominatim api
 // 
-function Form() {
+function Form(userEmail, userImage) {
   
   // const [existingUser, setExistingUser] = useState(true);
-  const [userEmail, setUserEmail] = useState('');
-  const [userImage, setUserImage] = useState('');
   const [lat, setLat] = useState(0);
   const [long, setLong] = useState(0);
+  const [userEmail, setUserEmail] = useState(userEmail);
+  const [userImage, setUserImage] = useState(userImage); 
     /** this hook takes in an object as its parameter
      * this will then allow us to get back an object which contains a variety of props and methods we can use with out form
      */
