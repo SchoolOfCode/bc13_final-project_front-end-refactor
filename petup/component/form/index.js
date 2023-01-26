@@ -99,7 +99,7 @@ function Form(email, image) {
           console.log('lat', values.latitude) 
           console.log(values);
 
-          const response = await fetch('http://localhost:3000/api/profile', {
+          const response = await fetch('https://petbrb.vercel.app/api/profile', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
