@@ -136,9 +136,10 @@ const Search = ({sitterData}) => {
       <div className="search-page-main-div">
       <div className="white-main-div">
 
-      {sitterData ? <></> : <p> No results found </p> }
+      {sitterData[0] ? <></> : <p className = "p-tag" > Sorry, results not found </p> }   
       
-      <div className="search-result">       
+      <div className="search-result">    
+      
         {sitterData.map((user) => {
           const price = Math.max(user.dog_walking_rate, user.pet_hosting_rate, user.house_sitting_rate)
           return (
