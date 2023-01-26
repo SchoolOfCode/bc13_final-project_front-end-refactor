@@ -86,3 +86,13 @@
 .navbar-input-fieald input {
     height: 85%;
 }
+
+.white-main-div > .p-tag{
+    position: absolute;
+    color: black;
+    font-size: small;
+    text-align: center;
+    line-height: 100px;
+    display: flex;
+    margin: 10rem;
+}
