@@ -1,8 +1,17 @@
 .profile-page-main-div {
     height: 80vh;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     background-color: #EEEEEE;
     padding:0 3rem 0 3rem;
+}
+
+.profile-page-main-div > h1 {
+    /* border: 2px solid purple; */
+    padding-top: 2%;
+}
+
+.profile-page-main-div > h6 {
+    font-size: medium;
 }
 
 .profile-page{
