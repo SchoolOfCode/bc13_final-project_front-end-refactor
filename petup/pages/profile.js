@@ -28,15 +28,21 @@ function profile() {
   const userEmail = session?.user.email;
   const userImage = session?.user.image;
   return (
-    <div>
+    <>
       <Header></Header>
-      <div className='profile-page-main-div'>
+      {/* < className='profile-page-main-div'>
       <h1>Set your profile information</h1>
+
+   
+      <div className="profile-page">
+
       <h6>Here you can also set your sitting services</h6>
       <Form email={userEmail} image={userImage} ></Form>
+
       </div>
+      
       <Footer></Footer>
-    </div>
+    </>
   )
 }
 

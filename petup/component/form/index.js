@@ -1,6 +1,8 @@
+
 import { useFormik, Formik } from 'formik';
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2'
+
 
 // async function setUserFormData(context) {
 
@@ -12,16 +14,16 @@ import Swal from 'sweetalert2'
 //   // LAT AND LONG based on the value retrieved from the API
 
 //   const setUserData = await setUserData(
-//     fullname, 
-//     nickname, 
+//     fullname,
+//     nickname,
 //     email,
-//     phoneNumber, 
+//     phoneNumber,
 //     profile_image,
 //     tagline,
-//     address_region, 
-//     address_city, 
-//     address_postcode, 
-//     latitude, 
+//     address_region,
+//     address_city,
+//     address_postcode,
+//     latitude,
 //     longitude,
 //     sitting_services_enabled,
 //     dogWalking.enabled,
@@ -36,6 +38,7 @@ import Swal from 'sweetalert2'
 // }
 
 // validate address_postcode with nominatim api
+
 // 
 function Form(email, image) {
   
@@ -50,11 +53,13 @@ function Form(email, image) {
     
     const formik = useFormik({
       /* 
+
       sitting_services_enabled: if true then the user will show up on searches
       petTypes: an object with boolean fields for each type of pet which signifies which pets the user wants to be a sitter for
       petHosting: if true then the user will show up on the filter for petHosting
       houseSitting: if true then the user will show up on the filter for houseSitting
       dogWalking: if true then the user will show up on the filter for dogWalking
+
        */ 
 
       initialValues: {
@@ -117,46 +122,48 @@ function Form(email, image) {
           setSubmitting(false);
           },
 
-        // validate: (values) => {
-        //   let errors = {};
-              // if (values.tagline is longer than 140 characters)
-        //   if (values.sitting_services_enabled === true) {
-        //     errors.address_postcode = 'Required';
-        //     errors.address_city = 'Required';
-        //     errors.address_region = 'Required';
-        //     errors.fullName = 'Required';
-        //     errors.lastName = 'Required';
-        //     errors.tagline = 'Required';
-        //     if (values.petHosting.enabled === false && values.dogWalking.enabled === false && values.houseSitting.enabled === false ) {
-        //       errors.petHosting = 'Required';
-        //       errors.dogWalking = 'Required';
-        //       errors.houseSitting = 'Required';
-        //     }
-        //     if (values.petTypes.dog === false && values.petTypes.cat === false && values.petTypes.other === false) {
-        //       // errors.petTypes.dog = 'Required';
-        //       // errors.petTypes.cat = 'Required';
-        //       // errors.petTypes.other = 'Required'
-        //     }
-        //     if (values.petHosting.enabled === true) {
-        //       errors.petHosting.rate = 'Required';
-        //     }
-        //     if (values.dogWalking.enabled === true) {
-        //       errors.dogWalking.rate = 'Required';
-        //       // errors.petTypes.dog = 'Required';
-        //     }
-        //     if (values.houseSitting.enabled === true) {
-        //       errors.houseSitting.rate = 'Required';
-        //     }
-        //   }
-        //   return errors;
-        // } 
-    })
 
-    return (
-      <Formik>
-        <form className="form-div" onSubmit={formik.handleSubmit}>
-          <div className="username">
-            <div className="first-name-div">
+    // validate: (values) => {
+    //   let errors = {};
+    // if (values.tagline is longer than 140 characters)
+    //   if (values.sitting_services_enabled === true) {
+    //     errors.address_postcode = 'Required';
+    //     errors.address_city = 'Required';
+    //     errors.address_region = 'Required';
+    //     errors.fullName = 'Required';
+    //     errors.lastName = 'Required';
+    //     errors.tagline = 'Required';
+    //     if (values.petHosting.enabled === false && values.dogWalking.enabled === false && values.houseSitting.enabled === false ) {
+    //       errors.petHosting = 'Required';
+    //       errors.dogWalking = 'Required';
+    //       errors.houseSitting = 'Required';
+    //     }
+    //     if (values.petTypes.dog === false && values.petTypes.cat === false && values.petTypes.other === false) {
+    //       // errors.petTypes.dog = 'Required';
+    //       // errors.petTypes.cat = 'Required';
+    //       // errors.petTypes.other = 'Required'
+    //     }
+    //     if (values.petHosting.enabled === true) {
+    //       errors.petHosting.rate = 'Required';
+    //     }
+    //     if (values.dogWalking.enabled === true) {
+    //       errors.dogWalking.rate = 'Required';
+    //       // errors.petTypes.dog = 'Required';
+    //     }
+    //     if (values.houseSitting.enabled === true) {
+    //       errors.houseSitting.rate = 'Required';
+    //     }
+    //   }
+    //   return errors;
+    // }
+  });
+
+  return (
+ 
+    <Formik >
+    <form className="form-div profile-page" onSubmit={formik.handleSubmit}>
+          <div className="username sitter-first-main-div">
+            <div className="first-name-div name-bio-div">
               <label htmlFor="nickname">First Name</label>
               <input
                 type="text"
@@ -341,9 +348,9 @@ function Form(email, image) {
           <button type="submit" className="submitButton">
             Submit
           </button></div>
-        </form>
-      </Formik>
-    );
+        </form> 
+    </Formik>
+  );
 }
 
 export default Form;
