@@ -42,7 +42,15 @@ export async function getServerSideProps(context){
 
 
 
+
 const Search = ({sitterData}) => {
+  //states for search bar at top of page
+  const [city, setCity] = useState("");
+  const [service, setService] = useState('pet_hosting');
+  // const [budget, setBudget] = useState(100)
+  const [pet, setPet] = useState('pet_dog')
+ 
+  const budget = 100; //hardcode max budget for now
 
   // map component needs cetner coordinates to put on the mpa as an [0,0] data 
   // depending on which card is clicked, we need to update a state here with that users coordinates, by setting them
@@ -53,6 +61,21 @@ const Search = ({sitterData}) => {
     setCoordinates([lat, long])
     console.log('You clicked me!')
   }
+
+  function handleServiceChange(e){
+    setService(e.target.value);
+  }
+
+  function handlePetChange(e){
+    setPet(e.target.value)
+  }
+
+  function handleCityChange(e){
+    setCity(e.target.value)
+  }
+
+
+
   return (
     <>
       <Head>
@@ -69,26 +92,42 @@ const Search = ({sitterData}) => {
           className="search-input-field"
           placeholder="Search"
           type="text"
+          onChange={handleCityChange}
         />
       </div>
         
         
         <div className="search-pet-service">
           <select name="service" id="pets" className="search-toggle-box-service">
-            <option value="Pet hosting">Pet Hosting</option>
-            <option value="home sitting">Home Sitting</option>
-            <option value="home sitting">Dog Walking</option>
+            <option value="Pet hosting" onClick={handleServiceChange}>Pet Hosting</option>
+            <option value="home sitting" onClick={handleServiceChange}>Home Sitting</option>
+            <option value="home sitting" onClick={handleServiceChange}>Dog Walking</option>
           </select>
         </div>
         <div className="pet-type">
           <select name="type" id="pet-type" className="toggle-box-type-pet">
-            <option value="Dog">Dog</option>
-            <option value="Cat">Cat</option>
-            <option value="Other">Other</option>
+            <option value="Dog" onClick={handlePetChange} >Dog</option>
+            <option value="Cat" onClick={handlePetChange} >Cat</option>
+            <option value="Other" onClick={handlePetChange} >Other</option>
           </select>
         </div>
         <div className="navbar-button-div">
+
+        <Link
+              href={{
+                pathname: "/search",
+                query: { 
+                  city: city, 
+                  service: service,
+                  pet: pet,
+                  budget: budget 
+                },
+              }}
+              passHref
+              style={{ textDecoration: "none" }}
+            >
         <Button className="sign-up" text="Update"></Button>
+        </Link>
         </div>
        
         </div>
