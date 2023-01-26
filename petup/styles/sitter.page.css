@@ -46,3 +46,11 @@ span {
     color: var(--darkblu);
     font-weight: 500;
 }
+
+.sign-in-instruction{
+    padding: 1.5rem;
+    margin: 2rem 0;
+    display:flex;
+    border: 1px solid var(--green);
+    border-style: none none solid none;
+}
