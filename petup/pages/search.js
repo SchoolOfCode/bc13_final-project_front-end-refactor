@@ -136,6 +136,7 @@ const Search = ({sitterData}) => {
       <div className="search-page-main-div">
       <div className="white-main-div">
 
+      {sitterData ? <></> : <p> No results found </p> }
       
       <div className="search-result">       
         {sitterData.map((user) => {
