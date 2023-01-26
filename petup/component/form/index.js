@@ -39,11 +39,9 @@ import Swal from 'sweetalert2'
 // 
 function Form() {
   
-  // const [existingUser, setExistingUser] = useState(true);
+  const [existingUser, setExistingUser] = useState(true);
   const [userEmail, setUserEmail] = useState('');
-  const [userImage, setUserImage] = useState('');
-  const [lat, setLat] = useState(0);
-  const [long, setLong] = useState(0);
+  const [userImage, setUserImage] = useState(''); 
     /** this hook takes in an object as its parameter
      * this will then allow us to get back an object which contains a variety of props and methods we can use with out form
      */
@@ -65,8 +63,8 @@ function Form() {
             address_region: '',
             address_city: '',
             address_postcode: '',
-            latitude: lat,
-            longitude: long,
+            latitude: 0.00,
+            longitude: 0.00,
             sitting_services_enabled: false,
             dog_walking: false,
             house_sitting: false,
@@ -83,12 +81,7 @@ function Form() {
         onSubmit: async (values, {setSubmitting}) => {
          
           setSubmitting(true);
-          const res = await fetch(`api.postcodes.io/postcodes/${address_postcode}`)
-          const data = await res.json();
-          setLat(data.result.latitude);
-          setLong(data.result.longitude);
-          console.log()
-          const response = await fetch('https://petbrb.vercel.app/api/profile', {
+          const response = await fetch('http://localhost:3000/api/profile', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -96,19 +89,19 @@ function Form() {
             },
             body: JSON.stringify(values),
         });
-          const parsedResponse = await response.json() 
-          const updatedUser = parsedResponse
-          console.log(updatedUser)
+        const parsedResponse = await response.json() 
+        const updatedUser = parsedResponse
+        console.log(updatedUser)
 
-          //alert("Profile is updated")
-          Swal.fire(
-            'Profile successfully updated',
-            'Have a pawsome day!',
-            'success'
-          )
-        
-          setSubmitting(false);
-          },
+        //alert("Profile is updated")
+        Swal.fire(
+          'Profile successfully updated',
+          'Have a pawsome day!',
+          'success'
+        )
+       
+        setSubmitting(false);
+        },
 
         // validate: (values) => {
         //   let errors = {};
