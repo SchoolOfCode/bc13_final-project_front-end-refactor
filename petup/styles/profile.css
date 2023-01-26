@@ -1,0 +1,175 @@
+.profile-page-main-div {
+    /* height: 80vh; */
+    /* border: 2px solid red; */
+    background-color: #EEEEEE;
+    padding:0 3rem 0 3rem;
+}
+
+.profile-page-main-div > h1 {
+    /* border: 2px solid purple; */
+    padding-top: 2%;
+}
+
+.profile-page-main-div > h6 {
+    font-size: medium;
+}
+
+.profile-page{
+    display: flex;
+    /* min-height: 80vh; */
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    padding-left: 3rem;
+}
+/* .name-picture-div {
+    display: flex;
+    height: 20rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    color: black;
+}
+.sitter-bio-address {
+    display: flex;
+} */
+.sitter-first-main-div {
+    display: flex;
+    height: 15rem;
+    width: 100%;
+    /* border: 10px solid red; */
+}
+.name-bio-div{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    /* border: 1px solid red;  */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.sitter-pic-div {
+    display: flex;
+    height: 100%;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+}
+.sitter-name-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid blue; */
+    height: 30%;
+    width: 100%;
+}
+.sitter-bio-div {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 50%;
+    align-items: flex-start;
+    margin-left: 2rem;
+    
+}
+.h1 {
+    border: 1px solid var(--gray);
+    padding: 1rem;
+    min-width: 15rem;
+}
+.sitter-second-main-div {
+    display: flex;
+    /* border: 1px solid black; */
+    min-height: 30rem;
+    width: 100%;
+    margin-top: 1%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.sitter-address-div {
+    display: flex;
+    /* border: 1px solid red; */
+    height: 5rem;
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 2rem;
+    gap: 7rem;
+    align-items: center;
+}
+.sitter-service-div{
+    display: flex;
+    /* border: 1px solid red; */
+    height: 50%;
+    width: 100%;
+}
+.sitter-address-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start
+    ;
+}
+.h2 {
+    display: flex;
+    border: 1px solid var(--gray);
+    padding: 1rem;
+    width: 100%;
+}
+.sitter-service-div{
+    display: flex;
+    height: 15rem;
+    /* border: 1px solid black; */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4rem;
+  
+}
+.sitter-service-box {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2.1rem;
+   
+}
+.data-box{
+    display: flex;
+    min-height: 20%;
+    max-height: 20%;
+    border: 1px solid var(--gray);
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.data-box > img {
+    height: 2rem;
+    width: 2rem;
+}
+.name-div {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.back-button {
+    display: flex;
+    height: 5rem;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+}
+.back-button > button{
+    position: relative;
+    left:0
+}
+.back-button > h1 {
+    align-items: center;
+    justify-content: center;
+}
+.back {
+    padding: 1rem;
+}

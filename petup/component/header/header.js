@@ -33,7 +33,7 @@ const Header = () => {
     <div className = "margin-div-header">
     <Link href='/'>
       {/* <Image src="/petbrb-high-resolution-logo-white-on-transparent-background.png" width={100} height={100}/> */}
-      <img src='https://i.ibb.co/6D4qNm8/petbrb-high-resolution-logo-white-on-transparent-background.png' alt="logo"></img>
+      <img src='https://i.ibb.co/6D4qNm8/petbrb-high-resolution-logo-white-on-transparent-background.png' alt="Pet-Brb-logo"></img>
     </Link>
     
       
@@ -52,7 +52,7 @@ const Header = () => {
       <div className="button-div">
       <h1 className="title">
           <Link href="/sitter" style={{ textDecoration: "none" }}>
-            Become a sitter
+            <span className='sitter-title'>Become a sitter</span>
           </Link>
         </h1>
     

@@ -1,13 +1,13 @@
 import React from "react";
-import Link from "next/link";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import Header from "../component/header/header";
 import { DisplayResults } from "../component/displayResults/displayResults";
 import Footer from "../component/footer/footer";
 import {getSitterByData} from '../lib/search.js'
 import dynamic from 'next/dynamic';
 import Button from "../component/button/button";
+import {useState} from 'react';
+import Link from "next/link";
 
 
 const Map = dynamic(
@@ -22,19 +22,17 @@ const Map = dynamic(
 
 //'context' contains request specific parameters, like query parameters, etc.
 export async function getServerSideProps(context){
-//get the city from the query parameter
+//get the input from the query parameter
   const service = (context.query.service);
   const city = (context.query.city);
   const pet = (context.query.pet);
   const budget = (context.query.budget);
-  // //old code below for getting city from useRouter hook:
-  //   const router = useRouter();
-  //   const input = router.query.city;   //data came out as object like this data = {city: input}
 
   //get the data
   const sitterData = await getSitterByData(service, city, pet, budget);
-  
+ 
   //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
+  console.log(sitterData)
   return {
     props: {
       sitterData,
@@ -45,20 +43,16 @@ export async function getServerSideProps(context){
 
 
 const Search = ({sitterData}) => {
- /* 
- //console.log(sitterData)
-//console.log(`this is user input for city: ${city}`)
 
-  //below is some old code from getting local data
-  // function getData() {
-  //   const response = getAllUsers(); //response is already parsed into JS object
-  //   // const data = response.json() // no need to parse again. 
-  //   return response;
-  // }
-  // const response = getData(); //fetch all data
-  // const result = citySearch(response, input); //get user that matches city input
-  */   
+  // map component needs cetner coordinates to put on the mpa as an [0,0] data 
+  // depending on which card is clicked, we need to update a state here with that users coordinates, by setting them
+  // map will have those coordinates sent down and it will center whichever card is clicked
+  const [coordinates, setCoordinates] = useState([sitterData[0].latitude, sitterData[0].longitude])
 
+  function handleClick(lat, long) {
+    setCoordinates([lat, long])
+    console.log('You clicked me!')
+  }
   return (
     <>
       <Head>
@@ -104,14 +98,12 @@ const Search = ({sitterData}) => {
       <div className="white-main-div">
 
       
-      <div className="search-result">
-
-      {/* <p>this is user input for city: ${city}</p> */}
-       
-
+      <div className="search-result">       
         {sitterData.map((user) => {
+          const price = Math.max(user.dog_walking_rate, user.pet_hosting_rate, user.house_sitting_rate)
           return (
-            <div className="card-div" key={user.id}>
+            <div className="card-div" key={user.user_id}>
+            <Link href={`/search/${user.user_id}`} style={{textDecoration: 'none', cursor:'pointer'}}>
               <DisplayResults
                 fullname={user.fullname}
                 nickname={user.nickname}
@@ -121,14 +113,19 @@ const Search = ({sitterData}) => {
                 tagline={user.tagline}
                 address_region={user.address_region}
                 address_city={user.address_city}
-                price={user.price}
+                price={price}
+                handleClick={() => handleClick(user.latitude, user.longitude)}
               />
+              </Link>
             </div>
           );
         })}</div>
-        <div className="map-div"><Map /></div>
+
+        <div className="map-div">
+          <Map sitterData={sitterData} coordinates={coordinates}/>
         </div>
         
+      </div>
       </div>
       <Footer />
     </>
@@ -137,5 +134,3 @@ const Search = ({sitterData}) => {
 
 export default Search;
 
-
-//refactor later to use dynamic routing?  

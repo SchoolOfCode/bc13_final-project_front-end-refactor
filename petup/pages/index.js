@@ -29,11 +29,12 @@ import Radio from "../component/radioButtons/radio";
 
 export default function Home() {
   const [city, setCity] = useState("");
-  const [service, setService] = useState(1);
-  const [budget, setBudget] = useState(50)
-  const [pet, setPet] = useState(2)
+  const [service, setService] = useState('pet_hosting');
+  const [budget, setBudget] = useState(100)
+  const [pet, setPet] = useState('pet_dog')
   const [priceString, setPriceString] = useState('(per night)');
   const [budgetWarning, setBudgetWarning] = useState('')
+ 
 
   function handleCityChange(e) {
     setCity(e.target.value);
@@ -41,13 +42,12 @@ export default function Home() {
 
   /**
    * 
-   * Takes in a value which is an int. Values correspond to these values in the database:
-   * 1 = 'Pet Hosting', 2 = 'Home Sitting', 3 = 'Dog Walking'
+   * Takes in a value which is a string that corresponds to the type of service
    */
   function handleServiceChange(e) {
     // if service is set to dog walking, then pet will also be set to Dog
-    if (e.target.value === 3) {
-      setPet(2)
+    if (e.target.value == 'dog_walking') {
+      setPet('pet_dog')
       setPriceString('(per hour)')
     }
     setPriceString('(per night)');
@@ -87,6 +87,7 @@ export default function Home() {
       {" "}
       <Head>
         <title>Home</title>
+        <meta name="description" content="PetBrB homepage. Search engine that allows you to search for Pet sitter by location and type of pet care you require. Options between Cat,Dog and Other. Input field with price prompt, for your desired budget."></meta>
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -107,7 +108,7 @@ export default function Home() {
         <div className="searchBox-div">
           <div className="top-search-div">
             <div className="pet-service">
-              <label for="service">What service would you like?</label>
+              <legend for="service">What service would you like?</legend>
               <div className = "select-div">
               <Image
               className = 'luggage-icon'
@@ -117,16 +118,15 @@ export default function Home() {
                height = {100}
               />
               <select name="service" id="pets" className="toggle-box-service">
-                <option value={1} alt='Pet Hosting' onClick={handleServiceChange}>Pet Hosting</option>
-                <option value={2} alt='Home Sitting' onClick={handleServiceChange}>Home Sitting</option>
-                <option value={3} alt='Dog Walking' onClick={handleServiceChange}>Dog Walking</option>
+                <option value='pet_hosting' alt='Pet Hosting' onClick={handleServiceChange}>Pet Hosting</option>
+                <option value='house_sitting' alt='Home Sitting' onClick={handleServiceChange}>Home Sitting</option>
+                <option value='dog_walking' alt='Dog Walking' onClick={handleServiceChange}>Dog Walking</option>
               </select>
               </div>
             </div>
 
             <div className="input-box-div">
-            
-            <label for="input">Near?</label>
+            <legend for="input">Near?</legend>
             <Image 
               className = 'search-icon'
               src = '/icons8-interface-96.png'
@@ -152,62 +152,65 @@ export default function Home() {
                   <legend>For what type of pet?</legend>
                   <div className = "pet-radio-box">
                   <div className = "input-radio-div">
+                  <label class="btn btn-primary" for="dog-btn-check">
                     <input
                       type="radio"
                       class="btn-check"
                       id="dog-btn-check"
                       autocomplete="off"
-                      value={2} 
+                      value='pet_dog' 
                       onClick={handlePetChange}
-                      checked={pet === 2}
+                      checked={pet === 'pet_dog'}
                     />
                     <Image
                       src = "/icons8-dog-sit-90.png"
                       width = {100}
                       height = {100}
+                      alt="dog-icon-sitting"
                       ></Image>
-                    <label class="btn btn-primary" for="dog-btn-check">
                       Dog
                     </label>
                     </div>
                     <br />
                     <div className = "input-radio-div">
+                    <label class="btn btn-primary" for="cat-btn-check">
                     <input
                       type="radio"
                       class="btn-check"
                       className = "btn-check"
                       id="cat-btn-check"
                       autocomplete="off"
-                      value={1}
+                      value='pet_cat'
                       onClick={handlePetChange}
-                      checked={pet === 1}
+                      checked={pet === 'pet_cat'}
                     />
                      <Image
                       src = "/icons8-pet-commands-stay-100.png"
                       width = {100}
                       height = {100}
+                      alt=" cat-icon"
                       ></Image>
-                    <label class="btn btn-primary" for="cat-btn-check">
                       Cat
                     </label>
                     </div>
                     <br />
                     <div className = "input-radio-div">
+                    <label class="btn btn-primary" for="other-btn-check">
                     <input
                       type="radio"
                       class="btn-check"
                       id="other-btn-check"
                       autocomplete="off"
-                      value={3} 
+                      value='pet_other' 
                       onClick={handlePetChange}
-                      checked={pet === 3}
+                      checked={pet === 'pet_other'}
                     />
                     <Image
                       src = "/icons8-easter-rabbit-96.png"
                       width = {100}
                       height = {100}
+                      alt="rabbit-icon"
                       ></Image>
-                    <label class="btn btn-primary" for="other-btn-check">
                       Other
                     </label>
                     </div>
@@ -218,19 +221,28 @@ export default function Home() {
             </div>
 
            <div className='price-container'>
-                <div className='text-container'>
-                  <label  className="budget-label" for='max'>Set your budget {priceString}.</label>
-                </div>
+                  <legend  className="budget-label" for='max'>For how much? {priceString}</legend>
                 <div className='budget-container'>
-                  <span class="currencyinput">£
-                    <input className='budget' name='max' placeholder='30' pattern="[0-9]+" onChange={handleBudgetChange}/>
-                    <h6 className='budget-warning'>{budgetWarning}</h6>
-                  </span>
+                  <input className='budget' name='min' placeholder='Min £0'/>
+                    <input className='budget' name='max' placeholder='Max £100' pattern="[0-9]+" onChange={handleBudgetChange}/>
+                    <p className='budget-warning'>{budgetWarning}</p>
                 </div>
             </div>
           </div>
+
           <div className="third-search-div">
-            {/* <Calendar style={{width: '30vh'}} /> */}
+          {/* <div className = "date-div">
+          <label for="date-search">Dates</label>
+            <div className = "date-search">
+              <p> Start date </p>  <Image
+                      src = "/icons8-chevron-right-90.png"
+                      width = {100}
+                      height = {100}
+                      alt=" chevron-right"
+                      ></Image> <p>End date</p>
+            </div>
+            </div> */}
+
             <Link
               href={{
                 pathname: "/search",
@@ -270,8 +282,7 @@ export default function Home() {
         <div className="tagline-div">
           <h1>Helping you find
               the best sitters, 
-              so you can 
-              spend less & worry less
+              so you can <span>spend less</span> & <span>worry less</span>
               </h1>
         </div>
             </div>
@@ -284,15 +295,16 @@ export default function Home() {
       </div>
      
       <div className = "bottom-div"> <div className="bottom-margin-div">
-       <h1> How does Pet'BrB work?</h1>
+       <h1> How does PetBrB work?</h1>
        
        <div className = "step1-div"> <Image
           className = "step1-icon"
           src = "/icons8-funnel-100.png"
           width = {100}
           height ={100}
+          alt="small-icon-funnel"
           ></Image>
-        <p className= "step1"> 1. Search for pet sitters in an area, for why you want, for where you want, for how much you want, and for when you want</p>
+        <p className= "step1"> 1. Search for pet sitters in an area, for where you want, for how much you want, and for when you want</p>
           </div>
           <div className = "step2-div">
         <p>2. Contact your found sitter to get to know them more and how they can help you and your needs for your pets. </p>  <Image
@@ -300,6 +312,7 @@ export default function Home() {
           src = "/icons8-unread-messages-100.png"
           width = {100}
           height ={100}
+          alt="small-icon-unread-message"
           ></Image>
        </div>
        <div className = "step3-div">
@@ -308,6 +321,7 @@ export default function Home() {
           src = "/icons8-handshake-100.png"
           width = {100}
           height ={100}
+          alt="small-icon-handshake"
           ></Image>
         <p className= "step3">3. Once an agree arrangement is made, you can be free of stress and enjoy your time with your pet!</p>
        </div>

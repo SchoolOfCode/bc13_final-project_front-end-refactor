@@ -1,9 +1,14 @@
+/* * {
+    text-align: center;
+} */
+
 .button-div {
     display: flex;
     align-items: center;
     height: 50%;
     width: 40%;
     justify-content: space-around;
+    text-align: center;
 }
 .sign-in {
 
@@ -12,10 +17,11 @@
     cursor: pointer;
     border: 1px solid var(--orange);
     border-radius: 5px;
-    text-align: left;
     vertical-align: top;
-    padding: calc(.875rem - 3px) 63px calc(.875rem - 3px) 15px;
-    background-color: var(--green);
+    /* padding: calc(.875rem - 3px) 63px calc(.875rem - 3px) 15px; */
+    min-width: 30%;
+    margin-right: 3%;
+    background-color: var(--darkblu);
     font-size: 14px;
     letter-spacing: 0.16px;
     min-height: 48px;
@@ -23,12 +29,13 @@
     color: var(--main-yellow);
     font-weight: 400;
     transition: background 70ms cubic-bezier(0,0,.38,.9),box-shadow 70ms cubic-bezier(0,0,.38,.9),border-color 70ms cubic-bezier(0,0,.38,.9),outline 70ms cubic-bezier(0,0,.38,.9);
-    
+    text-align: center;
 }
+
 .sign-in:hover {
         /* background-color: var(--main-yellow);
         color: var(--green); */
-        border: 3px solid var(--orange);
+        border: 1px solid #cecece;
     }
     a {
         padding: 0;
@@ -36,35 +43,33 @@
     }
 
 .sign-up {
-
+    
     display: flex;
     align-items: center;
     justify-content: center;
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    text-align: center;
-    padding: calc(.875rem - 3px) 63px calc(.875rem - 3px) 15px;
+    min-height: 48px;
+    /* padding: calc(.875rem - 3px) 63px calc(.875rem - 3px) 15px; */
+    min-width: 30%;
     background-color: var(--orange);
+    border: 1px solid #cecece;
     font-size: 14px;
     /* letter-spacing: 0.16px; */
     /* min-height: 48px; */
     line-height: 1.29;
-    color: var(--white);
+    color: var(--main-yellow);
     font-weight: 400;
+    text-align: center;
     /* transition: background 70ms cubic-bezier(0,0,.38,.9),box-shadow 70ms cubic-bezier(0,0,.38,.9), cubic-bezier(0,0,.38,.9),outline 70ms cubic-bezier(0,0,.38,.9);
      */
 }
-/* .sign-up:hover {
-    /* background-color: var(--green);
-    color: var(--main-yellow); */
-    /* border: 3px solid var(--green) */
-
-a {
-    padding: 0;
-    margin: 0;
-}
-
+ .sign-up:hover {
+    /* background-color: var(--green); */
+    /* color: var(--main-yellow);  */
+     border: 1px solid var(--green) ;
+ }
 
 
 .search-button {
@@ -77,6 +82,7 @@ a {
     outline: none;
     cursor: pointer;
     font-size: 14px;
+    font-weight: 500;
     transition-property: background-color, border-color, color, box-shadow, filter;
     transition-duration: .3s;
     border: 1px solid var(--green);
@@ -86,14 +92,13 @@ a {
     font-weight: 700;
     text-align: center;
     /* padding-left: calc(3em); */
-    /* padding: 1rem 0.8rem 1.2rem calc(3em); */
+    /* padding: 1rem 0.8rem 1.2rem calc(3em); */    
     padding: 16px 14px 18px 30px;
     /* color: var(--green); */
     /* box-shadow: inset 0 0 0 2px var(--main-yellow); */
     background-color: var(--orange);
-    color: var(--white);
+    color: var(--main-yellow);
     border-radius:5px
-
 }
 
 .search-button:hover {
