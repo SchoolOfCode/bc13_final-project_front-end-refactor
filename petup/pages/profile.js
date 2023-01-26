@@ -33,7 +33,7 @@ function profile() {
       <div className='profile-page-main-div'>
       <h1>Set your profile information</h1>
       <h6>Here you can also set your sitting services</h6>
-      <Form userEmail={userEmail} userImage={userImage} ></Form>
+      <Form email={userEmail} image={userImage} ></Form>
       </div>
       <Footer></Footer>
     </div>

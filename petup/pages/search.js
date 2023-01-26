@@ -47,7 +47,7 @@ const Search = ({sitterData}) => {
   // map component needs cetner coordinates to put on the mpa as an [0,0] data 
   // depending on which card is clicked, we need to update a state here with that users coordinates, by setting them
   // map will have those coordinates sent down and it will center whichever card is clicked
-  const [coordinates, setCoordinates] = useState([sitterData[0].latitude, sitterData[0].longitude])
+  const [coordinates, setCoordinates] = useState([sitterData[0]?.latitude, sitterData[0]?.longitude])
 
   function handleClick(lat, long) {
     setCoordinates([lat, long])
