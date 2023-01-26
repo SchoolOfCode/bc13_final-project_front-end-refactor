@@ -30,7 +30,7 @@ function profile() {
   return (
     <>
       <Header></Header>
-      {/* < className='profile-page-main-div'>
+      <div className='profile-page-main-div'>
       <h1>Set your profile information</h1>
 
    
@@ -42,8 +42,10 @@ function profile() {
       </div>
       
       <Footer></Footer>
+    <div/>
+    </div>
     </>
-  )
+   )
 }
 
-export default profile;
+export default profile; 
