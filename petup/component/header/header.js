@@ -4,6 +4,7 @@ import Button from "../button/button";
 import { useSession, signIn, signOut } from "next-auth/react"
 import Image from "next/image"
 
+
 const Header = () => {
 
   {/*This is OAuth*/}
@@ -58,7 +59,17 @@ const Header = () => {
     
         {status === "authenticated" ?   
         <div className="button-username">
-        <p>Hi, {userName}</p>
+        <Link
+              href={{
+                pathname: "/profile",
+                query: { 
+                },
+              }}
+              passHref
+              style={{ textDecoration: "none" }}
+            >
+        <span className = "link-username">Hi, {userName}</span>
+        </Link>
         <img src={userImage} alt='profile-image'></img>
         <Button onClick = {() => signOut()} className="sign-up" text="Sign out" />
         </div>

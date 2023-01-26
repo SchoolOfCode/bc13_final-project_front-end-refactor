@@ -1,6 +1,8 @@
-import { useFormik, Formik } from "formik";
-import { useState } from "react";
-import Swal from "sweetalert2";
+
+import { useFormik, Formik } from 'formik';
+import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2'
+
 
 // async function setUserFormData(context) {
 
@@ -36,70 +38,90 @@ import Swal from "sweetalert2";
 // }
 
 // validate address_postcode with nominatim api
-//
-function Form() {
-  const [existingUser, setExistingUser] = useState(true);
-  const [userEmail, setUserEmail] = useState("");
-  const [userImage, setUserImage] = useState("");
-  /** this hook takes in an object as its parameter
-   * this will then allow us to get back an object which contains a variety of props and methods we can use with out form
-   */
-  const formik = useFormik({
-    /* 
+
+// 
+function Form(email, image) {
+  
+  // const [existingUser, setExistingUser] = useState(true);
+  const [lat, setLat] = useState(0.0);
+  const [long, setLong] = useState(0.0);
+  const [userEmail, setUserEmail] = useState(email.email);
+  const [userImage, setUserImage] = useState(email.image); 
+    /** this hook takes in an object as its parameter
+     * this will then allow us to get back an object which contains a variety of props and methods we can use with out form
+     */
+    
+    const formik = useFormik({
+      /* 
+
       sitting_services_enabled: if true then the user will show up on searches
       petTypes: an object with boolean fields for each type of pet which signifies which pets the user wants to be a sitter for
       petHosting: if true then the user will show up on the filter for petHosting
       houseSitting: if true then the user will show up on the filter for houseSitting
       dogWalking: if true then the user will show up on the filter for dogWalking
-       */
-    initialValues: {
-      fullname: "",
-      nickname: "",
-      email: userEmail,
-      phone_number: "",
-      tagline: "",
-      profile_image: userImage,
-      address_region: "",
-      address_city: "",
-      address_postcode: "",
-      latitude: 0.0,
-      longitude: 0.0,
-      sitting_services_enabled: false,
-      dog_walking: false,
-      house_sitting: false,
-      pet_hosting: false,
-      pet_hosting_rate: 0,
-      house_sitting_rate: 0,
-      dog_walking_rate: 0,
-      pet_dog: false,
-      pet_cat: false,
-      pet_other: false,
-    },
-    // takes in the values object and creates a function of the devs choice
-    // here we can use next query to submit values into database and then refresh the page with a get request to retrieve user data
-    onSubmit: async (values, { setSubmitting }) => {
-      setSubmitting(true);
-      const response = await fetch("http://localhost:3000/api/profile", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
-      const parsedResponse = await response.json();
-      const updatedUser = parsedResponse;
-      console.log(updatedUser);
 
-      //alert("Profile is updated")
-      Swal.fire(
-        "Profile successfully updated",
-        "Have a pawsome day!",
-        "success"
-      );
+       */ 
 
-      setSubmitting(false);
-    },
+      initialValues: {
+            fullname: '',
+            nickname: '',
+            email: userEmail,
+            phone_number: '',
+            tagline: '',
+            profile_image: userImage,
+            address_region: '',
+            address_city: '',
+            address_postcode: '',
+            latitude: lat,
+            longitude: long,
+            sitting_services_enabled: false,
+            dog_walking: false,
+            house_sitting: false,
+            pet_hosting: false,
+            pet_hosting_rate: 0,
+            house_sitting_rate: 0,
+            dog_walking_rate: 0,
+            pet_dog: false,
+            pet_cat: false,
+            pet_other: false
+        }, 
+        // takes in the values object and creates a function of the devs choice
+        // here we can use next query to submit values into database and then refresh the page with a get request to retrieve user data
+        onSubmit: async (values, {setSubmitting}) => {
+          setSubmitting(true);
+          const res = await fetch(`https://api.postcodes.io/postcodes/${values.address_postcode}`)
+          const data = await res.json();
+          console.log('postcode', values.address_postcode)
+          console.log('data', data)
+          values.longitude = data.result.longitude;
+          values.latitude = data.result.latitude;
+          console.log('long', values.longitude) 
+          console.log('lat', values.latitude) 
+          console.log(values);
+
+          const response = await fetch('http://localhost:3000/api/profile', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            
+            body: JSON.stringify(values),
+        });
+          const parsedResponse = await response.json() 
+          const updatedUser = parsedResponse
+          console.log(updatedUser)
+
+          //alert("Profile is updated")
+          Swal.fire(
+            'Profile successfully updated',
+            'Have a pawsome day!',
+            'success'
+          )
+        
+          setSubmitting(false);
+          },
+
 
     // validate: (values) => {
     //   let errors = {};
