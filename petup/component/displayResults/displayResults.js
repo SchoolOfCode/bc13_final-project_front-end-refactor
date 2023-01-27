@@ -40,7 +40,7 @@ export function DisplayResults({
 
   return (
     <>
-      <button className="display-card" onClick={() => handleClick()}> 
+      <button className="display-card-button" onClick={() => handleClick()}> 
       <div className="display-card">
 
 
