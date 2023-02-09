@@ -264,7 +264,8 @@ export async function getStaticPaths() {
 }
 
 ///export getStaticProps to fetch required data to render this dynamic page
-export async function getStaticProps({ params }) {
+// export async function getStaticProps({ params }) {
+  export async function getServerSideProps({ params }) {
   const sData = await getSitterbyID(params.id);
 
   return {
