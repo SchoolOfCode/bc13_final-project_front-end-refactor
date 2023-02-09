@@ -256,7 +256,7 @@ export default function Post({ sData }) {
 export async function getStaticPaths() {
   // Return a list of possible value for id
   const paths = await getAllSitterID();
-  console.log(paths);
+  //console.log(paths);
   return {
     paths,
     fallback: "blocking", //this function called before initial render when using fallback: blocking
