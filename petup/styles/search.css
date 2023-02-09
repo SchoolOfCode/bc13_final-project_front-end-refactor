@@ -97,8 +97,7 @@
     margin: 10rem;
 }
 
-
-@media(max-width:550px){
+@media(max-width:800px){
     .search-filter-navbar{
         padding: 0.5rem 0rem;
     }
@@ -107,15 +106,19 @@
         width: 100%;
     }
 
-   .white-main-div{
-    width: 95%;
-    flex-direction: column;
-    gap: 2rem;
-   }
+    .white-main-div{
+        width: 95%;
+        flex-direction: column;
+        gap: 2rem;
+       }
 
-   .white-main-div > div {
-    width: 95%;
-   }
+    .white-main-div > div {
+        width: 95%;
+       }
+}
+
+/* for small mobile size */
+@media(max-width:550px){
 
    .display-card {
     flex-direction: column;
