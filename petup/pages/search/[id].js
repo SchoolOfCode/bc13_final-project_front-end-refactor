@@ -259,7 +259,7 @@ export async function getStaticPaths() {
   console.log(paths);
   return {
     paths,
-    fallback: blocking, //this function called before initial render when using fallback: blocking
+    fallback: "blocking", //this function called before initial render when using fallback: blocking
     // fallback: true // the function runs in the background when using fallback: true
   };
 }
