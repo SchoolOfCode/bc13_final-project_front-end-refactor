@@ -96,3 +96,43 @@
     display: flex;
     margin: 10rem;
 }
+
+
+@media(max-width:550px){
+    .search-filter-navbar{
+        padding: 0.5rem 0rem;
+    }
+
+    .navbar-container-search{
+        width: 100%;
+    }
+
+   .white-main-div{
+    width: 95%;
+    flex-direction: column;
+    gap: 2rem;
+   }
+
+   .white-main-div > div {
+    width: 95%;
+   }
+
+   .display-card {
+    flex-direction: column;
+   }
+
+   .display-card > img {
+    min-width: 100px;
+    min-height: 100px;
+   }
+
+   .display-card > .main-taglines {
+    max-width: 100%;
+   }
+
+   .main-taglines > h2 {
+    text-align: justify;
+   }
+
+
+}
