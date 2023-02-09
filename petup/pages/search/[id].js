@@ -23,7 +23,7 @@ export default function Post({ sData }) {
 
         
          <div className = "back-button" >
-         <button className = "back" onClick={() => router.back()}>Return to results</button>
+         <button className = "back" onClick={() => router.back()}> ←  Return to results</button>
          <h1 style={{ color: "black" }}>{sitterData.fullname}</h1>
             </div>
           
