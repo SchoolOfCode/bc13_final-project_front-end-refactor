@@ -259,13 +259,14 @@ export async function getStaticPaths() {
   console.log(paths);
   return {
     paths,
-    fallback: false,
+    fallback: blocking, //this function called before initial render when using fallback: blocking
+    // fallback: true // the function runs in the background when using fallback: true
   };
 }
 
 ///export getStaticProps to fetch required data to render this dynamic page
-// export async function getStaticProps({ params }) {
-  export async function getServerSideProps({ params }) {
+// `getStaticPaths` requires using `getStaticProps`
+export async function getStaticProps({ params }) {
   const sData = await getSitterbyID(params.id);
 
   return {
