@@ -67,12 +67,14 @@
 }
 
 .navbar-button-div button {
-    border-radius: 2px;
-    border-color: var(--orange);
-    height: 100%;
-    text-align: center;
-    /* text-justify: distribute; */
+    border-color: var(--green);
 }
+
+ .sign-up:hover {
+     border: 1px solid var(--white) ;
+ }
+
+
 .navbar-input-fieald, .pet-type, .search-pet-service, .navbar-button-div{
     padding: 0;
     margin: 0;
