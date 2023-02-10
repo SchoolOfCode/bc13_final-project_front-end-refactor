@@ -92,9 +92,17 @@
     color: black;
     font-size: small;
     text-align: center;
-    line-height: 100px;
+    /* line-height: 100px; */
     display: flex;
-    margin: 10rem;
+    margin: 10%;
+    padding: 5rem 0;
+}
+
+/* to center error message for tablet or lansdscape view */
+@media(max-width: 1050px){
+    .white-main-div > .p-tag{
+        width: 10rem;
+    }
 }
 
 @media(max-width:800px){
@@ -112,9 +120,22 @@
         gap: 2rem;
        }
 
+    .white-main-div > .p-tag{
+        position: relative;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+     
+    }   
+
     .white-main-div > div {
         width: 95%;
        }
+
+    .map-div {
+        padding: 1rem;
+    }
 }
 
 /* for small mobile size */

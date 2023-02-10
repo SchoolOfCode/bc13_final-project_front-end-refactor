@@ -127,12 +127,10 @@
         padding: 0;
         margin: 0;
         min-width: 100%;
-        border: 1px solid blue;
     }
 
     .margin-div-header{
         padding: 1rem;
-        border: 1px solid red;
     }
 
     .margin-div-header > a {
@@ -171,7 +169,6 @@
     }
    
     .button-div{
-        border: 1px solid blue;
         gap:0.1rem;
     }
 
