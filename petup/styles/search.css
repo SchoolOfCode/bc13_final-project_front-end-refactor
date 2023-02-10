@@ -67,12 +67,14 @@
 }
 
 .navbar-button-div button {
-    border-radius: 2px;
-    border-color: var(--orange);
-    height: 100%;
-    text-align: center;
-    /* text-justify: distribute; */
+    border-color: var(--green);
 }
+
+ .sign-up:hover {
+     border: 1px solid var(--white) ;
+ }
+
+
 .navbar-input-fieald, .pet-type, .search-pet-service, .navbar-button-div{
     padding: 0;
     margin: 0;
@@ -92,7 +94,71 @@
     color: black;
     font-size: small;
     text-align: center;
-    line-height: 100px;
+    /* line-height: 100px; */
     display: flex;
-    margin: 10rem;
+    margin: 10%;
+    padding: 5rem 0;
+}
+
+/* to center error message for tablet or lansdscape view */
+@media(max-width: 1050px){
+    .white-main-div > .p-tag{
+        width: 10rem;
+    }
+}
+
+@media(max-width:800px){
+    .search-filter-navbar{
+        padding: 0.5rem 0rem;
+    }
+
+    .navbar-container-search{
+        width: 100%;
+    }
+
+    .white-main-div{
+        width: 95%;
+        flex-direction: column;
+        gap: 2rem;
+       }
+
+    .white-main-div > .p-tag{
+        position: relative;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+     
+    }   
+
+    .white-main-div > div {
+        width: 95%;
+       }
+
+    .map-div {
+        padding: 1rem;
+    }
+}
+
+/* for small mobile size */
+@media(max-width:550px){
+
+   .display-card {
+    flex-direction: column;
+   }
+
+   .display-card > img {
+    min-width: 100px;
+    min-height: 100px;
+   }
+
+   .display-card > .main-taglines {
+    max-width: 100%;
+   }
+
+   .main-taglines > h2 {
+    text-align: justify;
+   }
+
+
 }

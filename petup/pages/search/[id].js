@@ -23,7 +23,7 @@ export default function Post({ sData }) {
 
         
          <div className = "back-button" >
-         <button className = "back" onClick={() => router.back()}>Return to results</button>
+         <button className = "back" onClick={() => router.back()}> ←  Return to results</button>
          <h1 style={{ color: "black" }}>{sitterData.fullname}</h1>
             </div>
           
@@ -256,14 +256,16 @@ export default function Post({ sData }) {
 export async function getStaticPaths() {
   // Return a list of possible value for id
   const paths = await getAllSitterID();
-  console.log(paths);
+  //console.log(paths);
   return {
     paths,
-    fallback: false,
+    fallback: "blocking", //this function called before initial render when using fallback: blocking
+    // fallback: true // the function runs in the background when using fallback: true
   };
 }
 
 ///export getStaticProps to fetch required data to render this dynamic page
+// `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params }) {
   const sData = await getSitterbyID(params.id);
 
