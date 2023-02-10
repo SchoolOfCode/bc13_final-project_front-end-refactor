@@ -73,6 +73,7 @@ footer > a :hover::before {
 }
 
 
+/* mobile or tablet */
 @media(max-width:550px){
     .margin-div-footer{
         padding: 1rem;
@@ -84,9 +85,30 @@ footer > a :hover::before {
         gap: 1rem;
     }
 
-    .margin-div-footer > footer > h1 > a{
-        font-size: 0.7rem;
+    .margin-div-footer > footer > h1 > a > span{
+        font-size: 0.6rem;
         text-align: center;
     }
    
+  }
+
+  /* small mobile screen */
+
+  @media(max-width: 350px){
+
+    .margin-div-footer > footer > img { 
+        
+        max-width: 4rem;
+        max-height: 0.8rem;
+    
+     } 
+
+     .margin-div-footer > footer {
+        align-items: baseline;
+     }
+    
+     .margin-div-footer > footer > h1 > a > span {
+        font-size: 0.6rem;
+     }
+    
   }

@@ -713,7 +713,7 @@
 
     .top-div {
         height: 100%;
-    
+        max-width: 100%;
     } 
 
     .top-middle-div {
@@ -772,6 +772,15 @@
     
     /* Mobile only  */
     @media (max-width: 550px) {
+
+        .tagline-div > h1{
+            font-size:x-large;
+        }
+
+        .middle-div > h1{
+            font-size: large;
+        }
+
         .top-search-div{
             flex-direction: column;
         }
@@ -794,6 +803,14 @@
 
         .second-search-div > div {
             width: 90%;
+        }
+
+        .bottom-margin-div > h1{
+            font-size: medium;
+        }
+
+        .bottom-margin-div > div > p {
+            font-size: small;
         }
 
     }

@@ -310,5 +310,34 @@
         min-width: 10rem;
         font-size: medium;
     }
+
+
+    .sitter-bio-div{
+        padding : 1rem;
+        align-self: center;
+    }
+   
+    
+    .sitter-second-main-div{
+       padding:0;
+       gap: 1rem;
+    }
+
+    .sitter-address-div {
+        /* flex-direction: column; */
+        height:100%;
+        gap:0.5rem;
+    }
+
+    .sitter-address-box{
+        min-width: 30%;
+    }
+
+    .h2 {
+        padding: 1rem 0.1rem;
+        margin: 0; 
+    }
+
+
 }
 
