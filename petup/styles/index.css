@@ -308,25 +308,34 @@
     float: left; */
 }
 
+/* .input-radio-div > input {
+    display: none;
+} */
+
+
 .input-radio-div>label {
-    background-color: white;
     color: #282828;
     font-size: 12px;
+     background-color: white;
     border: 1px solid var(--green);
     border-radius: 0;
     min-width: 90%;
     height: 43px;
-    /* padding-left: calc(1em + 10px + 15px); */
+}
 
+.input-radio-div > input[type=radio]:checked + .btn-primary {
+    background-color: var(--green);
 }
 
 .input-radio-div label:hover {
     background-color: var(--green);
+} 
+
+ .input-radio-div label:focus-within {
+    background-color: var(--green); 
 }
 
-.input-radio-div label:focus-within {
-    background-color: var(--green);
-}
+
 
 /** budget **/
 
