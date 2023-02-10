@@ -58,10 +58,57 @@ footer > a :hover::before {
     transform: scaleX(1);
   }
 
-.margin-div-footer > footer > img {
-    height: 20%;
-    width: 20%;
-}
+.margin-div-footer > footer > img { 
+    /* max-height: 15%; */
+    /* max-width: 20%; */
+    max-width: 6rem;
+    max-height: 1.2rem;
+
+    /* width:20%;
+    height:20%; */
+ } 
+
 .contact-us:hoover {
     color: var(--orange);
 }
+
+
+/* mobile or tablet */
+@media(max-width:550px){
+    .margin-div-footer{
+        padding: 1rem;
+    }
+
+    .margin-div-footer > footer {
+        padding: 0;
+        margin: 0;
+        gap: 1rem;
+    }
+
+    .margin-div-footer > footer > h1 > a > span{
+        font-size: 0.6rem;
+        text-align: center;
+    }
+   
+  }
+
+  /* small mobile screen */
+
+  @media(max-width: 350px){
+
+    .margin-div-footer > footer > img { 
+        
+        max-width: 4rem;
+        max-height: 0.8rem;
+    
+     } 
+
+     .margin-div-footer > footer {
+        align-items: baseline;
+     }
+    
+     .margin-div-footer > footer > h1 > a > span {
+        font-size: 0.6rem;
+     }
+    
+  }

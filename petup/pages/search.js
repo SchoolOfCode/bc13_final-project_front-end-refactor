@@ -136,7 +136,7 @@ const Search = ({sitterData}) => {
       <div className="search-page-main-div">
       <div className="white-main-div">
 
-      {sitterData[0] ? <></> : <p className = "p-tag" > Sorry, results not found </p> }   
+      {sitterData[0] ? <></> : <p className = "p-tag" > Sorry, there are no pet sitters in your area </p> }   
       
       <div className="search-result">    
       
