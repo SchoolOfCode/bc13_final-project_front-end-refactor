@@ -2,8 +2,6 @@
 
 A web platform for pet-sitting services.
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-
 <img alt="PetBrb logo" src="./petup/public/petbrb-high-resolution-logo-white-on-transparent-background.png" width = "700"><br/>
 
 ## Description
@@ -14,7 +12,7 @@ PetBrb provides a convenient and reliable solution for pet owners who need to fi
 
 The website is accessible at https://petbrb.vercel.app/
 
-<img alt="screenshot of petbrb website" src="PetBrB_screenshot.png" width = "700"><br/>
+<img alt="screenshot of petbrb website" src="./petup/public/PetBrB_screenshot.png" width = "700"><br/>
 
 ## Features
 
