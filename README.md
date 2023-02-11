@@ -46,7 +46,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 Javascript, React.js, Next.js v12, HTML, CSS, Auth.js, Vercel, Node.js, PostgreSQL, Leaflet, Bootstrap.
 
-<img alt="petBrB tech stack" src="petbrb_tech_stack.png" width = "700"><br/>
+<img alt="petBrB tech stack" src="./petup/public/petbrb_tech_stack.png" width = "700"><br/>
 
 ## How To Run Locally
 
@@ -135,7 +135,7 @@ Run this script to reset the database (drop tables, then recreate tables and pop
 
 The current database has been designed with a single table that merges user information and service information for ease of use. However, the database can be extended to comprise multiple tables for users, services, bookings, and reviews to enhance its structure.
 
-<img alt="table ERD" src="table_ERD.png"><br/>
+<img alt="table ERD" src="./petup/public/table_ERD.png"><br/>
 
 ## Authors
 
