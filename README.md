@@ -93,23 +93,23 @@ To successfully run this project locally, you need to set up environment variabl
 
 ### Setting up cloud service for database
 
-- Create an empty postgres database instance via a cloud-hosted database service (ex: [ElephantSQL](https://www.elephantsql.com/docs/) or [Railway](https://ekomenyong.com/insights/how-to-setup-free-postgresql-database-on-railway-app)), and copy service connection URL.
+- Create an empty postgres database instance via a cloud-hosted database service (ex: [ElephantSQL](https://www.elephantsql.com/docs/) or [Railway](https://ekomenyong.com/insights/how-to-setup-free-postgresql-database-on-railway-app)), and copy the service connection URL.
 
 ### Setting up Authentication Providers
 
 - Create a [Github OAuth App](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app) and obtain the Client ID and Client Secret keys.
-- Create a [Google OAuth app](https://developers.google.com/identity/sign-in/web/sign-in)
+- Create a [Google OAuth app](https://developers.google.com/identity/sign-in/web/sign-in) and obtain the Client ID and Client Secret keys.
 
 ### Add environment variables
 
 Create a `.env` file in the root directory and insert the following environment variables. Be sure to list `.env` inside `.gitignore` file.
 
-`POSTGRES_CONNECTION_URL` = <Service connection URL>
-`GITHUB_ID`= <client ID of Github OAuth provider>
-`GITHUB_SECRET`= <client ID of Github OAuth provider>
-`GOOGLE_ID`= <client ID of Google OAuth provider>
-`GOOGLE_SECRET` =<client Secret of Google OAuth provider>
-`NEXTAUTH_URL` = <http://localhost:3000>
+`POSTGRES_CONNECTION_URL` = [Service connection URL]
+`GITHUB_ID`= [client ID of Github OAuth provider]
+`GITHUB_SECRET`= [client ID of Github OAuth provider]
+`GOOGLE_ID`= [client ID of Google OAuth provider]
+`GOOGLE_SECRET` = [client Secret of Google OAuth provider]
+`NEXTAUTH_URL` = [http://localhost:3000]
 
 ## Create and populate the database
 
@@ -135,7 +135,7 @@ Run this script to reset the database (drop tables, then recreate tables and pop
 
 The current database has been designed with a single table that merges user information and service information for ease of use. However, the database can be extended to comprise multiple tables for users, services, bookings, and reviews to enhance its structure.
 
-<img alt="table ERD" src="./petup/public/table_ERD.png"><br/>
+<img alt="table ERD" src="./petup/public/table_ERD.png" width = "700"><br/>
 
 ## Authors
 
