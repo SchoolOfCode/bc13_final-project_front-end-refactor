@@ -135,7 +135,7 @@ Run this script to reset the database (drop tables, then recreate tables and pop
 
 The current database has been designed with a single table that merges user information and service information for ease of use. However, the database can be extended to comprise multiple tables for users, services, bookings, and reviews to enhance its structure.
 
-<img alt="table ERD" src="./petup/public/table_ERD.png" width = "700"><br/>
+<center><img alt="table ERD" src="./petup/public/table_ERD.png"></center><br/>
 
 ## Authors
 
