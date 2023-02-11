@@ -24,23 +24,25 @@ The website is accessible at https://petbrb.vercel.app/
 - User authentication
 - 'Create a profile' form with dedicated API routes for POST and PUT requests.
 
-### Data fetching
+#### Data fetching
 
 The `pages/index.js` file contains the client-side main page which accepts input parameters to filter the search results in the database. This page transitions to the `pages/search.js` page through `next/link` with a specific query object in the HTTP context. The `pages/search.js` page features Next.js `getServerSideProps` function, which runs only on server-side and is used to fetch data at request time. As `getServerSideProps` only runs on the server and never in the browser, the data is fetched directly from the database within this function. The data is then passed to the page component through props, which are returned from `getServerSideProps` and are rendered on the results page.
 
-### Dynamic routing
+#### Dynamic routing
 
 Dynamic routes are created to display each user's profile, which is defined in the `pages/search/[id].js` file. The `user_id` path parameter, which matches the URL, will be passed to the page as a query parameter. The `getStaticPaths` and `getStaticProps` functions in Next.js are used to fetch the data for each user based on the `user_id`. Client-side navigation to these dynamic routes is handled with `next/link`.
 
-### Interactive map
+#### Interactive map
 
 [Leaflet.js](https://leafletjs.com/examples/quick-start/) is utilized to display an interactive map with markers, using OpenStreetMap tiles. It sets its view using geographical coordinate. The [Postcodes.io](https://postcodes.io/) API is utilized to retrieve latitude and longitude information based on the address postcode.
 
-### API routes
+#### API routes
 
 API endpoints can be accessed at [http://localhost:3000/api/profile](http://localhost:3000/api/profie). The endpoint at this location can be modified in the `pages/api/profile.js` file.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as API routes.
+
+<br/>
 
 ## Tech Stack
 
