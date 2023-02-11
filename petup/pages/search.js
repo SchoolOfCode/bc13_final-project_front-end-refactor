@@ -32,7 +32,7 @@ export async function getServerSideProps(context){
   const sitterData = await getSitterByData(service, city, pet, budget);
  
   //the props that is being returned here will be passed as props in the component function 'Search', so the data can be rendered on the page. 
-  console.log(sitterData)
+  
   return {
     props: {
       sitterData,
