@@ -278,7 +278,6 @@ export default function Home() {
                 onClick={() => handleClick}
                 className="search-button"
                 text="Search Now"
-                // style={{width: '100%'}}
               >
               
 
