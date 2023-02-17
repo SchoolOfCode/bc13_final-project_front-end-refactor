@@ -2,7 +2,7 @@
 
 A web platform for pet-sitting services.
 
-<img alt="PetBrb logo" src="./petup/public/petbrb-high-resolution-logo-white-on-transparent-background.png" width = "700"><br/>
+<img alt="PetBrb logo" src="./petup/public/logo-no-background.png" width = "700"><br/>
 
 ## Description
 
