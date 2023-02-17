@@ -144,6 +144,7 @@
     position: relative;
     font-size: 10px;
     /* padding-left: 10px; */
+  
     
 }
 
@@ -175,7 +176,13 @@
     /* padding-left: 12px;  */
     padding-left: calc(1em + 10px + 15px);
     /* text-align: center; */
+    text-align: center;
 
+}
+..select-div>select>option {
+    text-align: center;
+    padding: 0;
+    position: absolute;
 }
 
 /*--search input field--*/
@@ -308,9 +315,9 @@
     float: left; */
 }
 
-/* .input-radio-div > input {
+.input-radio-div > input {
     display: none;
-} */
+}
 
 
 .input-radio-div>label {
@@ -445,7 +452,12 @@
     width: 100%;
     border: 1px solid var(--green);
     /* border-radius: 5px; */
+    
 }
+/* .toggle-box-service > option {
+   padding: 0;
+    
+} */
 
 
 .third-search-div {
