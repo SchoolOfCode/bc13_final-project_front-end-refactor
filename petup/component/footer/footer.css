@@ -1,0 +1,117 @@
+.margin-div-footer{
+    display: flex;
+    min-height: 5rem;
+    max-height: 7rem;
+    max-width: 100%;
+    background-color: var(--darkblu);
+    color: var(--main-yellow);
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem ;
+}
+
+.margin-div-footer > footer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem 0 4rem;
+    
+ 
+}
+
+
+footer > h2, a > h2 {
+    font-size: larger;
+}
+footer a h2:hoover {
+    color: var(--orange);
+}
+footer > a {
+    display: flex;
+    max-height: 10%;
+    max-width: 100%;
+    background-color: var(--darkblu);
+    color: var(--main-yellow);
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem ;
+    
+}
+footer > a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+footer > a :hover::before {
+    transform: scaleX(1);
+  }
+
+.margin-div-footer > footer > img { 
+    /* max-height: 15%; */
+    /* max-width: 20%; */
+    max-width: 6rem;
+    max-height: 1.2rem;
+
+    /* width:20%;
+    height:20%; */
+ } 
+
+.contact-us:hoover {
+    color: var(--orange);
+}
+
+
+/* mobile or tablet */
+@media(max-width:600px){
+    .margin-div-footer{
+        padding: 1rem;
+    }
+
+    .margin-div-footer > footer {
+        padding: 0;
+        margin: 0;
+        gap: 1rem;
+       
+    }
+
+    .margin-div-footer > footer > h1 > a > span{
+        font-size: 0.6rem;
+        text-align: center;
+    }
+
+    .margin-div-footer > footer > img { 
+        
+        max-width: 4rem;
+        max-height: 0.8rem;
+    
+     } 
+   .sitter-title{
+    max-width: 3rem;
+   }
+  }
+
+  /* small mobile screen */
+
+  @media(max-width: 350px){
+
+     .margin-div-footer > footer {
+        align-items: baseline;
+     }
+    
+     .margin-div-footer > footer > h1 > a > span {
+        font-size: 0.6rem;
+     }
+    
+  }

@@ -1,0 +1,29 @@
+/* .container {
+    width: 500px;
+    height: 800px;
+    float: right;
+} */
+
+.leaflet-container {
+    width: 100%;
+    height: 33rem;
+
+    
+  }
+  .map-div {
+    /* border:2px solid blue; */
+    width: 49%;
+    height: 100%;
+    display: flex;
+    /* height: 30rem; */
+    /* position: fixed; */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.map-div div {
+    width: 100%;
+}
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    border: 0px solid rgba(0,0,0,0.2);
+}

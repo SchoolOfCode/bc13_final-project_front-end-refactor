@@ -1,0 +1,840 @@
+/* main div and background divs */
+
+.main-div {
+
+    /* height: 80%; */
+    max-width: 100%;
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: var(--white);
+    
+}
+
+.top-div {
+    height: 40rem;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    background-image: url('../public/landing-page.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 115%;
+
+}
+
+.feature {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+}
+
+
+/*--center field--*/
+
+.margin-div {
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: middle;
+    /* padding: 0 4rem 0 4rem; */
+    flex-direction: column;
+}
+
+.top-middle-div {
+    height: 85%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    padding: 0 4rem 0 2rem;
+    gap: 2rem;
+}
+
+.middle-div {
+    height: 15%;
+    width: 40%;
+    align-items: center;
+
+}
+
+.middle-div h1 {
+    color: var(--white);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 1.2rem;
+}
+
+/*-- search box --*/
+
+.searchBox-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 65%;
+    max-height: 75%;
+    /* width: 52%; */
+    min-width: 50%;
+    max-width: 70%;
+    padding: 2%;
+    /* border-radius: 10px; */
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    background-color: var(--white);
+    opacity: 200%;
+    border: 1px solid var(--green);
+    transform: translate(0px, 1rem);
+}
+
+/*-- top search field --*/
+
+.top-search-div {
+    display: flex;
+    height: 20%;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: small;
+}
+
+
+/* --service input field-- */
+.pet-service {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80px;
+    width: 50%;
+    /* float: left; */
+    font-size: small;
+    position: relative;
+
+}
+
+.pet-service > legend {
+    text-align : left;
+    font-size: small;
+}
+.select-div > input::placeholder {
+    text-align: center;
+}
+
+.select-div {
+    display: flex;
+    flex-direction: column;
+    height: 43px;
+    width: 100%;
+    float: left;
+    position: relative;
+    font-size: 10px;
+    /* padding-left: 10px; */
+  
+    
+}
+
+.logo-icon {
+    position: absolute;
+    /* margin:28px 10px; */
+    /* margin: 0.8rem 0.8rem; */
+    /* margin-right: 4px; */
+    /* float: left; */
+    left: 10px;
+    top: 9px;
+    z-index: 1;
+    
+}
+
+.select-div>select {
+    border: 1px solid var(--green);
+    /* border-radius: 5px; */
+    height: 100%;
+    line-height: normal;
+    color: #282828;
+    display: block;
+    /* width: 30vh; */
+    width: 90%;
+    /* box-sizing: border-box; */
+    user-select: auto;
+    font-size: 10px;
+    padding: 0 6px;
+    /* padding-left: 12px;  */
+    padding-left: calc(1em + 10px + 15px);
+    /* text-align: center; */
+    text-align: center;
+
+}
+..select-div>select>option {
+    text-align: center;
+    padding: 0;
+    position: absolute;
+}
+
+/*--search input field--*/
+.input-box-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    width: 50%;
+    /* float: left; */
+    font-size: small;
+}
+
+.input-box-div > legend {
+    text-align : left;
+    font-size: small;
+}
+
+.search-icon {
+    position: absolute;
+    margin: 3.2em 0.8em;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 4px;
+    float: left;
+}
+
+
+.input-field {
+    border: 1px solid var(--green);
+    /* border-radius: 5px; */
+    height: 5vh;
+    /* height: 4.5em; */
+    line-height: normal;
+    color: #282828;
+    display: block;
+    /* width: 30vh; */
+    width: 90%;
+    /* box-sizing: border-box; */
+    user-select: auto;
+    font-size: 10px;
+    padding: 0 6px;
+    /* padding-left: 12px;  */
+    padding-left: calc(3em);
+    /* text-align: center; */
+}
+
+
+
+
+/* second search div */
+
+/* for what type of pet (radio div)*/
+
+.second-search-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    height: 20%;
+    width: 100%;
+    margin:0;
+    padding: 0;
+    font-size: small;
+    gap: 30px;
+}
+
+.radio-div {
+    /* float: left; */
+    display: flex;
+    align-items: center;
+    align-content: center;
+    /* justify-content: space-around; */
+    /* gap: 1vw; */
+    flex-direction: column;
+    /* width: 30vw; */
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid transparent; */
+    
+}
+
+.radio-div>form {
+    width: 100%;
+    height: 100%;
+}
+
+.pet-radio {
+    /* border: 1px solid grey; */
+    width: 100%;
+    height: 100%;
+    padding-right: 5%;
+}
+
+
+.pet-radio > legend {
+    font-size: small;
+    text-align: left;
+}
+
+.pet-radio-box {
+    /* border: 1px solid var(--green); */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+.input-radio-div {
+    width: 100%;
+    height: 43px;
+    
+}
+
+.input-radio-div > .btn-primary{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-radio-div > .btn-primary > img {
+    position: relative;
+    /* margin: 0.5em 0.5em; */
+    width: 18px;
+    height: 18px;
+    /* margin-right: 4px;
+    float: left; */
+}
+
+.input-radio-div > input {
+    display: none;
+}
+
+
+.input-radio-div>label {
+    color: #282828;
+    font-size: 12px;
+     background-color: white;
+    border: 1px solid var(--green);
+    border-radius: 0;
+    min-width: 90%;
+    height: 43px;
+}
+
+.input-radio-div > input[type=radio]:checked + .btn-primary {
+    background-color: var(--green);
+}
+
+.input-radio-div label:hover {
+    background-color: var(--green);
+} 
+
+ .input-radio-div label:focus-within {
+    background-color: var(--green); 
+}
+
+
+
+/** budget **/
+
+
+
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+}
+
+.price-container h5 {
+    font-size: small;
+}
+
+.price-input {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.price-container > legend {
+    text-align: left;
+    padding-left: 2%;
+    
+}
+
+
+.budget-container {
+    width : 100%;
+    height: 100%;
+    /* float: left; */
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.minPrice-container,
+.maxPrice-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.budget {
+    height: 43px;
+    width: 40%;
+    font-size: 12px;
+    /* border-color: var(--green); */
+    border: 1px solid var(--green);
+    align-items: space-around; 
+}
+
+.budget-label {
+    font-size: small;
+    float: left;
+}
+
+.budget-warning {
+    font-size: x-small;
+    height: 10%;
+    color: rgb(247, 41, 41);
+}
+
+
+
+/* .checkboxes {
+    display: flex;
+    align-items: center;
+}
+.checkboxes > input {
+    display: flex;
+    width: 30px;
+    height: 40px;
+    
+
+}
+.checkboxes > label {
+    font-size: 25px;
+} */
+
+
+/* price slider */
+
+.price-slider {
+    width: 50%;
+    /* background-color: black; */
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.chakra-slider {
+    width: 100%;
+    min-height: 20px;
+    height: 100%;
+    /* background-color: grey; */
+    /* position: fixed; */
+}
+
+/*third search div*/
+
+.toggle-box-service {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    border: 1px solid var(--green);
+    /* border-radius: 5px; */
+    
+}
+/* .toggle-box-service > option {
+   padding: 0;
+    
+} */
+
+
+.third-search-div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 20%;
+    width: 100%;
+}
+
+/* .third-search-div>a {
+    display: flex;
+} */
+
+/** dates **/
+
+.date-div > label {
+    color: #282828;
+    font-size: 12px;
+    float: left;
+}
+
+.date-div {
+    width: 50%;
+}
+
+.date-search > img {
+    position: relative;
+    /* margin: 0.5em 0.5em; */
+    width: 18px;
+    height: 18px;
+}
+
+.date-search{
+    border: 1px solid var(--green);
+    align-items: center;
+    background-color: white;
+    width : 100%;
+    min-width: 10rem;
+    height: 4em;
+    color: #282828;
+    font-size: 12px;
+    display: flex;
+    justify-content : space-between;
+}
+
+.date-search > p {
+   width: 2rem;
+   font-size: 10px;
+}
+
+
+.number-input {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    min-width: 3vh;
+    max-width: 10vh;
+}
+
+.react-datepicker-wrapper {
+    display: flex;
+    height: 100%;
+    width: 10vh;
+}
+
+.react-datepicker__input-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+.react-datepicker__input-container>input {
+    display: flex;
+
+    height: 100%;
+    width: 100%;
+}
+
+.chakra-numberinput {
+    display: flex;
+    width: 100%;
+}
+
+.chakra-numberinput>input {
+    width: 100%;
+}
+
+.btn-check {
+    display: flex;
+    text-align: center;
+    background-color: var(--orange);
+    width: 5vw;
+}
+
+
+
+/* search now button*/
+
+
+.search-icon2 {
+    /* margin: 1em 0.5em; */
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    /* margin-right: 4px; */
+    /* float: left; */
+    fill: currentColor;
+    color: var(--white);
+    z-index: 1;
+}
+
+
+/* tagline div */
+
+.tagline-div {
+    border: transparent;
+    min-height: 40%;
+    max-height: 40%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    align-content: space-between;
+    border-radius: 15px;
+    background-color: transparent;
+    /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); */
+    padding: 0;
+}
+
+.tagline-div>h1 {
+    font-size: xx-large;
+    text-align: left;
+    color: #EEEEEE;
+}
+
+.tagline-div h1 span {
+    color: var(--white);
+    font-style: italic;
+}
+
+
+/* bottom div */
+
+.bottom-div {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.bottom-margin-div {
+    height: 15rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    /* padding-top: 1rem; */
+    flex-direction: column;
+}
+
+.bottom-margin-div>h1 {
+    text-align: center;
+    font-size: medium;
+    color: black;
+    padding: 0 0 0.5em 0;
+    font-size: large;
+}
+
+.bottom-margin-div>p {
+    text-align: center;
+    font-size: small;
+    color: black;
+    /* padding: 0.5em 0; */
+}
+
+/* -How does Pet'Brb work?- Div */
+
+.bottom-margin-div>div {
+    height: 4em;
+    width: 100%;
+    color: #282828;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    align-items: center;
+    ;
+
+}
+
+.step1-icon {
+    /* position: relative; */
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.step1-div>p {
+    margin-left: 0.5rem;
+    font-size: medium;
+}
+
+.step2-icon {
+    /* position: relative; */
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+
+.step2-div>p {
+    margin-right: 0.5rem;
+    font-size: medium;
+}
+
+
+
+.step3-icon {
+    /* position: relative; */
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.step3-div>p {
+    /* padding-left: calc(2em);
+    text-align: center;
+    font-size: medium; */
+    margin-left: 0.5rem;
+    font-size: medium;
+}
+.step1-div, .step2-div, .step3-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.btn-primary {
+    columns: var(--green);
+}
+
+
+/* media query */
+
+
+/* Enable hover only on non-touch devices
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+      background: rgba(var(--card-rgb), 0.1);
+      border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    }
+  
+    .card:hover span {
+      transform: translateX(4px);
+    }
+  } */
+  
+
+  
+  /* Mobile and Tablet */
+  @media (max-width: 700px) {
+
+    .top-div {
+        height: 100%;
+        max-width: 100%;
+    } 
+
+    .top-middle-div {
+        
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        padding: 3rem 1rem;
+        gap: 2rem;
+       
+        /* padding: 0 4rem 0 2rem; */
+    }
+
+    .searchBox-div {
+        min-width: 100%;
+        gap: 2rem;
+    }
+
+    .tagline-div {
+        width: 100%;
+    }
+
+    .tagline-div > h1{
+        text-align: center;
+    }
+
+    .middle-div {
+       
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .bottom-div {
+        height: 100%;
+
+    }
+
+    .bottom-margin-div {
+        height: 100%;
+        padding: 3rem 2rem;
+        gap: 2rem;
+       
+    }
+
+    .bottom-margin-div>div {
+        height: 100%;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .bottom-margin-div > div > p{
+        text-align: justify;
+    }
+
+}
+    
+    /* Mobile only  */
+    @media (max-width: 550px) {
+
+        .tagline-div > h1{
+            font-size:x-large;
+        }
+
+        .middle-div > h1{
+            font-size: large;
+        }
+
+        .top-search-div{
+            flex-direction: column;
+        }
+
+        .top-search-div > div {
+            width: 90%;
+        }
+
+        .select-div {
+            width: 100%;
+        }
+
+        .select-div>select{
+            width: 100%;
+        }
+
+        .second-search-div{
+            flex-direction: column;
+        }
+
+        .second-search-div > div {
+            width: 90%;
+        }
+
+        .bottom-margin-div > h1{
+            font-size: medium;
+        }
+
+        .bottom-margin-div > div > p {
+            font-size: small;
+        }
+
+    }
+    
+
+

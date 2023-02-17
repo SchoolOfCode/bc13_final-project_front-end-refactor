@@ -1,0 +1,56 @@
+.sitter-main-div {
+    display: flex;
+    min-height: 50rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #cecece;
+    background-image: url('../public/landing-page.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title-sitter {
+    margin-top: 0.7rem;
+    margin-bottom: 0.5rem;
+    width: 80%;
+    text-align: center;
+}
+
+.title-sitter h1 {
+    color: black;
+}
+.paragraphs {
+    display: flex;
+    flex-direction: column;
+    min-height: 80%;
+    width: 70%;
+    background-color: var(--white);
+    align-content: center;
+    align-items: center;
+
+}
+
+.paragraphs  > p {
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+.sitter-button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--darkblu);
+    font-weight: 500;
+}
+
+.sign-in-instruction{
+    padding: 1.5rem;
+    margin: 2rem 0;
+    display:flex;
+    border: 1px solid var(--green);
+    border-style: none none solid none;
+}

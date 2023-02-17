@@ -1,0 +1,27 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300&display=swap');
+
+html, body , #__next{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  
+  background-color:rgba(0, 0, 0, 0.4);
+  /* opacity: 0.4;
+  filter: alpha(opacity=40); */
+  /* /* background-size: cover; */
+  
+  font-family: 'Poppins', 'sans-serif';
+}
+
+:root {
+  --main-yellow: #eeeeee;
+  --green: #489FB5;
+  --white: #EDE7E3;
+  /* --old: E08304 */
+  --orange: #E08304;
+  --gray: #737373;
+  --darkblu: #16697A;
+}
+/* FFA62B */
