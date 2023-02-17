@@ -83,6 +83,7 @@ footer > a :hover::before {
         padding: 0;
         margin: 0;
         gap: 1rem;
+       
     }
 
     .margin-div-footer > footer > h1 > a > span{
@@ -96,7 +97,9 @@ footer > a :hover::before {
         max-height: 0.8rem;
     
      } 
-   
+   .sitter-title{
+    max-width: 3rem;
+   }
   }
 
   /* small mobile screen */
