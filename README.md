@@ -10,7 +10,7 @@ PetBrb provides a convenient and reliable solution for pet owners who need to fi
 
 ## Demo
 
-The website is accessible at [here](https://petbrb.vercel.app)
+The website is accessible [Here](https://petbrb.vercel.app)
 
 <img alt="screenshot of petbrb website" src="./petup/public/PetBrB_screenshot.png" width = "700"><br/>
 
