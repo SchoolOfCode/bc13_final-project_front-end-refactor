@@ -10,9 +10,9 @@ const Header = () => {
   {/*This is OAuth*/}
   const { data: session, status } = useSession()
   const userEmail = session?.user.email;
-  const userName = session?.user.name;
+  const userName = session?.user.name.split(" ")[0]; //takes first name
   const userImage = session?.user.image;
-  console.log(session)
+  //console.log(session)
 
   // if (status === "loading") {
   //   return <p>Hang on there...</p>
