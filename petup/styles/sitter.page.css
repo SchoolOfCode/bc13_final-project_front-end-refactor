@@ -54,3 +54,56 @@ span {
     border: 1px solid var(--green);
     border-style: none none solid none;
 }
+
+
+/* media query */
+
+  /* Mobile and Tablet */
+  @media (max-width: 700px) {
+
+    
+    .paragraphs {
+        min-width: 90%;
+        /* gap: 2rem; */
+    }
+
+    .title-sitter {
+        
+        width: 90%;
+        
+    }
+    
+    .paragraphs > p {
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-bottom: 1em;
+        text-align: justify;
+    }
+
+    .sitter-button {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .sign-in-instruction{
+        padding: 1.5rem;
+        margin: 2rem 0;
+        display:flex;
+        border: 1px solid var(--green);
+        border-style: none none solid none;
+        text-align: center
+    }
+
+}
+    
+    /* Mobile only  */
+    @media (max-width: 550px) {
+
+       .paragraphs > p {
+        font-size: small;
+       }
+
+    }
+    
+
+
