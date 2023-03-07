@@ -110,10 +110,33 @@
 @media(max-width:800px){
     .search-filter-navbar{
         padding: 0.5rem 0rem;
-    }
+    } 
 
     .navbar-container-search{
         width: 100%;
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+
+
+    .navbar-input-fieald, .pet-type, .search-pet-service, .navbar-button-div{
+        width: 100%;
+    }
+
+    .navbar-input-fieald input {
+        width: 100%;
+    }
+
+    .navbar-container-search > .navbar-button-div{
+        width: 100%;
+        padding-left: 0.5rem;
+        
+    }
+
+    .navbar-button-div > a > button {
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 0.8rem;
     }
 
     .white-main-div{
