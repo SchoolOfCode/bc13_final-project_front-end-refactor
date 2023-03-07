@@ -120,3 +120,49 @@
     box-shadow: inset 0 1px 4px 0 rgb(119 122 175 / 30%);
     text-align: justify;
 }
+
+
+/* media query */
+
+  /* Mobile and Tablet */
+  @media (max-width: 1000px) {
+
+    
+    .divs-containter {
+        min-width: 90%;
+        flex-direction: column-reverse;
+        margin: 1rem;
+       
+    }
+
+    .divs-containter > .contact-right{
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .contact-right > p {
+        margin: 1rem;
+        font-size: small;
+    }
+
+    .divs-containter > .contact-left{
+        width: 100%;
+        padding: 1rem;
+    }   
+
+    .contact-left > form {
+        width: 100%;
+        height: 100%;
+        gap: 0.5rem;
+    }
+
+   .feedback {
+        width: 90%;
+        margin-top: 1rem;
+        padding: 2rem;
+        font-size: small;
+    }
+
+   
+       
+    }
