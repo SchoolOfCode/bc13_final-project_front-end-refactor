@@ -6,6 +6,7 @@ html, body , #__next{
   padding: 0;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
   
   background-color:rgba(0, 0, 0, 0.4);
   /* opacity: 0.4;
