@@ -131,6 +131,7 @@
 
     .margin-div-header{
         padding: 1rem;
+        min-width: 100%;
     }
 
     .margin-div-header > a {
@@ -139,6 +140,11 @@
 
     .title span{
         font-size:0.7rem;
+    }
+
+    .button-div {
+        display: flex;
+        align-items : center;
     }
 
     .button-div > h1{
@@ -158,9 +164,12 @@
     .button-username > img{
         display : none;
     }
+
    
     .link-username {
         font-size: 0.5rem;
+        text-align: center;
+        align-items: center;
     }
 
     .button-username > a {
